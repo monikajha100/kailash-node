@@ -1,0 +1,140 @@
+  <style>
+    /* Global styles */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
+
+    h2 {
+      text-align: center;
+      margin-top: 20px;
+      color: #333;
+    }
+
+    /* Form container */
+    #contact-us {
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      max-width: 800px;
+      margin: 30px auto;
+      padding: 20px;
+      margin-top: 160px;
+    }
+
+    /* Form fields */
+    div {
+      margin-bottom: 15px;
+    }
+
+    /* Label */
+    label {
+      font-size: 1.1em;
+      font-weight: bold;
+      display: block;
+      margin-bottom: 5px;
+      color: #333;
+    }
+
+    /* Input fields and text areas */
+    input[type="text"],
+    input[type="number"],
+    input[type="email"],
+    textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      box-sizing: border-box;
+      font-size: 1em;
+      margin-top: 5px;
+    }
+
+    textarea {
+      height: 100px;
+      resize: vertical;
+    }
+
+    /* Button */
+    button[type="submit"] {
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      font-size: 1.2em;
+      cursor: pointer;
+      border-radius: 5px;
+      width: 100%;
+      margin-top: 15px;
+    }
+
+    button[type="submit"]:hover {
+      background-color: #45a049;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      form {
+        padding: 15px;
+        margin: 20px;
+      }
+
+      h2 {
+        font-size: 1.5em;
+      }
+
+      input[type="text"],
+      input[type="number"],
+      input[type="email"],
+      textarea {
+        font-size: 1em;
+      }
+
+      button[type="submit"] {
+        font-size: 1em;
+      }
+    }
+
+    /* Style for required fields */
+    input[required] {
+      border-color: #f44336;
+    }
+
+    input[required]:focus {
+      border-color: #f44336;
+      outline: none;
+    }
+  </style>
+  <!-- Logo Image URL -->
+  <section id="contact-us">
+    <h2>Contact Us</h2>
+    <p style="font-size: 1rem;">
+      We would be delighted to hear from you. Please fill out the form below to get in touch with us.
+    </p>
+
+    <form action="/index/submit-contact-form" method="POST">
+      <% if (typeof req.query.message_type !== 'undefined' || typeof req.query.message_text !== 'undefined'  ){ %>
+        <div class="alert alert-<%= req.query.message_type %> text-dark  ">
+            <%= req.query.message_text %>
+        </div>
+      <% } %>
+      <div class="form-group">
+        <label for="name">Full Name:</label>
+        <input type="text" id="name" name="full_name" required />
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email Address:</label>
+        <input type="email" id="email" name="email_address" required />
+      </div>
+
+      <div class="form-group">
+        <label for="message">Your Message:</label>
+        <textarea id="message" name="message" rows="4" required></textarea>
+      </div>
+
+      <button type="submit" class="btn-submit">Send Message</button>
+    </form>
+  </section>

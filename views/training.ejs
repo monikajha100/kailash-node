@@ -1,0 +1,27 @@
+<link rel="stylesheet" href="/stylesheets/training.css">
+<head>
+    <title>Ayush</title>
+</head>
+
+<!-- Hero Section for Training Programs -->
+
+
+<!-- Main Training Programs Section -->
+<div class="trainings pb-5 container-fluid">
+    <h2 class="py-3 text-center">Explore Our Training Programs</h2>
+    <div class="grid">
+        <% training.forEach(training => { %>
+            <div class="card">
+                <div class="img-box">
+                    <img src="<%= training.image_url %>" alt="<%= training.title %>" />
+                </div>
+                <div class="card-content">
+                    <h3><%= training.title %></h3>
+                    <p><%= training.description %></p>
+                    <!-- Dynamic link to each training program's details page -->
+                    <a href="/index/training/<%= training.trainingid %>" class="btn">Learn More</a>
+                </div>
+            </div>
+        <% }) %>
+    </div>
+</div>

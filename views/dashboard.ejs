@@ -1,0 +1,157 @@
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+</head>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 20px;
+        background-color: #f4f4f4;
+    }
+    header {
+        background: #333;
+        color: #fff;
+        padding: 10px 20px;
+        text-align: center;
+    }
+    .edit-content-form {
+        background: #fff;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+    label {
+        display: block;
+        margin: 10px 0 5px;
+    }
+    input[type="text"],
+    textarea,
+    select,
+    input[type="file"] {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+    button {
+        background: #5cb85c;
+        color: #fff;
+        border: none;
+        padding: 10px 15px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    button:hover {
+        background: #4cae4c;
+    }
+    footer {
+        text-align: center;
+        margin-top: 20px;
+        color: #888;
+    }
+</style>
+</head>
+<body>
+    <header class="p-4">
+        <h1>Admin Dashboard</h1>
+        <button class="btn btn-danger">
+            <a href="/admin/logout" class="text-white">log out</a>
+        </button>
+    </header>
+    <main>
+        <section class="edit-content-form">
+            <h2>Edit Content for Website Pages</h2>
+            <% if (typeof req.query.message_type !== 'undefined' || typeof req.query.message_text !== 'undefined'  ){ %>
+                <div class="alert alert-<%= req.query.message_type %> text-dark  ">
+                    <%= req.query.message_text %>
+                </div>
+            <% } %>
+            <form action="" method="get">
+                
+                <!-- Select Page to Edit -->
+                <!-- <input type="hidden" name="hidden_page_type" value="True" /> -->
+                <label for="page-type">Choose Page:</label>
+                <% if (typeof req !== 'undefined'){ %>
+                <select id="page-type" name="page_type">
+                    <option value="" selected disabled>--Select Page--</option>
+                    <option value="service" <% if (req.query.page_type == 'service') { %> selected <% } %> >Service</option>
+                    <option value="training"  <% if (req.query.page_type == 'training') { %> selected <% } %>>Training</option>
+                    <option value="team"  <% if (req.query.page_type == 'team') { %> selected <% } %>>Team</option>
+                    <option value="about" <% if (req.query.page_type == 'about') { %> selected <% } %> >About Us</option>
+                    <option value="contact" <% if (req.query.page_type == 'contact') { %> selected <% } %> >Contact Us</option>
+                    <option value="index" <% if (req.query.page_type == 'contact') { %> selected <% } %> > index</option>
+                </select>
+                <% } %>
+                <% if (typeof req == 'undefined'){ %>
+                    <select id="page-type" name="page_type">
+                        <option value="" selected disabled>--Select Page--</option>
+                        <option value="service" >Service</option>
+                        <option value="training">Training</option>
+                        <option value="team">Team</option>
+                        <option value="about">About Us</option>
+                        <option value="contact">Contact Us</option>
+                        <option value="contact">index</option>
+                    </select>
+                <% } %>       
+                <button type="submit" class="btn btn-primary">Show data</button>
+            </form>
+            <% if (typeof page_data !=='undefined' && page_data) { %>
+                <form action="" method="get">
+                    <input type="hidden" name="page_type" value="<%= req.query.page_type %>">
+                    <label for="page-type">Choose card:</label>
+                    <select id="page-type" name="selected_title">
+                        <option value="" selected disabled>--Select Page--</option>
+                        <% page_data.forEach(data => { %>
+                            <option value="<%= data.title %>"
+                                <% if (req.query.selected_title === data.title){ %>    
+                                    selected
+                                <% } %>    
+                            >
+                                <%= data.title %>
+                            </option>
+                        <% }) %>
+                    </select>
+                    <button type="submit" class="btn btn-primary">Show data</button>
+                </form>
+                <% } %>
+                <% if (typeof selected_data !=='undefined' && selected_data ) { %>
+                    
+                    <hr>
+                    <form action="/admin/dashboard/update_card" method="get">
+                    <h4 class="fw-bold">Update Data</h4>   
+                    <input type="hidden" name="table_name" value="<%= req.query.page_type %>">
+                    <input type="hidden" name="selected_title" value="<%= req.query.selected_title %>">
+                    <!-- Title Field -->
+                    <label for="title">Title:</label>
+                    <input type="text" id="title" name="title" value="<%= selected_data.title %>" required>
+                    <!-- Description Field -->
+                    <label for="description">Description:</label>
+                    <textarea id="description" name="description" rows="5" required><%= selected_data.description %></textarea>
+                    <label for="description">full Description:</label>
+                    <textarea id="description" name="full_description" rows="5" ><%= selected_data.full_description %></textarea>
+                    <label for="description">detail image:</label>
+                    <textarea id="description" name="details_img" rows="5" ><%= selected_data.details_img %></textarea>
+                    <!-- Image Upload (Optional) -->
+                    <label for="image" >Upload Image:</label>
+                    <label for="image" >*image part is under development*</label>
+                    <input type="file" id="image" name="image" accept="image/*" disabled>
+                    <!-- Submit Button -->
+                    <button type="submit">Save Changes</button>
+                    </form>
+                    <!-- </form> -->
+                <% } %>
+
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Your Company. All rights reserved.</p>
+    </footer>
+</body>
+</html>
+
+

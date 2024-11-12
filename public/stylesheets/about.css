@@ -1,0 +1,128 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+
+}
+
+header {
+    color: #4bcffa;;
+    background: #4bcffa;/* Navbar color */
+    padding: 10px 20px;
+    position: fixed;
+    width: 100%;
+    height: 15%;
+    
+}
+
+.menu {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: 4%;
+    padding: 0;
+    margin-top: 1px;
+    margin-bottom: 5px;
+}
+
+.menu li {
+    margin: 0 15px;
+
+    
+}
+
+.menu a {
+    text-decoration: none;
+    font-weight: bold;
+    color: white;
+
+    
+}
+
+.search-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.search-icon {
+    cursor: pointer;
+    font-size: 1.5em;
+    margin-left: 10px; /* Space between input and icon */
+    z-index: 2; /* Make sure the icon is on top */
+}
+
+.search-input {
+    width: 0; /* Initially hidden */
+    opacity: 0; /* Make it invisible */
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    position: absolute;
+    right: 0; /* Position input to the right of the icon */
+    transition: width 0.3s ease, opacity 0.3s ease; /* Smooth transition for width and opacity */
+}
+
+.search-container:hover .search-input {
+    width: 150px; /* Set desired width on hover */
+    opacity: 1; /* Make it visible */
+}
+
+.hero {
+    background: url('hero-background.jpg') no-repeat center center/cover;
+    color: white;
+    text-align: center;
+    padding: 100px 20px;
+    
+}
+/* About Us section styling */
+#about {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    background-color: #f3f6fa;
+    color: #333;
+    margin-top: -5%;
+}
+
+.about-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.about-text {
+    flex: 1;
+    padding-right: 20px;
+}
+
+.about-text h1 {
+    font-size: 6em;
+    color: #3b5998;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.about-text p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    margin-top: 10px;
+}
+
+.about-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-image img {
+    max-width: 60%;
+    height: 50%;
+    border-radius: 8px;
+}

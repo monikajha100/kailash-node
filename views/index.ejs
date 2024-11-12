@@ -1,0 +1,164 @@
+<link rel="stylesheet" href="/stylesheets/style.css" />
+  <section class="hero">
+  <video autoplay muted loop class="hero-video">
+    <source src="<%= index.background_video_url || 'default-video.mp4' %>" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+  <div class="overlay">
+    <a href="/index/service" class="cta-button">
+      <%= index.button_text_1 || 'Explore Our Courses' %>
+    </a>
+    <a href="/index/training" class="cta-button">
+      <%= index.button_text_2 || 'Explore Our Services' %>
+    </a>
+  </div>
+</section>
+
+<!-- Visitor Counter -->
+<section class="visitor-counter">
+  <h2>Total Visitors:</h2>
+  <span class="count" id="visitor-count">0</span>
+</section>
+
+<script>
+  // Check if the visitor count is already stored in localStorage
+  let visitorCount = localStorage.getItem('visitorCount') || 0;
+  visitorCount++;
+  localStorage.setItem('visitorCount', visitorCount);
+  document.getElementById('visitor-count').innerText = visitorCount;
+</script>
+
+<!-- Full Width Image Section -->
+<section class="full-width-image">
+  <img src="<%= index.background_image_url || 'default-image.jpg' %>" alt="Full Width Image" class="full-width-image">
+
+  <!-- Customer Comment Popups -->
+  <div class="customer-comments">
+    <div class="customer-comment active">
+      <p>"<%= index.comment_1 || 'This is a sample comment.' %>"</p>
+    </div>
+    <div class="customer-comment">
+      <p>"<%= index.comment_2 || 'This is another sample comment.' %>"</p>
+    </div>
+    <div class="customer-comment">
+      <p>"<%= index.comment_3 || 'Here is a third sample comment.' %>"</p>
+    </div>
+
+    <!-- Dot Navigation -->
+    <div class="slider-dots">
+      <span class="dot active"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+    </div>
+  </div>
+</section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const comments = document.querySelectorAll('.customer-comment');
+    const dots = document.querySelectorAll('.dot');
+    let currentIndex = 0;
+
+    function changeSlide() {
+      comments.forEach((comment, index) => {
+        comment.classList.remove('active');
+        dots[index].classList.remove('active');
+      });
+
+      comments[currentIndex].classList.add('active');
+      dots[currentIndex].classList.add('active');
+      currentIndex = (currentIndex + 1) % comments.length;
+    }
+
+    setInterval(changeSlide, 5000);
+
+    dots.forEach((dot, index) => {
+      dot.addEventListener('click', () => {
+        currentIndex = index;
+        changeSlide();
+      });
+    });
+  });
+</script>
+
+<!-- Scrolling Text Section -->
+<div class="scrolling-text">
+  <p>
+    <%= index.scrolling_text || 'Welcome to Souranjh Technology!' %>
+  </p>
+</div>
+<div class="box-container">
+  <div class="box">
+    <img
+      src="https://media.istockphoto.com/id/186862958/photo/print-or-printer-icon.webp?a=1&b=1&s=612x612&w=0&k=20&c=HAULxdn43C9hq1VqfaZGBwpo7SQ3gEC74C7Xw4hH4pA="
+      alt="Courses Image" class="box-img">
+    <h3>300+</h3>
+    <p>Delight clients</p>
+  </div>
+  <div class="box">
+    <img
+      src=https://img.freepik.com/premium-photo/3d-flat-icon-as-process-improvement-symbol-with-space-text-blue-background-concept-as-sle_980716-426260.jpg?ga=GA1.1.1666531303.1714742568&semt
+      alt="Placements Image" class="box-img">
+    <h3>500+ </h3>
+    <p>project complete</p>
+  </div>
+  <div class="box">
+    <img
+      src="https://img.freepik.com/free-vector/navy-arrows-circle_78370-7812.jpg?ga=GA1.1.1666531303.1714742568&semt=ais_hybrid"
+      alt="Other Image" class="box-img">
+    <h3>100+</h3>
+    <p>ongoing</p>
+  </div>
+  <div class="box">
+    <img
+      src="https://img.freepik.com/free-vector/golden-star-laurel-icon-white-background_24640-133891.jpg?ga=GA1.1.1666531303.1714742568&semt=ais_hybrid"
+      alt="Other Image" class="box-img">
+    <h3>5+</h3>
+    <p>Award and Re-organization</p>
+  </div>
+</div>
+
+
+
+<div class="black-box">
+  <p>
+    <%= index.black_box_welcome_message %>
+  </p> <!-- Left side content -->
+
+  <div class="contact-info"> <!-- Right side content -->
+    <h2>
+      <%= index.contact_info_heading %>
+    </h2>
+    <p><span class="phone-icon">📞</span> Contact Us: <%= index.contact_info_phone %>
+    </p>
+  </div>
+</div>
+
+<p>
+  <%= index.black_box_extra_content %>
+</p> <!-- Additional info -->
+</div>
+
+<div class="grey">
+  <ul class="box1">
+    <li class="left-section">
+      <h2>Careers</h2>
+      <p>Gain and Heritage. Leave a Legacy</p>
+      <div class="box2">
+        <a href="/index/join_us">Join Us</a>
+
+      </div>
+    </li>
+    
+    <!-- Vertical Divider -->
+    <div class="divider-line"></div>
+
+    <li class="right-section">
+      <h2>Contact Us</h2>
+      <p>What can we help you achieve?</p>
+      <div class="box3">
+        <a href="index/contact_us" target="_blank">Speak with us</a>
+      </div>
+    </li>
+  </ul>
+</div>

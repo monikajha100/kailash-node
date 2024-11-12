@@ -1,0 +1,209 @@
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f5f5f5; /* Light background for the entire page */
+}
+
+/* Header styles */
+header {
+    background-color: #4bcffa; /* Header background color */
+    padding: 20px 0;
+    position: fixed; 
+    width: 100%;
+    top: 0;
+    z-index: 10;
+}
+
+.menu {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+.menu li {
+    display: inline-block;
+}
+
+.menu a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    font-size: 1.2rem;
+    transition: color 0.3s;
+}
+
+.menu a:hover {
+    color: #95afc0; /* Change color on hover */
+}
+
+/* Search container */
+.search-container {
+    display: flex;
+    align-items: center;
+}
+
+.search-input {
+    padding: 8px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-right: 5px; /* Space between input and button */
+}
+
+.search-icon {
+    background-color: #95afc0; /* Button background */
+    border: none;
+    color: white;
+    padding: 8px 10px;
+    cursor: pointer;
+    font-size: 1rem;
+    border-radius: 4px;
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+.search-icon:hover {
+    background-color: #007bff; /* Darker blue on hover */
+}
+
+/* Intro Section styles */
+.intro {
+    margin-top: 80px; /* Adjusted to ensure content is below fixed header */
+    padding: 40px 20px;
+    text-align: center;
+    background-color: #e9ecef; /* Light grey background */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.intro h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+.intro p {
+    font-size: 1.2em;
+}
+
+/* Process Section styles */
+.process {
+    padding: 40px 20px;
+    background-color: white; /* White background for the process section */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    margin: 20px 0;
+}
+
+.process h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #007bff; /* Blue title */
+}
+
+.process-content {
+    display: flex;
+    flex-direction: row; /* Horizontal layout for the list and image */
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.process-content ol {
+    padding: 20px;
+    flex: 1; /* Allows the list to take available space */
+}
+
+.process-content li {
+    margin-bottom: 15px; /* Spacing between list items */
+}
+
+.process-content li::marker {
+    color: #007bff; /* Blue color for bullet points */
+}
+
+.process-image {
+    flex: 1; /* Allows the image to take available space */
+    display: flex; /* Makes sure the image is centered */
+    justify-content: center; /* Centers the image horizontally */
+    align-items: center; /* Centers the image vertically */
+    padding: 20px;
+}
+
+.process-image img {
+    width: 100%; /* Ensures the image is responsive */
+    height: auto; /* Keeps the aspect ratio of the image */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15); /* Shadow for image */
+}
+
+/* Contact Section styles */
+.contact {
+    padding: 40px 20px;
+    background-color: white; /* Blue background */
+    color: black;
+    text-align: center;
+}
+
+.contact h2 {
+    margin-bottom: 10px;
+}
+
+.contact a {
+    color: #ffc107; /* Gold color for links */
+    text-decoration: underline;
+    transition: color 0.3s; /* Smooth transition for hover effect */
+}
+
+.contact a:hover {
+    color: #ffffff; /* Change color on hover */
+}
+
+/* Footer styles */
+footer {
+    text-align: center;
+    padding: 15px;
+    background-color: #343a40; /* Dark footer */
+    color: white;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .menu {
+        flex-direction: column; /* Stack menu items on smaller screens */
+        align-items: flex-start; /* Align to the start */
+    }
+
+    .process-content {
+        flex-direction: column; /* Stack process content vertically */
+    }
+    
+    .process-image {
+        order: -1; /* Ensure the image appears above the list on small screens */
+        padding: 10px 0; /* Adjust padding */
+    }
+
+    .intro h1 {
+        font-size: 2em; /* Smaller heading on mobile */
+    }
+
+    .intro p {
+        font-size: 1em; /* Smaller paragraph on mobile */
+    }
+
+    .search-container {
+        flex-direction: column; /* Stack search input and button */
+    }
+}

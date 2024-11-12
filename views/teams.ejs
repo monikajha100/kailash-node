@@ -1,0 +1,240 @@
+<style>
+  /* Global Styles */
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    /* Light background */
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  /* Header and Navigation */
+  header {
+    background-color: #333;
+    /* Dark background for header */
+    padding: 10px 20px;
+  }
+
+  nav .menu {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+  }
+
+  nav .menu li {
+    margin: 0 15px;
+  }
+
+  nav .menu li a {
+    color: white;
+    font-size: 16px;
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+  }
+
+  nav .menu li a:hover {
+    color: #ff6347;
+    /* Hover effect with tomato color */
+  }
+
+  /* Search Input */
+  .search-container {
+    display: flex;
+    align-items: center;
+  }
+
+  .search-input {
+    padding: 5px 10px;
+    font-size: 14px;
+    border-radius: 20px;
+    border: none;
+    margin-right: 10px;
+  }
+
+  .search-icon {
+    background-color: transparent;
+    border: none;
+    font-size: 18px;
+    color: white;
+    cursor: pointer;
+  }
+
+  /* Overview Section */
+  .overview-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 50px 20px;
+    margin-top: 30px;
+  }
+
+  .overview-card {
+    width: 45%;
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 5%;
+  }
+
+  .overview-card h2 {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 15px;
+  }
+
+  .overview-card p {
+    color: #555;
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+
+  .explore-button {
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+    font-size: 16px;
+    border-radius: 5px;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease;
+  }
+
+  .explore-button:hover {
+    background-color: #ff6347;
+    /* Hover effect */
+  }
+
+  /* Responsive Layout for Mobile */
+  @media (max-width: 768px) {
+    .overview-section {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .overview-card {
+      width: 80%;
+      margin-bottom: 20px;
+    }
+  }
+
+  body,
+  html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+  }
+
+  header {
+    background-color: #4bcffa;
+    padding: 20px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 10;
+  }
+
+  .menu {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+  }
+
+  .menu li {
+    display: inline-block;
+  }
+
+  .menu a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    font-size: 1.2rem;
+    transition: color 0.3s;
+  }
+
+  .menu a:hover {
+    color: #95afc0;
+  }
+
+  .search-container {
+    display: flex;
+    align-items: center;
+  }
+
+  .search-input {
+    padding: 8px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+
+  .search-icon {
+    background-color: #95afc0;
+    border: none;
+    color: white;
+    padding: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    border-radius: 4px;
+  }
+
+  /* Hero section */
+  .hero {
+    position: relative;
+    background: url('https://media.istockphoto.com/id/1435226158/photo/circuit-board-background-computer-data-technology-artificial-intelligence.webp?a=1&b=1&s=612x612&w=0&k=20&c=VROwMSP0NZhKDaJBc8mjxyI8REYKJ4QaWePEijXsKbo=') no-repeat center center;
+    background-size: cover;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .team-card{
+    transition: all 0.3s ease-out;
+  }
+
+  .team-card:hover{
+    transform: translateY(-10px);
+  }
+</style>
+<title>Our Teams</title>
+<section class="overview-section">
+  <div class="overview-card">
+    <h2>Our Team</h2>
+    <p>Meet the professionals who drive our success. Our team is skilled, dedicated, and ready to help you achieve your
+      goals.</p>
+    <a href="#" class="explore-button">Explore Team</a>
+  </div>
+  <div class="card-area d-flex justify-content-center flex-wrap gap-3 mt-4">
+    <% teams.forEach(team=>{ %>
+    <a href="/index/team/<%= team.id %>" class="card card-body shadow-sm d-flex flex-column justify-content-evenly team-card" style="min-width: 300px;max-width: 300px;height: 400px;">
+      <div class="image-container w-100 h-100" style="overflow: hidden;max-height: 70%;">
+        <img
+          src="<%= team.image_url ? team.image_url : 'https://placehold.co/600x400/orange/white' %>"
+          alt="image" class="w-100 h-100" style="object-fit: cover;border-radius: 5px 5px 0 0 ;">
+      </div>
+      <div class="bg-dark text-white d-flex flex-column align-items-center p-2 mt-1  justify-content-center"
+        style="border-radius: 0 0 5px 5px;">
+        <h5 class="m-0 p-0"><%= team.full_name %></h5>
+        <h6 class="m-0 p-0 mt-3"><%= team.position %></h6>
+      </div>
+    </a>
+    <% }) %>
+  </div>
+</section>
+
+<!-- src="https://img-cdn.pixlr.com/image-generator/history/65bb506dcb310754719cf81f/ede935de-1138-4f66-8ed7-44bd16efc709/medium.webp" -->

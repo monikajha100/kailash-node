@@ -1,0 +1,21 @@
+<link rel="stylesheet" href="/stylesheets/service.css" />
+
+
+<div class="services">
+    <h2>Our Services</h2>
+    <div class="grid">
+        <% service.forEach(service => { %>
+            <div class="card">
+                <div class="img-box">
+                    <img src="<%= service.image_url %>" alt="<%= service.title %>" />
+                </div>
+                <div class="card-content">
+                    <h3><%= service.title %></h3>
+                    <p><%= service.description %></p>
+                    <!-- Dynamic link to each service's details page -->
+                    <a href="/index/service/<%= service.serviceid %>" class="btn">Learn More</a>
+                </div>
+            </div>
+        <% }) %>
+    </div>
+</div>
