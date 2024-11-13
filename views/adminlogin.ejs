@@ -5,8 +5,7 @@
         align-items: center;
         width: 100%;
         height: 100%;
-        font-family: kanit;
-
+        /* font-family: kanit; */
     }
 
     .foodimage {
@@ -22,7 +21,9 @@
         justify-content: center;
         align-items: center;
         flex-direction: column;
-
+    }
+    a{
+        text-decoration: none !important;
     }
 </style>
 <html>
@@ -64,7 +65,7 @@
                             <input type="password" placeholder="Enter password" name="password" class="form-control">
                         </div>
                         <div style="margin-top:25px; width:70%;">
-                            <button type="submit" style="width:100%;" class="btn btn-primary btn-lg">login</button>
+                            <button type="submit" style="width:100%;" class="btn btn-primary">login</button>
                         </div>
                         <button class="btn btn-success mt-3">
                             <a class="text-white " href="/admin/create_admin">create admin</a>

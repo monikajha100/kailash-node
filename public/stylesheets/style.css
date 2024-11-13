@@ -1,5 +1,6 @@
 /* General Styles */
-body, html {
+body,
+html {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -53,7 +54,8 @@ header {
   font-size: 1rem;
   border: 1px solid #ccc;
   border-radius: 4px;
-  margin-right: 10px; /* Add space between input and button */
+  margin-right: 10px;
+  /* Add space between input and button */
 }
 
 .search-icon {
@@ -71,107 +73,151 @@ header {
   background-color: #7f97b0;
 }
 
-  
+
 .hero {
   position: relative;
   background: grey;
   background-size: cover;
-  height: 500px;
+  height: 400px;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
 }
+
 .overlay {
   padding: 50px;
   border-radius: 10px;
 }
+
 h1 {
   font-size: 3em;
   margin-bottom: 20px;
   font-family: 'Arial', sans-serif;
 }
+
 p {
   font-size: 1.5em;
   margin-bottom: 40px;
   font-family: 'Arial', sans-serif;
 }
+
 .cta-button {
   display: inline-block;
   padding: 15px 30px;
-  background-color: grey; /* Call-to-action button color */
+  background-color: grey;
+  /* Call-to-action button color */
   color: white;
   font-size: 1.2em;
   font-family: 'Arial', sans-serif;
   text-decoration: none;
   margin: 0 10px;
-  border-radius: 50px; /* Makes the corners fully rounded */
+  border-radius: 50px;
+  /* Makes the corners fully rounded */
   transition: background-color 0.3s ease;
-  border: 2px solid black; /* Thinner outline around the button */
+  border: 2px solid black;
+  /* Thinner outline around the button */
 }
+
 .cta-button:hover {
-  background-color: #333333; /* Darker shade on hover */
-  }
+  background-color: #333333;
+  /* Darker shade on hover */
+}
+
 @media (max-width: 768px) {
   h1 {
-      font-size: 2.5em;
+    font-size: 2.5em;
   }
+
   p {
-      font-size: 1.2em;
+    font-size: 1.2em;
   }
+
   .cta-button {
-      font-size: 1em;
-      padding: 10px 20px;
+    font-size: 1em;
+    padding: 10px 20px;
   }
 }
+
 .visitor-counter {
-  background-color: #f2f2f2; /* Light gray background */
-  border: 1px solid #ccc; /* Light gray border */
-  border-radius: 8px; /* Rounded corners */
-  padding: 20px; /* Padding for spacing */
-  text-align: center; /* Center the text */
-  margin: 20px auto; /* Center the section on the page */
-  max-width: 300px; /* Max width for the counter */
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  background-color: #f2f2f2;
+  /* Light gray background */
+  border: 1px solid #ccc;
+  /* Light gray border */
+  border-radius: 8px;
+  /* Rounded corners */
+  padding: 20px;
+  /* Padding for spacing */
+  text-align: center;
+  /* Center the text */
+  margin: 20px auto;
+  /* Center the section on the page */
+  max-width: 300px;
+  /* Max width for the counter */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  /* Subtle shadow for depth */
 }
+
 .visitor-counter h2 {
-  font-size: 1.5rem; /* Font size for heading */
-  margin-bottom: 10px; /* Space below the heading */
-  color: #333; /* Dark text color */
+  font-size: 1.5rem;
+  /* Font size for heading */
+  margin-bottom: 10px;
+  /* Space below the heading */
+  color: #333;
+  /* Dark text color */
 }
+
 .count {
-  font-size: 2rem; /* Larger font size for the count */
-  font-weight: bold; /* Bold text */
-  color: #3498db; /* Blue color for the count */
+  font-size: 2rem;
+  /* Larger font size for the count */
+  font-weight: bold;
+  /* Bold text */
+  color: #3498db;
+  /* Blue color for the count */
 }
+
 /* Style the main container */
 
-/* Full-width image */
+.full-width-image-container {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+}
+
 .full-width-image {
   width: 100%;
-  height: auto;
+  height: 300px;
   position: relative;
 }
 
 /* Positioning the customer comments in the bottom-right corner */
 .customer-comments {
-  position: absolute;
-  bottom: 20px;
-  right: 20px;
   color: #fff;
-  background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent background for readability */
+  background-color: rgba(0, 0, 0, 0.4);
   padding: 10px;
-  border-radius: 8px;
-  max-width: 300px;
+  border-radius: 5px;
+  min-width: 300px;
+  width: 50%;
+  text-align: center;
+  height: fit-content;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-weight: 300;
 }
 
 /* Individual comment styling */
 .customer-comment {
-  display: none; /* Hide by default */
+  display: none;
+  /* Hide by default */
 }
 
 .customer-comment.active {
-  display: block; /* Show the active comment */
+  display: block;
+  /* Show the active comment */
 }
 
 /* Dot navigation styling */
@@ -196,85 +242,117 @@ p {
 }
 
 h2 {
-  margin-top: 0; /* Remove margin from top */
+  margin-top: 0;
 }
+
 .box-container {
   display: flex;
-  justify-content: space-around; /* Space between the boxes */
-  flex-wrap: wrap; /* Wrap boxes on smaller screens */
+  justify-content: space-around;
+  /* Space between the boxes */
+  flex-wrap: wrap;
+  gap: 1rem;
+  /* Wrap boxes on smaller screens */
   padding: 20px;
-  margin-top: 8%;
 }
+
 .box {
-  border: 2px solid grey; /* Black border */
-  color:black; /* White text color */
-  border-radius: 10px; /* Rounded corners */
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Soft shadow effect */
+  flex-grow: 1;
+  border: 1px solid black;
+  color: black;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0 0 0 / 0.2);
   text-align: center;
   padding: 20px;
-  width: 250px; /* Fixed width for each box */
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effects */
+  width: 250px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
 .box-img {
-  width: 80%; /* Image takes full width of the box */
-  height: 100px; /* Adjust height as needed */
-  object-fit: cover; /* Ensures image covers the space */
-  border-radius: 8px; /* Rounds the image corners */
-  margin-bottom: 15px; /* Space between image and text */
+  width: 50%;
+  /* Image takes full width of the box */
+  /* height: 100px; */
+  /* Adjust height as needed */
+  object-fit: cover;
+  /* Ensures image covers the space */
+  border-radius: 8px;
+  /* Rounds the image corners */
+  margin-bottom: 15px;
+  /* Space between image and text */
 }
+
 .box h3 {
   font-size: 1.5rem;
   margin: 10px 0;
 }
+
 .box p {
   font-size: 1rem;
-  }
-.box:hover {
-  transform: translateY(-10px); /* Moves the box upwards on hover */
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3); /* Larger shadow on hover */
 }
+
+.box:hover {
+  transform: translateY(-10px);
+  /* Moves the box upwards on hover */
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+  /* Larger shadow on hover */
+}
+
 .black-box {
   background-color: black;
   color: white;
   margin-top: 20px;
   padding: 30px;
-  border-radius: 10px;
-  display: flex; /* Use flexbox for positioning */
-  justify-content: space-between; /* Space between left and right content */
-  align-items: center; /* Center vertically */
-  text-align: right; /* Align text to the right */
-  height: 100%; /* Increase height as needed */
-  min-height: 250px; /* Set a minimum height if desired */
+  /* border-radius: 10px; */
+  display: flex;
+  /* Use flexbox for positioning */
+  justify-content: space-between;
+  /* Space between left and right content */
+  align-items: center;
+  /* Center vertically */
+  text-align: right;
+  /* Align text to the right */
+  height: 100%;
+  /* Increase height as needed */
+  min-height: 250px;
+  /* Set a minimum height if desired */
 }
 
 .black-box p {
   font-size: 2rem;
-  width: 40%; /* Set to half width of the black box */
+  width: 40%;
+  /* Set to half width of the black box */
   font-style: oblique;
-  text-align: right; /* Aligns paragraph text to the right */
+  text-align: right;
+  /* Aligns paragraph text to the right */
 }
 
 .contact-info {
-  width: 50%; /* Keeps the content at half-width */
-  text-align: right; /* Aligns text to the left */
-  margin-left: 0; /* Ensures it starts from the left */
+  width: 50%;
+  /* Keeps the content at half-width */
+  text-align: right;
+  /* Aligns text to the left */
+  margin-left: 0;
+  /* Ensures it starts from the left */
 }
 
 .contact-info h2 {
-  font-size: 2rem; /* Customize heading size */
-  text-align: right; /* Aligns the heading to the right side */
+  font-size: 2rem;
+  /* Customize heading size */
+  text-align: right;
+  /* Aligns the heading to the right side */
   font-style: oblique;
 }
 
 .contact-info p {
   margin: 10px 0;
-  font-size: 1.2rem; /* Customize contact text size */
-  text-align: right; 
+  font-size: 1.2rem;
+  /* Customize contact text size */
+  text-align: right;
 }
 
 .contact-info .phone-icon {
   font-size: 1.5rem;
-  margin-right: 10px; /* Space between icon and text */
+  margin-right: 10px;
+  /* Space between icon and text */
 }
 
 
@@ -299,35 +377,43 @@ ul.box1 {
   display: flex;
   padding: 0;
   margin: 0;
-  justify-content: space-between; /* Distribute space between items */
+  justify-content: space-between;
+  /* Distribute space between items */
 }
 
 /* Styling for the left and right sections */
 /* Styling for the left and right sections */
-.left-section, .right-section {
-  width: 45%; /* Each section takes 45% width */
+.left-section,
+.right-section {
+  width: 45%;
+  /* Each section takes 45% width */
   padding: 20px;
-  background-color: grey; /* Set background color to grey */
+  background-color: grey;
+  /* Set background color to grey */
   border-radius: 10px;
   text-align: center;
   margin-top: 4%;
-  margin-bottom: 0; /* Remove bottom margin */
- 
-  
+  margin-bottom: 0;
+  /* Remove bottom margin */
+
+
 }
 
 /* Vertical Divider line styling */
 .divider-line {
-  width: 2px; /* Thin line */
-  background-color: black; /* Black color for the line */
+  width: 2px;
+  /* Thin line */
+  background-color: black;
+  /* Black color for the line */
   /* Full height of the container */
- margin-top: 2%;
+  margin-top: 2%;
 
 }
 
 /* Styling for boxes with links */
 /* Styling for boxes with links */
-.box2, .box3 {
+.box2,
+.box3 {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -335,54 +421,68 @@ ul.box1 {
 }
 
 /* Link styling */
-.box2 a, .box3 a {
+.box2 a,
+.box3 a {
   padding: 10px 18px;
   border: 2px solid black;
-  color: black; /* Set text color to black */
-  background-color:grey; /* Set initial background color to green */
+  color: black;
+  /* Set text color to black */
+  background-color: grey;
+  /* Set initial background color to green */
   text-decoration: none;
- 
-   /* Smooth transition */
+
+  /* Smooth transition */
 }
 
 /* Hover effect */
 
 
 /* Change cursor to black when hovering over the links */
-.box2 a:hover, .box3 a:hover {
+.box2 a:hover,
+.box3 a:hover {
   color: black;
-  cursor: pointer; /* Change cursor to a pointer to indicate clickable link */
+  cursor: pointer;
+  /* Change cursor to a pointer to indicate clickable link */
 }
 
 
 .scrolling-text {
-  width: 100%; /* Set the width of the container */
+  width: 100%;
+  /* Set the width of the container */
   height: 20%;
   overflow: hidden;
   white-space: nowrap;
-  direction: rtl; /* Set direction to right-to-left */
+  direction: rtl;
+  /* Set direction to right-to-left */
   font-size: 50px;
   margin-top: 1%;
   margin-bottom: 1%;
 }
+
 .scrolling-text p {
   display: inline-block;
   animation: scroll 30s linear infinite;
   margin-top: 1%;
 
 }
+
 @keyframes scroll {
-  0% { transform: translateX(100%); }
-  100% { transform: translateX(-100%); }
+  0% {
+    transform: translateX(100%);
+  }
+
+  100% {
+    transform: translateX(-100%);
+  }
 }
-.scroll
-{
+
+.scroll {
   list-style: none;
   width: 200px;
   height: 200px;
   border: 2px solid #000;
-  background-color:#ffff;
-  margin:5px;
+  background-color: #ffff;
+  margin: 5px;
   text-align: center;
   line-height: 50px;
   margin-left: 5px;
@@ -390,7 +490,8 @@ ul.box1 {
   margin-top: 1px;
   margin-bottom: 2%;
   margin-left: 12%;
-} 
+}
+
 .box6 {
   margin-top: -5%;
   width: 100%;
@@ -419,11 +520,15 @@ footer {
   height: auto;
 }
 
-.footer-links, .footer-contact, .footer-social {
+.footer-links,
+.footer-contact,
+.footer-social {
   width: 25%;
 }
 
-.footer-links h3, .footer-contact h3, .footer-social h3 {
+.footer-links h3,
+.footer-contact h3,
+.footer-social h3 {
   font-size: 1.2em;
   margin-bottom: 10px;
   font-weight: bold;
@@ -484,7 +589,9 @@ footer {
     align-items: center;
   }
 
-  .footer-links, .footer-contact, .footer-social {
+  .footer-links,
+  .footer-contact,
+  .footer-social {
     width: 100%;
     text-align: center;
     margin-bottom: 20px;
@@ -527,14 +634,17 @@ ul.box1 p {
 }
 
 /* Box styling */
-ul.box1 .box2, ul.box1 .box3 {
+ul.box1 .box2,
+ul.box1 .box3 {
   margin-top: 10px;
 }
 
-ul.box1 .box2 a, ul.box1 .box3 a {
+ul.box1 .box2 a,
+ul.box1 .box3 a {
   text-decoration: none;
   padding: 10px 20px;
-  background-color: grey; /* Green background for buttons */
+  background-color: grey;
+  /* Green background for buttons */
   color: white;
   border-radius: 5px;
   font-weight: bold;
@@ -542,8 +652,10 @@ ul.box1 .box2 a, ul.box1 .box3 a {
 }
 
 /* Hover effect for the button */
-ul.box1 .box2 a:hover, ul.box1 .box3 a:hover {
-  background-color: black; /* Darker green when hovered */
+ul.box1 .box2 a:hover,
+ul.box1 .box3 a:hover {
+  background-color: black;
+  /* Darker green when hovered */
 }
 
 /* Vertical divider styling */
@@ -555,7 +667,8 @@ ul.box4 {
 
 ul.box4 li {
   border-left: 2px solid #ccc;
-  height: 50px;  /* Adjust the height of the vertical line */
+  height: 50px;
+  /* Adjust the height of the vertical line */
   margin-left: 20px;
 }
 

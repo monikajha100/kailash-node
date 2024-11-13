@@ -1,79 +1,6 @@
 <style>
-  /* CSS styles directly in the HTML file */
-  body,
-  html {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
-  }
-
   /* Header Styles */
-  header {
-    background-color: #4bcffa;
-    padding: 20px 0;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 10;
-  }
-
-  /* Menu Styles */
-  .menu {
-    list-style: none;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    margin: 0;
-    padding: 0;
-  }
-
-  .menu li {
-    display: inline-block;
-  }
-
-  .menu a {
-    color: white;
-    text-decoration: none;
-    padding: 10px 15px;
-    font-size: 1.2rem;
-    transition: color 0.3s;
-  }
-
-  .menu a:hover {
-    color: #95afc0;
-  }
-
-  /* Search Icon and Input Styles */
-  .search-container {
-    display: flex;
-    align-items: center;
-  }
-
-  .search-input {
-    padding: 8px;
-    font-size: 1rem;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    margin-right: 10px;
-    /* Space between input and button */
-  }
-
-  .search-icon {
-    background-color: #95afc0;
-    border: none;
-    color: white;
-    padding: 8px;
-    cursor: pointer;
-    font-size: 1rem;
-    border-radius: 4px;
-  }
-
-  /* Search Icon Hover Effect */
-  .search-icon:hover {
-    background-color: #7f97b0;
-  }
-
+  
   /* About Section Styles */
   #about {
     padding: 100px 20px;
@@ -82,13 +9,6 @@
     text-align: center;
   }
 
-  #about h1 {
-    font-size: 2.5rem;
-    color: #333;
-    /* Dark color for the heading */
-    margin-bottom: 20px;
-    font-weight: bold;
-  }
 
   .about-content {
     max-width: 800px;
@@ -121,13 +41,13 @@
 
 <!-- About Section -->
 <section id="about" style="padding-top: 100px;">
-  <h1>ABOUT US</h1>
+  <h1 class="display-4 fw-bold">ABOUT US</h1>
   <div class="about-content">
     <div class="about-text">
       <p><strong>
           <%= aboutData.title %>
         </strong></p>
-      <p>
+      <p class="text-secondary">
         <%= aboutData.description %>
       </p> <!-- This will display the description -->
     </div>

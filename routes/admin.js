@@ -57,7 +57,7 @@ router.post('/check_admin_login', function (req, res) {
                 localStorage.setItem("ADMIN", JSON.stringify(result[0]));
                 res.status(200).redirect('/admin/dashboard');
             } else {
-                res.status(200).render('adminlogin', { status: false, message: 'Invalid emailid or password' });
+                res.status(200).render('adminlogin', { status: false, message: 'Invalid emailid or password',req });
             }
         }
     });

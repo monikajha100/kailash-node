@@ -38,6 +38,10 @@ app.use('/index', loadHeaderAndFooterMiddleware, indexRouter);
 app.use('/users', usersRouter);
 app.use('/admin', adminRouter);
 
+app.use((req, res) => {
+  res.status(404).render('404'); // Render the 404 page for non-API routes
+});
+
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
   next(createError(404));

@@ -1,14 +1,15 @@
 <link rel="stylesheet" href="/stylesheets/style.css" />
-  <section class="hero">
-  <video autoplay muted loop class="hero-video">
-    <source src="<%= index.background_video_url || 'default-video.mp4' %>" type="video/mp4">
+<section class="hero mt-5">
+  <video autoplay muted loop class="border w-100 h-100" style="position: absolute;object-fit: cover;">
+    <source src="./videos/mov_bbb.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
-  <div class="overlay">
-    <a href="/index/service" class="cta-button">
+  <div class="position-absolute w-100 h-100 bg-dark" style="opacity: 0.3;"></div>
+  <div class="d-flex gap-4 px-4" style="margin: 0 auto;position: relative;z-index: 10;transform: translateY(100px);">
+    <a href="/index/service" class="btn btn-light btn-lg">
       <%= index.button_text_1 || 'Explore Our Courses' %>
     </a>
-    <a href="/index/training" class="cta-button">
+    <a href="/index/training" class="btn btn-light btn-lg">
       <%= index.button_text_2 || 'Explore Our Services' %>
     </a>
   </div>
@@ -30,7 +31,10 @@
 
 <!-- Full Width Image Section -->
 <section class="full-width-image">
-  <img src="<%= index.background_image_url || 'default-image.jpg' %>" alt="Full Width Image" class="full-width-image">
+  <div class="full-width-image-container">
+    <img src="<%= index.background_image_url || 'default-image.jpg' %>" alt="Full Width Image"
+      class="w-100 h-100 position-ab" style="object-fit: cover;">
+  </div>
 
   <!-- Customer Comment Popups -->
   <div class="customer-comments">
@@ -82,7 +86,7 @@
 </script>
 
 <!-- Scrolling Text Section -->
-<div class="scrolling-text">
+<div class="scrolling-text w-100" style="overflow: hidden;">
   <p>
     <%= index.scrolling_text || 'Welcome to Souranjh Technology!' %>
   </p>
@@ -134,24 +138,36 @@
   </div>
 </div>
 
-<p>
+<!-- <p>
   <%= index.black_box_extra_content %>
-</p> <!-- Additional info -->
+</p>  -->
 </div>
 
-<div class="grey">
+<div class="d-flex justify-content-evenly p-4">
+  <div class="text-center">
+    <h2 class="m-0 p-0">Careers</h2>
+    <p class="m-0 p-0 text-secondary">Gain and Heritage. Leave a Legacy</p>
+    <a href="/index/join_us" class="btn btn-primary mt-2">Join us</a>
+  </div>
+  <div class="text-center">
+    <h2 class="m-0 p-0">Contact us</h2>
+    <p class="m-0 p-0 text-secondary">What can we help you achieve?</p>
+    <a href="/index/contact_us" target="_blank" class="btn btn-primary mt-2">Speak with us</a>
+  </div>
+</div>
+
+<!-- <div class="grey">
   <ul class="box1">
     <li class="left-section">
       <h2>Careers</h2>
       <p>Gain and Heritage. Leave a Legacy</p>
       <div class="box2">
         <a href="/index/join_us">Join Us</a>
-
       </div>
-    </li>
-    
-    <!-- Vertical Divider -->
-    <div class="divider-line"></div>
+    </li> -->
+
+<!-- Vertical Divider -->
+<!-- <div class="divider-line"></div>
 
     <li class="right-section">
       <h2>Contact Us</h2>
@@ -161,4 +177,4 @@
       </div>
     </li>
   </ul>
-</div>
+</div> -->

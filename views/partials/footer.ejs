@@ -1,7 +1,7 @@
-<footer>
+<footer class="bg-dark text-white">
   <div class="footer-content">
     <div class="footer-logo">
-      <img src="<%= index.footer_logo_image_url || '/default-footer-logo.png' %>" width="100" height="50"
+      <img src="<%= index.footer_logo_image_url || './images/mvlogo.png' %>" width="100" height="50"
         alt="Footer Logo">
     </div>
     <div class="footer-links">
@@ -27,12 +27,12 @@
         <% if (index[`${platform}_link`]) { %>
           <a href="<%= index[`${platform}_link`] %>">
             <img src="/icons/<%= platform %>.png" alt="<%= platform %>">
-          </a>
+          </a><br>
           <% } %>
             <% }); %>
     </div>
   </div>
-  <div class="footer-bottom">
-    <p>&copy; 2024 Souranjh Technology. All Rights Reserved.</p>
+  <div class="p-0 m-0 w-100" >
+    <p class="p-0 m-0 h6 text-center text-secondary" style="transform: translateY(35px);">&copy; 2024 Souranjh Technology. All Rights Reserved.</p>
   </div>
 </footer>

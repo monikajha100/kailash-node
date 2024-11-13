@@ -1,10 +1,7 @@
   <style>
     /* Global styles */
     body {
-      font-family: Arial, sans-serif;
       background-color: #f4f4f4;
-      margin: 0;
-      padding: 0;
     }
 
     h2 {
@@ -21,11 +18,11 @@
       max-width: 800px;
       margin: 30px auto;
       padding: 20px;
-      margin-top: 160px;
+      margin-top: 100px;
     }
 
     /* Form fields */
-    div {
+    div.form-group {
       margin-bottom: 15px;
     }
 
@@ -39,7 +36,7 @@
     }
 
     /* Input fields and text areas */
-    input[type="text"],
+    /* input[type="text"],
     input[type="number"],
     input[type="email"],
     textarea {
@@ -50,7 +47,7 @@
       box-sizing: border-box;
       font-size: 1em;
       margin-top: 5px;
-    }
+    } */
 
     textarea {
       height: 100px;
@@ -58,7 +55,7 @@
     }
 
     /* Button */
-    button[type="submit"] {
+    /* button[type="submit"] {
       background-color: #4CAF50;
       color: white;
       border: none;
@@ -72,7 +69,7 @@
 
     button[type="submit"]:hover {
       background-color: #45a049;
-    }
+    } */
 
     /* Responsive Design */
     @media (max-width: 768px) {
@@ -85,12 +82,12 @@
         font-size: 1.5em;
       }
 
-      input[type="text"],
+      /* input[type="text"],
       input[type="number"],
       input[type="email"],
       textarea {
         font-size: 1em;
-      }
+      } */
 
       button[type="submit"] {
         font-size: 1em;
@@ -98,19 +95,19 @@
     }
 
     /* Style for required fields */
-    input[required] {
+    /* input[required] {
       border-color: #f44336;
-    }
+    } */
 
-    input[required]:focus {
+    /* input[required]:focus {
       border-color: #f44336;
       outline: none;
-    }
+    } */
   </style>
   <!-- Logo Image URL -->
-  <section id="contact-us">
+  <section id="contact-us" class="mx-3 mx-lg-auto">
     <h2>Contact Us</h2>
-    <p style="font-size: 1rem;">
+    <p class="text-center text-secondary" style="font-size: 1rem;">
       We would be delighted to hear from you. Please fill out the form below to get in touch with us.
     </p>
 
@@ -122,19 +119,19 @@
       <% } %>
       <div class="form-group">
         <label for="name">Full Name:</label>
-        <input type="text" id="name" name="full_name" required />
+        <input type="text" id="name" name="full_name" class="form-control" required />
       </div>
 
       <div class="form-group">
         <label for="email">Email Address:</label>
-        <input type="email" id="email" name="email_address" required />
+        <input type="email" id="email" name="email_address" class="form-control" required />
       </div>
 
       <div class="form-group">
         <label for="message">Your Message:</label>
-        <textarea id="message" name="message" rows="4" required></textarea>
+        <textarea id="message" name="message" rows="4" class="form-control" required></textarea>
       </div>
 
-      <button type="submit" class="btn-submit">Send Message</button>
+      <button type="submit" class="btn btn-success w-100">Send Message</button>
     </form>
   </section>
