@@ -20,10 +20,19 @@ const storage = multer.diskStorage({
 const upload = multer({ storage: storage });
 
 router.get('/', function (req, res) {
-  res.render('layout', {
-    title: "Index Page",
-    page: 'index'
+  pool.query('select * from visitors', (error, result) => {
+    count = result[0].count;
+
+
+    pool.query('update visitors set count = ? where id = ?', [++count, 1], (error1, result1) => {
+      res.render('layout', {
+        title: "Index Page",
+        page: 'index',
+        count
+      })
+    })
   })
+
 });
 
 
@@ -98,7 +107,7 @@ router.get('/training/:id', function (req, res) {
 
 router.get('/teams', (req, res) => {
   pool.query('select * from team', (error, results) => {
-    if(error)
+    if (error)
       console.error(error)
 
     if (results.length === 0) {
@@ -160,6 +169,12 @@ router.post("/submit-join-us", upload.single('resume'), (req, res) => {
 
   const query = "INSERT INTO applications (application_id, full_name, email, position, resume, application_data) VALUES (?, ?, ?, ?, ?, ?)";
   pool.query(query, [id, name, email, position, resumeData, application_data], (err, result) => {
+    fs.unlink(resumeFile.path, (unlinkErr) => {
+      if (unlinkErr) {
+        console.error("Error deleting the file:", unlinkErr);
+      }
+    });
+
     if (err)
       return res.redirect('/index/join_us/?message_text=Something went wrong&message_type=danger')
 

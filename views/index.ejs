@@ -18,15 +18,15 @@
 <!-- Visitor Counter -->
 <section class="visitor-counter">
   <h2>Total Visitors:</h2>
-  <span class="count" id="visitor-count">0</span>
+  <span class="count" id="visitor-count"><%= count %></span>
 </section>
 
 <script>
   // Check if the visitor count is already stored in localStorage
-  let visitorCount = localStorage.getItem('visitorCount') || 0;
-  visitorCount++;
-  localStorage.setItem('visitorCount', visitorCount);
-  document.getElementById('visitor-count').innerText = visitorCount;
+  // let visitorCount = localStorage.getItem('visitorCount') || 0;
+  // visitorCount++;
+  // localStorage.setItem('visitorCount', visitorCount);
+  // document.getElementById('visitor-count').innerText = visitorCount;
 </script>
 
 <!-- Full Width Image Section -->
