@@ -74,7 +74,7 @@ router.get('/training', function (req, res) {
       return res.status(500).send('Training page error');
 
     res.render('layout', {
-      title: 'Training Programs',
+      title: "Training",
       page: 'training',
       training: results
     })
@@ -89,18 +89,16 @@ router.get('/training/:id', function (req, res) {
     if (error)
       return res.status(500).send('Training/id page error');
 
-    if (results.length === 0) {
-      return res.status(404).send('Training Program Not Found');
-    }
+   
 
     const data = results[0];
 
-    console.log(data)
+   
 
     res.render('layout', {
-      title: data.title,
+      title: 'training details',
       page: 'training_detail',
-      training: data
+      data
     })
   });
 });
@@ -157,7 +155,7 @@ router.get('/join_us', (req, res) => {
 })
 
 router.post("/submit-join-us", upload.single('resume'), (req, res) => {
-  const { name, email, position, application_data } = req.body;
+  const { name, email, position, application_data, mobile } = req.body;
   const resumeFile = req.file;
 
   const id = uuidv4();
@@ -167,8 +165,8 @@ router.post("/submit-join-us", upload.single('resume'), (req, res) => {
 
   const resumeData = fs.readFileSync(resumeFile.path);
 
-  const query = "INSERT INTO applications (application_id, full_name, email, position, resume, application_data) VALUES (?, ?, ?, ?, ?, ?)";
-  pool.query(query, [id, name, email, position, resumeData, application_data], (err, result) => {
+  const query = "INSERT INTO applications (application_id, full_name, email, position, resume, application_data, mobile) VALUES (?, ?, ?, ?, ?, ?, ?)";
+  pool.query(query, [id, name, email, position, resumeData, application_data, mobile], (err, result) => {
     fs.unlink(resumeFile.path, (unlinkErr) => {
       if (unlinkErr) {
         console.error("Error deleting the file:", unlinkErr);

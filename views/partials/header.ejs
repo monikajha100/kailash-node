@@ -9,6 +9,76 @@
   nav a:hover {
     transform: translateY(-5px);
   }
+
+  .menu-toggle {
+    display: none;
+  }
+
+  /* Side menu styles */
+  .side-menu {
+    position: fixed;
+    top: 0;
+    left: -250px;
+    width: 250px;
+    height: 100%;
+    background-color: #333;
+    transition: left 0.3s;
+    z-index: 998;
+  }
+
+  .side-menu .menu-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    gap: 1rem;
+  }
+
+  .side-menu .menu-content a {
+    color: white;
+    font-size: 1.5rem;
+    text-decoration: none;
+    padding: 10px;
+  }
+
+  .side-menu .menu-content a:hover {
+    background-color: #575757;
+  }
+
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    z-index: 997;
+  }
+
+  /* When the checkbox is checked, show the side menu and overlay */
+  #menu-toggle:checked + .side-menu {
+    left: 0;
+  }
+
+  #menu-toggle:checked + .side-menu .overlay {
+    display: block;
+  }
+
+  /* Hamburger Icon Styles */
+  .hamburger-icon {
+    font-size: 30px;
+    cursor: pointer;
+    color: #000;
+    padding: 10px;
+  }
+
+  /* Remove default styling for links */
+  .menu-content a {
+    border: none;
+    text-decoration: none;
+  }
 </style>
 
 <header class="px-4 d-none d-md-block" style="z-index: 999;">
@@ -35,53 +105,27 @@
 </header>
 
 <header class="d-flex d-md-none m-0 p-0" style="z-index: 999;">
-  <nav class="w-100 d-flex flex-column flex-md-row justify-content-between">
-    <div class="d-flex p-2 justify-content-between w-100">
-      <div>
-        <a href="/index"><img src="./images/mvlogo.png" width="100" height="30" alt="Company Logo"></a>
-      </div>
-      <div>
-        <div class="d-flex gap-1 align-items-center">
-          <input type="text" placeholder="<%= index.search_placeholder || 'Search here...' %>" class="form-control m-0"
-            aria-label="Search input" style="max-width: 150px;">
-          <button class="btn btn-primary" aria-label="Search">
-            <%= index.search_button_text || 'Search' %>
-          </button>
-        </div>
-      </div>
+  <nav class="w-100 d-flex justify-content-between align-items-center p-2">
+    <div>
+      <a href="/index"><img src="./images/mvlogo.png" width="100" height="30" alt="Company Logo"></a>
     </div>
 
-    <div class="d-flex align-items-center bg-dark px-2 gap-3">
-      <div class="d-flex gap-5">
-        <a href="/index/about">About us</a>
-        <a href="/index/teams">Teams</a>
-        <a href="/index/join_us">Career</a>
-        <a href="/index/contact_us">Contact us</a>
-      </div>
-
+    <!-- Hamburger Icon -->
+    <div>
+      <!-- Hidden checkbox to control side menu visibility -->
+      <input type="checkbox" id="menu-toggle" class="menu-toggle">
+      <label for="menu-toggle" class="hamburger-icon">&#9776;</label>
     </div>
   </nav>
 </header>
 
-
-<!-- <header>
-  <nav>
-    <ul class="menu">
-      <li class="logo_li">
-        <a href="#"><img src="./images/mvlogo.png" width="100" height="30" alt="Company Logo"></a>
-      </li>
-      <li><a href="/index/about">ABOUT US</a></li>
-      <li><a href="/index/teams">TEAMS</a></li>
-      <li><a href="/index/join_us">CAREER</a></li>
-      <li><a href="/index/contact_us">CONTACT US</a></li>
-
-      <li class="search-container">
-        <input type="text" placeholder="<%= index.search_placeholder || 'Search here...' %>" class="search-input form-control"
-          aria-label="Search input">
-        <button class="search-icon" aria-label="Search">
-          <%= index.search_button_text || 'Search' %>
-        </button>
-      </li>
-    </ul>
-  </nav>
-</header> -->
+<!-- Side Menu -->
+<div class="side-menu">
+  <div class="overlay"></div>
+  <div class="menu-content">
+    <a href="/index/about">About Us</a>
+    <a href="/index/teams">Teams</a>
+    <a href="/index/join_us">Career</a>
+    <a href="/index/contact_us">Contact Us</a>
+  </div>
+</div>
