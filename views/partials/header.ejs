@@ -1,4 +1,69 @@
 <style>
+  /* General Header Styling */
+ 
+  /* Navigation Styling */
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+  }
+  /* Search Container Styling */
+/* Search Container Styling */
+.search-container {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.search-icon {
+  margin-right: 500px;
+  font-size: 20px;
+  margin-right: 10px;  /* Adds space between the icon and the input field */
+}
+
+.search-input {
+  width: 0;
+  opacity: 0;
+  visibility: hidden;
+  height: 30px;
+  padding: 0 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+  transition: width 0.3s ease, opacity 0.3s ease, visibility 0.3s ease;
+}
+
+/* When checkbox is checked, show the search bar */
+#search-toggle:checked ~ .search-input {
+  width: 150px;
+  opacity: 1;
+  visibility: visible;
+}
+
+
+
+  .menu-header {
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+  }
+  .close-icon {
+    font-size: 24px;
+  
+  }
+  .menu-content a {
+    display: block;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #333;
+    border-bottom: 1px solid #ddd;
+    transition: background-color 0.2s ease;
+  }
+  .menu-content a:hover {
+    background-color: #f0f0f0;
+  }
   nav a {
     color: white;
     text-decoration: none !important;
@@ -58,11 +123,11 @@
   }
 
   /* When the checkbox is checked, show the side menu and overlay */
-  #menu-toggle:checked + .side-menu {
+  #menu-toggle:checked+.side-menu {
     left: 0;
   }
 
-  #menu-toggle:checked + .side-menu .overlay {
+  #menu-toggle:checked+.side-menu .overlay {
     display: block;
   }
 
@@ -79,12 +144,45 @@
     border: none;
     text-decoration: none;
   }
-</style>
+
+  #search-options {
+    position: absolute;
+    background-color: rgb(246, 251, 255);
+    top: 100%;
+    /* width: 100%; */
+    border-radius: 5px;
+    margin-top: 5px;
+    padding: 5px;
+  }
+
+  #search-options ul,
+  #search-options li,
+  #search-options a {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+    color: black;
+    cursor: pointer;
+  }
+
+  #search-options li {
+    padding: 10px 1rem;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+  }
+
+  #search-options li:hover {
+    color: rgb(99, 99, 99);
+    background-color: rgb(223, 230, 236);
+  }
+
+  </style>
 
 <header class="px-4 d-none d-md-block" style="z-index: 999;">
   <nav class="d-flex justify-content-between">
     <div>
-      <a href="/index"><img src="./images/mvlogo.png" width="100" height="30" alt="Company Logo"></a>
+      <a href="/index"><img src="./images/mvlogo.png" width="150" height="50" alt="Company Logo"></a>
     </div>
     <div class="d-flex align-items-center gap-3">
       <div class="d-flex gap-5">
@@ -104,28 +202,42 @@
   </nav>
 </header>
 
-<header class="d-flex d-md-none m-0 p-0" style="z-index: 999;">
-  <nav class="w-100 d-flex justify-content-between align-items-center p-2">
+
+<header>
+  
+  <nav>
+    <!-- Search Section -->
     <div>
-      <a href="/index"><img src="./images/mvlogo.png" width="100" height="30" alt="Company Logo"></a>
+      <a href="/index"><img src="./images/mvlogo.png" width="150" height="50" alt="Company Logo"></a>
+    </div>
+    <div class="search-container">
+      <!-- Checkbox to toggle search bar -->
+      <input type="checkbox" id="search-toggle" style="display: none;">
+      <label for="search-toggle" class="search-icon">&#128269;</label>
+      <input type="text" class="search-input" placeholder="Search..." />
     </div>
 
-    <!-- Hamburger Icon -->
+    <!-- Hamburger Menu Section -->
     <div>
-      <!-- Hidden checkbox to control side menu visibility -->
-      <input type="checkbox" id="menu-toggle" class="menu-toggle">
+      <!-- Checkbox to toggle side menu -->
+      <input type="checkbox" id="menu-toggle" style="display: none;">
       <label for="menu-toggle" class="hamburger-icon">&#9776;</label>
+
+      <!-- Side Menu -->
+      <div class="side-menu">
+        <!-- Close Button -->
+        <div class="menu-header">
+          <label for="menu-toggle" class="close-icon">&times;</label>
+        </div>
+
+        <!-- Menu Items -->
+        <div class="menu-content">
+          <a href="/index/about">About Us</a>
+          <a href="/index/join_us">Career</a>
+          <a href="/index/teams">Teams</a>
+          <a href="/index/contact_us">Contact Us</a>
+        </div>
+      </div>
     </div>
   </nav>
 </header>
-
-<!-- Side Menu -->
-<div class="side-menu">
-  <div class="overlay"></div>
-  <div class="menu-content">
-    <a href="/index/about">About Us</a>
-    <a href="/index/teams">Teams</a>
-    <a href="/index/join_us">Career</a>
-    <a href="/index/contact_us">Contact Us</a>
-  </div>
-</div>
