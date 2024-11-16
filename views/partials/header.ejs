@@ -177,6 +177,7 @@
     background-color: rgb(223, 230, 236);
   }
 
+
   </style>
 
 <header class="px-4 d-none d-md-block" style="z-index: 999;">
@@ -191,12 +192,16 @@
         <a href="/index/join_us">Career</a>
         <a href="/index/contact_us">Contact us</a>
       </div>
-      <div class="d-flex gap-1 align-items-center">
-        <input type="text" placeholder="<%= index.search_placeholder || 'Search here...' %>" class="form-control m-0"
-          aria-label="Search input" style="max-width: 150px;">
+      <div class="d-flex gap-1 align-items-center position-relative">
+        <input type="text" id="nav_search" placeholder="<%= index.search_placeholder || 'Search here...' %>"
+          class="form-control m-0" aria-label="Search input" style="max-width: 150px;">
         <button class="btn btn-primary" aria-label="Search">
           <%= index.search_button_text || 'Search' %>
         </button>
+        <div id="search-options">
+          <ul id="search-options_ul">
+          </ul>
+        </div>
       </div>
     </div>
   </nav>
@@ -241,3 +246,77 @@
     </div>
   </nav>
 </header>
+
+
+<!-- Side Menu -->
+<div class="side-menu">
+  <div class="overlay"></div>
+  <div class="menu-content">
+    <a href="/index/about">About Us</a>
+    <a href="/index/teams">Teams</a>
+    <a href="/index/join_us">Career</a>
+    <a href="/index/contact_us">Contact Us</a>
+  </div>
+</div>
+
+<script defer>
+  const items = [{
+    name: "index",
+    href: "/index",
+  }, {
+    name: "join us",
+    href: "/index/join_us",
+  }, {
+    name: "contact us",
+    href: "/index/contact_us",
+  }, {
+    name: "teams",
+    href: "/index/teams",
+  }, {
+    name: "about us",
+    href: "/index/about_us",
+  }]
+
+  $(document).ready(() => {
+    $('#search-options').hide()
+
+    $('#nav_search').focusin(() => {
+      items.forEach(item => {
+        const li_tag = `
+      <li>
+        <a href='${item.href}'>
+        ${item.name}
+        </a>
+      </li>`
+        $('#search-options_ul').append(li_tag)
+      })
+    })
+
+    $('#nav_search').focusout(() => {
+      setTimeout(() => {
+        $('#search-options_ul > li').remove()
+        $('#search-options').hide()
+      }, 300)
+    })
+
+    $('#nav_search').on('input', (e) => {
+      $('#search-options').show()
+      $('#search-options_ul > li').remove()
+      const text = $('#nav_search').val()
+      const filter_items = items.filter(item => item.name.includes(text))
+
+      filter_items.forEach(item => {
+        const li_tag = `
+      <li>
+        <a href='${item.href}'>
+        ${item.name}
+        </a>
+      </li>`
+        $('#search-options_ul').append(li_tag)
+      })
+
+    })
+  })
+
+</script>
+
