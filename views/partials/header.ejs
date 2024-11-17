@@ -23,7 +23,7 @@
   .search-icon {
     /* margin-right: 500px; */
     font-size: 20px;
-    margin-right: -20px;
+    margin-right: -6px;
     /* Adds space between the icon and the input field */
   }
 
@@ -123,7 +123,8 @@
     top: 0;
     right: 0;
     top: 100%;
-    width: 250px;
+    /* width: 100px; */
+    width: 100%;
     transition: left 0.3s;
     z-index: 99;
     border-radius: 0 0 0 10px;
@@ -254,15 +255,21 @@
     </div>
     <div class="search-container ms-auto ms-md-0">
       <!-- Checkbox to toggle search bar -->
-      <input type="text" id="search_input" class="search-input position-relative" placeholder="Search..." />
-      <label for="search-toggle" class="search-icon position-relative" id="search_icon_label">&#128269;</label>
+      <input type="text" id="search_input" class="search-input position-relative form-control" placeholder="Search..."
+        style="max-width: 100px;margin-right: -10px;max-height:2rem ;">
+      <!-- <label for="search-toggle" class="search-icon position-relative " id="search_icon_label" style="background-color: transparent;">&#128269;</label> -->
     </div>
 
     <!-- Hamburger Menu Section -->
     <div>
       <!-- Checkbox to toggle side menu -->
       <!-- <input type="checkbox" id="menu-toggle" style="display: none;"> -->
-      <label for="menu-toggle" id="hamburger-icon" class="hamburger-icon">&#9776;</label>
+      <label for="menu-toggle" id="hamburger-icon" class="hamburger-icon">
+        <!-- <span style="font-size: 1.5rem;margin:auto 0;width: 10px;">
+          Menu
+        </span> -->
+        &#9776;
+      </label>
 
       <!-- Side Menu -->
       <div class="side-menu mt-3" id="side-menu" style="z-index: 99999;">
@@ -316,7 +323,7 @@
   $(document).ready(() => {
     $('#search-options').hide()
     $("#side-menu").hide()
-    $("#search_input").hide()
+    //$("#search_input").hide()
 
     $("#hamburger-icon").click(() => {
       $("#side-menu").slideToggle()
