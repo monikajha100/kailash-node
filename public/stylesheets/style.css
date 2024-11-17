@@ -391,40 +391,31 @@ ul.box1 {
   padding: 0;
   margin: 0;
   justify-content: space-between;
-  /* Distribute space between items */
+  
 }
 
-/* Styling for the left and right sections */
-/* Styling for the left and right sections */
+
 .left-section,
 .right-section {
   width: 45%;
-  /* Each section takes 45% width */
+ 
   padding: 20px;
   background-color: grey;
-  /* Set background color to grey */
+  
   border-radius: 10px;
   text-align: center;
   margin-top: 4%;
   margin-bottom: 0;
-  /* Remove bottom margin */
-
-
+  
 }
 
-/* Vertical Divider line styling */
 .divider-line {
   width: 2px;
-  /* Thin line */
-  background-color: black;
-  /* Black color for the line */
-  /* Full height of the container */
+ background-color: black;
   margin-top: 2%;
-
 }
 
-/* Styling for boxes with links */
-/* Styling for boxes with links */
+
 .box2,
 .box3 {
   display: flex;
@@ -433,24 +424,16 @@ ul.box1 {
   margin-top: 20px;
 }
 
-/* Link styling */
-.box2 a,
+
 .box3 a {
   padding: 10px 18px;
   border: 2px solid black;
   color: black;
-  /* Set text color to black */
   background-color: grey;
-  /* Set initial background color to green */
-  text-decoration: none;
-
-  /* Smooth transition */
+   text-decoration: none;
 }
 
-/* Hover effect */
 
-
-/* Change cursor to black when hovering over the links */
 .box2 a:hover,
 .box3 a:hover {
   color: black;
@@ -654,7 +637,7 @@ ul.box1 li {
   border-bottom: 1px solid #ccc;
 }
 
-/* Style for the headings */
+
 ul.box1 h2 {
   font-size: 24px;
   margin: 0;
@@ -662,14 +645,14 @@ ul.box1 h2 {
   color: #333;
 }
 
-/* Style for the paragraph text */
+
 ul.box1 p {
   font-size: 16px;
   color: #666;
   margin-top: 5px;
 }
 
-/* Box styling */
+
 ul.box1 .box2,
 ul.box1 .box3 {
   margin-top: 10px;
@@ -680,21 +663,21 @@ ul.box1 .box3 a {
   text-decoration: none;
   padding: 10px 20px;
   background-color: grey;
-  /* Green background for buttons */
+  
   color: white;
   border-radius: 5px;
   font-weight: bold;
   transition: background-color 0.3s;
 }
 
-/* Hover effect for the button */
+
 ul.box1 .box2 a:hover,
 ul.box1 .box3 a:hover {
   background-color: black;
-  /* Darker green when hovered */
+ 
 }
 
-/* Vertical divider styling */
+
 ul.box4 {
   list-style: none;
   padding: 0;
@@ -704,11 +687,11 @@ ul.box4 {
 ul.box4 li {
   border-left: 2px solid #ccc;
   height: 50px;
-  /* Adjust the height of the vertical line */
+ 
   margin-left: 20px;
 }
 
-/* Divider link (it can be used for styling if necessary) */
+
 ul.box4 .divider-link {
   display: block;
   height: 100%;
@@ -716,29 +699,27 @@ ul.box4 .divider-link {
 }
 @media (max-width: 768px) {
   .black-box {
-    flex-direction: column; /* Stack content vertically */
-    align-items: center; /* Center-align items */
+    flex-direction: column; 
+    align-items: center; 
     text-align: center;
   }
 
   .black-box p {
-    margin-bottom: 15px; /* Add spacing below the welcome message */
+    margin-bottom: 15px; 
   }
 
   .black-box .contact-info {
-    margin-bottom: 15px; /* Add spacing below the contact info */
+    margin-bottom: 15px; 
   }
 
   .black-box .contact-info h2 {
-    font-size: 1.2rem; /* Smaller heading size for mobile */
+    font-size: 1.2rem;
   }
-
   .black-box .contact-info p {
-    font-size: 0.95rem; /* Adjust font size for mobile */
+    font-size: 0.95rem;
   }
-
   .black-box p:last-of-type {
-    margin-top: 10px; /* Spacing above the extra content */
+    margin-top: 10px; /
   }
 }
-
+  
