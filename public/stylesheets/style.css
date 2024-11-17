@@ -228,7 +228,7 @@ p {
 }
 
 .dot {
-  height: 10px;
+  height: 5px;
   width: 10px;
   margin: 0 5px;
   background-color: #bbb;
@@ -245,56 +245,68 @@ h2 {
   margin-top: 0;
 }
 
+/* Container styling */
 .box-container {
-  display: flex;
-  justify-content: space-around;
-  /* Space between the boxes */
-  flex-wrap: wrap;
-  gap: 1rem;
-  /* Wrap boxes on smaller screens */
-  padding: 20px;
+  display: grid; /* Enables grid layout */
+  grid-template-columns: repeat(4, 1fr); /* Creates 4 equal columns */
+  gap: 20px; /* Space between the boxes */
+  padding: 20px; /* Adds padding around the container */
+  text-align: center; /* Centers text inside each box */
+  margin-bottom: 8%;
 }
 
+/* Box styling */
 .box {
-  flex-grow: 1;
-  border: 1px solid black;
-  color: black;
-  border-radius: 5px;
-  box-shadow: 0 0 5px rgba(0 0 0 / 0.2);
-  text-align: center;
-  padding: 20px;
-  width: 250px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.box-img {
-  width: 50%;
-  /* Image takes full width of the box */
-  /* height: 100px; */
-  /* Adjust height as needed */
-  object-fit: cover;
-  /* Ensures image covers the space */
-  border-radius: 8px;
-  /* Rounds the image corners */
-  margin-bottom: 15px;
-  /* Space between image and text */
-}
-
-.box h3 {
-  font-size: 1.5rem;
-  margin: 10px 0;
-}
-
-.box p {
-  font-size: 1rem;
+  background-color: #f9f9f9; /* Light background color */
+  border: 1px solid skyblue; /* Optional: subtle border */
+  border-radius: 10px; /* Rounded corners */
+  padding: 20px; /* Internal spacing for each box */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: shadow for depth */
+  transition: transform 0.3s ease; /* Smooth hover effect */
+  
 }
 
 .box:hover {
-  transform: translateY(-10px);
-  /* Moves the box upwards on hover */
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
-  /* Larger shadow on hover */
+  transform: scale(1.05); /* Slightly enlarge on hover */
 }
+
+/* Image styling */
+.box img {
+  width: 80px; /* Set a fixed width for images */
+  height: 80px; /* Set a fixed height for images */
+  margin-bottom: 15px; /* Space below the image */
+  border-radius: 50%; /* Optional: make the image circular */
+}
+
+/* h3 styling */
+.box h3 {
+  font-size: 24px; /* Adjust font size */
+  color: #333; /* Dark text color */
+  margin: 10px 0; /* Space around the heading */
+}
+
+/* Paragraph styling */
+.box p {
+  font-size: 16px; /* Smaller font size */
+  color: #777; /* Gray text color */
+  margin-top: 5px; /* Space above the text */
+}
+
+/* Responsive styling */
+@media (max-width: 768px) {
+  .box-container {
+    grid-template-columns: repeat(1, 1fr); /* Show 2 boxes per row on smaller screens */
+   
+  }
+}
+
+@media (max-width: 480px) {
+  .box-container {
+    grid-template-columns: 1fr; /* Show 1 box per row on very small screens */
+   
+  }
+}
+
 
 .black-box {
   background-color: black;
@@ -312,8 +324,9 @@ h2 {
   /* Align text to the right */
   height: 100%;
   /* Increase height as needed */
-  min-height: 250px;
+  min-height: 350px;
   /* Set a minimum height if desired */
+  ;
 }
 
 .black-box p {
@@ -442,39 +455,62 @@ ul.box1 {
 .box3 a:hover {
   color: black;
   cursor: pointer;
-  /* Change cursor to a pointer to indicate clickable link */
 }
+
 
 
 .scrolling-text {
-  width: 100%;
-  /* Set the width of the container */
-  height: 20%;
-  overflow: hidden;
-  white-space: nowrap;
-  direction: rtl;
-  /* Set direction to right-to-left */
-  font-size: 50px;
-  margin-top: 1%;
-  margin-bottom: 1%;
+  width: 100%; 
+  overflow: hidden; 
+  white-space: nowrap; 
+  direction: rtl; 
+  font-size: 50px; 
+  margin: 1% 0; 
+  text-align: center;
+  
+  color: #333; 
+  position: relative;
 }
+
 
 .scrolling-text p {
-  display: inline-block;
-  animation: scroll 30s linear infinite;
-  margin-top: 1%;
-
+  display: inline-block; 
+  animation: scroll 30s linear infinite; 
+  margin: 0; 
+  font-weight: bold; 
 }
+
 
 @keyframes scroll {
-  0% {
-    transform: translateX(100%);
+  from {
+    transform: translateX(100%); 
   }
-
-  100% {
-    transform: translateX(-100%);
+  to {
+    transform: translateX(-100%); 
   }
 }
+
+
+@media (max-width: 768px) {
+  .scrolling-text {
+    width: 100%; 
+    overflow: hidden; 
+    white-space: nowrap; 
+    direction: rtl; 
+    font-size: 50px; 
+    margin: 1% 0; 
+    text-align: center; 
+    
+    
+    color: #333;
+    position: relative;
+  }
+
+  .scrolling-text p {
+    animation: scroll 20s linear infinite; 
+  }
+}
+
 
 .scroll {
   list-style: none;
@@ -499,7 +535,7 @@ ul.box1 {
   background-color: #333;
 }
 
-/* General Footer Styling */
+
 footer {
   background-color: #333;
   color: #fff;
@@ -582,7 +618,7 @@ footer {
   margin: 0;
 }
 
-/* Media Query for Smaller Screens */
+
 @media (max-width: 768px) {
   .footer-content {
     flex-direction: column;
@@ -604,7 +640,7 @@ footer {
 }
 
 
-/* General styles for the unordered list */
+
 ul.box1 {
   list-style: none;
   padding: 0;
@@ -705,27 +741,4 @@ ul.box4 .divider-link {
     margin-top: 10px; /* Spacing above the extra content */
   }
 }
-@media (max-width: 768px) {
-  .d-flex {
-    flex-direction: column; /* Stack items vertically */
-    align-items: center;
-    gap: 20px; /* Add spacing between the sections */
-    background-color: ; /* Light grey background */
-    padding: 20px; /* Add padding around the sections */
-  }
 
-  .text-center {
-    width: 100%; /* Take full width in mobile view */
-    position: relative;
-  }
-
-  /* Add horizontal line below "Contact Us" */
-  .text-center:first-child::after {
-    content: "";
-    display: block;
-    width: 80%; /* Adjust width of the line */
-    height: 1px; /* Line thickness */
-    background-color: #ccc; /* Line color */
-    margin: 20px auto; /* Center and add spacing */
-  }
-}
