@@ -678,3 +678,54 @@ ul.box4 .divider-link {
   height: 100%;
   width: 0;
 }
+@media (max-width: 768px) {
+  .black-box {
+    flex-direction: column; /* Stack content vertically */
+    align-items: center; /* Center-align items */
+    text-align: center;
+  }
+
+  .black-box p {
+    margin-bottom: 15px; /* Add spacing below the welcome message */
+  }
+
+  .black-box .contact-info {
+    margin-bottom: 15px; /* Add spacing below the contact info */
+  }
+
+  .black-box .contact-info h2 {
+    font-size: 1.2rem; /* Smaller heading size for mobile */
+  }
+
+  .black-box .contact-info p {
+    font-size: 0.95rem; /* Adjust font size for mobile */
+  }
+
+  .black-box p:last-of-type {
+    margin-top: 10px; /* Spacing above the extra content */
+  }
+}
+@media (max-width: 768px) {
+  .d-flex {
+    flex-direction: column; /* Stack items vertically */
+    align-items: center;
+    gap: 20px; /* Add spacing between the sections */
+    background-color: ; /* Light grey background */
+    padding: 20px; /* Add padding around the sections */
+  }
+
+  .text-center {
+    width: 100%; /* Take full width in mobile view */
+    position: relative;
+  }
+
+  /* Add horizontal line below "Contact Us" */
+  .text-center:first-child::after {
+    content: "";
+    display: block;
+    width: 80%; /* Adjust width of the line */
+    height: 1px; /* Line thickness */
+    background-color: #ccc; /* Line color */
+    margin: 20px auto; /* Center and add spacing */
+  }
+}

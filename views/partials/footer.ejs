@@ -1,4 +1,170 @@
-<footer class="bg-dark text-white">
+<style>
+footer {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+footer.bg-dark {
+  background-color: #222; /* Dark background */
+  color: #fff; /* White text color */
+  padding: 40px 20px; /* Add padding */
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap; /* Responsive for smaller screens */
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px; /* Add spacing between columns */
+}
+
+.footer-logo img {
+  max-width: 100%; /* Ensure responsive image scaling */
+  height: auto;
+}
+
+.footer-links,
+.footer-contact,
+.footer-social {
+  flex: 1; /* Equal column width */
+  min-width: 200px; /* Prevent collapsing on small screens */
+}
+
+.footer-links h3,
+.footer-contact h3,
+.footer-social h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: #f39c12; /* Highlight headings */
+  text-transform: uppercase;
+}
+
+.footer-links ul {
+  list-style: none; /* Remove bullet points */
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links ul li {
+  margin: 8px 0;
+}
+
+.footer-links ul li a {
+  text-decoration: none;
+  color: #fff; /* Link color */
+  transition: color 0.3s ease;
+}
+
+.footer-links ul li a:hover {
+  color: #f39c12; /* Highlight on hover */
+}
+
+.footer-contact p {
+  margin: 5px 0;
+  font-size: 0.9rem;
+}
+
+.footer-social a {
+  margin: 0 8px;
+  display: inline-block;
+}
+
+.footer-social img {
+  width: 28px; /* Smaller icon size */
+  height: 28px;
+  transition: transform 0.3s ease; /* Animation on hover */
+}
+
+.footer-social img:hover {
+  transform: scale(1.2); /* Slight zoom effect */
+}
+
+.footer-contact p,
+.footer-social a {
+  color: #fff;
+  font-size: 0.9rem;
+  text-decoration: none;
+}
+
+/* Footer Bottom Bar */
+footer .p-0.m-0.w-100 {
+  border-top: 1px solid #444; /* Divider line */
+  margin-top: 20px;
+  padding-top: 10px;
+  font-size: 0.8rem;
+  color: #aaa;
+}
+
+footer .p-0.m-0.w-100:hover {
+  color: #f39c12;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column; /* Stack items vertically */
+    text-align: center;
+  }
+
+  .footer-links,
+  .footer-contact,
+  .footer-social {
+    flex: none; /* Disable equal width on smaller screens */
+    margin-bottom: 20px; /* Add spacing between sections */
+  }
+
+  .footer-links h3,
+  .footer-contact h3,
+  .footer-social h3 {
+    font-size: 1rem; /* Smaller heading font size */
+  }
+
+  .footer-links ul li,
+  .footer-contact p {
+    font-size: 0.85rem; /* Reduce font size for mobile */
+  }
+
+  .footer-social a {
+    margin: 5px; /* Adjust spacing for social icons */
+  }
+
+  .footer-social img {
+    width: 24px; /* Even smaller icon size */
+    height: 24px;
+  }
+}
+
+/* Mobile View Priority */
+@media (max-width: 576px) {
+  .footer-content {
+    display: flex;
+    flex-direction: column; /* Stack all sections vertically */
+  }
+
+  .footer-links {
+    order: 1; /* Display Quick Links first */
+  }
+
+  .footer-contact {
+    order: 2; /* Display Contact Us next */
+  }
+
+  .footer-social {
+    order: 3; /* Display Follow Us last */
+  }
+
+  h3 {
+    font-size: 0.95rem; /* Adjust heading size for smaller screens */
+  }
+
+  ul li a,
+  p {
+    font-size: 0.8rem; /* Further reduce font size for mobile */
+  }
+}
+
+  </style><footer class="bg-dark text-white">
   <div class="footer-content">
     <div class="footer-logo">
       <img src="<%= index.footer_logo_image_url || './images/mvlogo.png' %>" width="100" height="50"

@@ -93,36 +93,49 @@
 </div>
 <div class="box-container">
   <div class="box">
-    <img
-      src="https://media.istockphoto.com/id/186862958/photo/print-or-printer-icon.webp?a=1&b=1&s=612x612&w=0&k=20&c=HAULxdn43C9hq1VqfaZGBwpo7SQ3gEC74C7Xw4hH4pA="
-      alt="Courses Image" class="box-img">
-    <h3>300+</h3>
+    <img src="https://media.istockphoto.com/id/186862958/photo/print-or-printer-icon.webp?a=1&b=1&s=612x612&w=0&k=20&c=HAULxdn43C9hq1VqfaZGBwpo7SQ3gEC74C7Xw4hH4pA=" alt="Courses Image" class="box-img">
+    <h3 data-target="300">0</h3>
     <p>Delight clients</p>
   </div>
   <div class="box">
-    <img
-      src=https://img.freepik.com/premium-photo/3d-flat-icon-as-process-improvement-symbol-with-space-text-blue-background-concept-as-sle_980716-426260.jpg?ga=GA1.1.1666531303.1714742568&semt
-      alt="Placements Image" class="box-img">
-    <h3>500+ </h3>
-    <p>project complete</p>
+    <img src="https://img.freepik.com/premium-photo/3d-flat-icon-as-process-improvement-symbol-with-space-text-blue-background-concept-as-sle_980716-426260.jpg?ga=GA1.1.1666531303.1714742568&semt" alt="Placements Image" class="box-img">
+    <h3 data-target="500">0</h3>
+    <p>Project complete</p>
   </div>
   <div class="box">
-    <img
-      src="https://img.freepik.com/free-vector/navy-arrows-circle_78370-7812.jpg?ga=GA1.1.1666531303.1714742568&semt=ais_hybrid"
-      alt="Other Image" class="box-img">
-    <h3>100+</h3>
-    <p>ongoing</p>
+    <img src="https://img.freepik.com/free-vector/navy-arrows-circle_78370-7812.jpg?ga=GA1.1.1666531303.1714742568&semt=ais_hybrid" alt="Other Image" class="box-img">
+    <h3 data-target="100">0</h3>
+    <p>Ongoing</p>
   </div>
   <div class="box">
-    <img
-      src="https://img.freepik.com/free-vector/golden-star-laurel-icon-white-background_24640-133891.jpg?ga=GA1.1.1666531303.1714742568&semt=ais_hybrid"
-      alt="Other Image" class="box-img">
-    <h3>5+</h3>
+    <img src="https://img.freepik.com/free-vector/golden-star-laurel-icon-white-background_24640-133891.jpg?ga=GA1.1.1666531303.1714742568&semt=ais_hybrid" alt="Other Image" class="box-img">
+    <h3 data-target="5">0</h3>
     <p>Award and Re-organization</p>
   </div>
 </div>
 
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const counters = document.querySelectorAll(".box h3"); // Select all h3 elements
 
+    counters.forEach(counter => {
+      const updateCounter = () => {
+        const target = +counter.getAttribute("data-target"); // Get target value
+        const current = +counter.innerText; // Current displayed number
+        const increment = Math.ceil(target / 200); // Increment value (adjust speed)
+
+        if (current < target) {
+          counter.innerText = current + increment; // Update counter
+          setTimeout(updateCounter, 20); // Repeat every 20ms (adjust speed)
+        } else {
+          counter.innerText = target; // Set the final value
+        }
+      };
+
+      updateCounter(); // Start the animation
+    });
+  });
+</script>
 
 <div class="black-box">
   <p>
