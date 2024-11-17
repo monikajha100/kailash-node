@@ -723,3 +723,130 @@ ul.box4 .divider-link {
   }
 }
   
+/* Styling for the grey container */
+.grey {
+  display: flex; /* Flexbox layout */
+  flex-wrap: wrap; /* Wrap content on smaller screens */
+  background-color: grey; /* Light grey background */
+  padding: 20px; /* Inner spacing */
+  border-radius: 10px; /* Rounded corners */
+  gap: 20px; /* Space between child elements */
+  justify-content: space-between; /* Spread items evenly */
+  position: relative; /* For positioning the divider */
+}
+
+/* Styling for each text-center box */
+.grey .text-center {
+  flex: 1 1 calc(50% - 20px); /* Two equal boxes per row, with gap accounted */
+  background-color: grey; /* White background for contrast */
+  border-radius: 10px; /* Rounded edges for individual boxes */
+  padding: 20px; /* Internal spacing */
+  text-align: center; /* Center-align the text */
+  margin-top: 5%;
+}
+
+/* Divider line */
+
+/* Headings and text styling */
+.grey .text-center h2 {
+  font-size: 24px; /* Larger font size for headings */
+  color: #333; /* Dark text color */
+  margin-bottom: 1px; /* Space below the heading */
+  align-items: center;
+}
+
+.grey .text-center p {
+  font-size: 16px; /* Font size for paragraph text */
+  color: black; /* Gray text color */
+  margin-bottom: 5px; /* Space below the paragraph */
+}
+
+/* Button styling */
+.grey .btn {
+  font-size: 16px; /* Button font size */
+  background-color: transparent; /* No background by default */
+  color: black; /* Black text color */
+  border: 2px solid black; /* Black border */
+  border-radius: 5px; /* Rounded button edges */
+  padding: 10px 15px; /* Padding for better appearance */
+  text-align: center; /* Center-align text */
+  text-decoration: none; /* Remove underline from links */
+  transition: all 0.3s ease; /* Smooth transition for hover effects */
+  display: inline-block; /* Ensure buttons are inline */
+}
+
+/* Button hover effect */
+.grey .btn:hover {
+  background-color: #007bff; /* Blue background on hover */
+  color: #ffffff; /* White text color on hover */
+  border-color: #007bff; /* Border matches the hover background */
+}
+
+/* Responsive styling for mobile view */
+@media (max-width: 768px) {
+  .grey {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    gap: 20px; /* Space between elements */
+    background-color: grey;
+    padding: 20px;
+    border-radius: 10px;
+    height: auto;
+  }
+
+  .grey .text-center {
+    text-align: center;
+    padding: 10px;
+    background-color:grey;
+    border-radius: 10px;
+  }
+
+  /* Horizontal Divider */
+  .grey:bottom {
+    content: ''; /* Empty content for the divider */
+    position: absolute;
+    width: 90%; /* Width of the horizontal line */
+    height: 2px; /* Thickness of the divider */
+    background-color: #333; /* Divider color */
+    top: 50%; /* Position vertically in the center of the container */
+    left: 5%; /* Center the line horizontally, leaving some padding */
+    transform: translateY(-50%); /* Adjust for precise centering */
+  }
+    .grey .text-center h2 {
+      font-size: 24px; /* Larger font size for headings */
+      color: #333; /* Dark text color */
+      margin-bottom: 1px; /* Space below the heading */
+      align-items: center;
+    }
+    
+    .grey .text-center p {
+      font-size: 16px; /* Font size for paragraph text */
+      color: black; /* Gray text color */
+      margin-bottom: 5px; /* Space below the paragraph */
+    }
+    
+    /* Button styling */
+    .grey .btn {
+      font-size: 16px; /* Button font size */
+      background-color: transparent; /* No background by default */
+      color: black; /* Black text color */
+      border: 2px solid black; /* Black border */
+      border-radius: 5px; /* Rounded button edges */
+      padding: 10px 15px; /* Padding for better appearance */
+      text-align: center; /* Center-align text */
+      text-decoration: none; /* Remove underline from links */
+      transition: all 0.3s ease; /* Smooth transition for hover effects */
+      display: inline-block; /* Ensure buttons are inline */
+    }
+    
+    /* Button hover effect */
+    .grey .btn:hover {
+      background-color: #007bff; /* Blue background on hover */
+      color: #ffffff; /* White text color on hover */
+      border-color: #007bff; /* Border matches the hover background */
+    }
+    
+  
+  }
+
+
