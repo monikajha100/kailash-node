@@ -1,58 +1,93 @@
 <style>
   /* General Header Styling */
- 
+
   /* Navigation Styling */
   nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px;
+    padding: 20px;
+    position: relative;
+    /* z-index: 99999; */
+    height: 30px;
   }
+
   /* Search Container Styling */
-/* Search Container Styling */
-.search-container {
-  display: flex;
-  align-items: center;
-  position: relative;
-}
+  /* Search Container Styling */
+  .search-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+  }
 
-.search-icon {
-  margin-right: 500px;
-  font-size: 20px;
-  margin-right: 10px;  /* Adds space between the icon and the input field */
-}
+  .search-icon {
+    /* margin-right: 500px; */
+    font-size: 20px;
+    margin-right: -20px;
+    /* Adds space between the icon and the input field */
+  }
 
-.search-input {
+  /* .search-input {
   width: 0;
   opacity: 0;
   visibility: hidden;
+  display: none;
   height: 30px;
   padding: 0 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
   outline: none;
   transition: width 0.3s ease, opacity 0.3s ease, visibility 0.3s ease;
-}
+} */
 
-/* When checkbox is checked, show the search bar */
+  #search-toggle {
+    margin-right: -100px;
+  }
+
+  /* When checkbox is checked, show the search bar */
+  /* #search-toggle:not(:checked) ~ .search-input {
+  width: 0;
+  opacity: 0;
+  visibility: hidden;
+  margin-right: -50px;
+  height: 30px;
+  padding: 0 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+  transition: all 0.3s ease;
+}
 #search-toggle:checked ~ .search-input {
+  margin-right: -20px;
   width: 150px;
   opacity: 1;
   visibility: visible;
-}
-
+  transition: all 0.3s ease;
+} */
 
 
   .menu-header {
     display: flex;
+    margin-left: auto;
     justify-content: flex-end;
-    padding: 10px;
-    border-bottom: 1px solid #ddd;
+    padding: 0 10px;
+    width: fit-content;
+    cursor: pointer;
+    /* height: 50%; */
+    /* border-radius: 200%; */
+    /* background-color: #84e0fe; */
+    /* border-bottom: 1px solid #ddd; */
   }
+
   .close-icon {
     font-size: 24px;
-  
+
   }
+
+  .menu-content {
+    position: relative;
+  }
+
   .menu-content a {
     display: block;
     padding: 10px 20px;
@@ -61,9 +96,11 @@
     border-bottom: 1px solid #ddd;
     transition: background-color 0.2s ease;
   }
+
   .menu-content a:hover {
     background-color: #f0f0f0;
   }
+
   nav a {
     color: white;
     text-decoration: none !important;
@@ -81,14 +118,15 @@
 
   /* Side menu styles */
   .side-menu {
-    position: fixed;
+    background-color: #4BCFFA;
+    position: absolute;
     top: 0;
-    left: -250px;
+    right: 0;
+    top: 100%;
     width: 250px;
-    height: 100%;
-    background-color: #333;
     transition: left 0.3s;
-    z-index: 998;
+    z-index: 99;
+    border-radius: 0 0 0 10px;
   }
 
   .side-menu .menu-content {
@@ -102,13 +140,14 @@
 
   .side-menu .menu-content a {
     color: white;
-    font-size: 1.5rem;
+    font-size: 1rem;
     text-decoration: none;
     padding: 10px;
   }
 
   .side-menu .menu-content a:hover {
     background-color: #575757;
+    border-radius: 5px;
   }
 
   .overlay {
@@ -176,12 +215,10 @@
     color: rgb(99, 99, 99);
     background-color: rgb(223, 230, 236);
   }
+</style>
 
-
-  </style>
-
-<header class="px-4 d-none d-md-block" style="z-index: 999;">
-  <nav class="d-flex justify-content-between">
+<header class="py-4 d-none d-md-block" style="z-index: 99999;">
+  <nav class="d-flex justify-content-between" style="z-index: 999999;">
     <div>
       <a href="/index"><img src="./images/mvlogo.png" width="150" height="50" alt="Company Logo"></a>
     </div>
@@ -207,36 +244,35 @@
   </nav>
 </header>
 
+<!-- small screen nav -->
+<header class="d-block d-md-none" style="z-index: 999999;">
 
-<header>
-  
-  <nav>
+  <nav class="d-flex d-md-none flex-row justify-content-between justify-md-center">
     <!-- Search Section -->
     <div>
       <a href="/index"><img src="./images/mvlogo.png" width="150" height="50" alt="Company Logo"></a>
     </div>
-    <div class="search-container">
+    <div class="search-container ms-auto ms-md-0">
       <!-- Checkbox to toggle search bar -->
-      <input type="checkbox" id="search-toggle" style="display: none;">
-      <label for="search-toggle" class="search-icon">&#128269;</label>
-      <input type="text" class="search-input" placeholder="Search..." />
+      <input type="text" id="search_input" class="search-input position-relative" placeholder="Search..." />
+      <label for="search-toggle" class="search-icon position-relative" id="search_icon_label">&#128269;</label>
     </div>
 
     <!-- Hamburger Menu Section -->
     <div>
       <!-- Checkbox to toggle side menu -->
-      <input type="checkbox" id="menu-toggle" style="display: none;">
-      <label for="menu-toggle" class="hamburger-icon">&#9776;</label>
+      <!-- <input type="checkbox" id="menu-toggle" style="display: none;"> -->
+      <label for="menu-toggle" id="hamburger-icon" class="hamburger-icon">&#9776;</label>
 
       <!-- Side Menu -->
-      <div class="side-menu">
+      <div class="side-menu mt-3" id="side-menu" style="z-index: 99999;">
         <!-- Close Button -->
-        <div class="menu-header">
+        <!-- <div class="menu-header" id="menu-header">
           <label for="menu-toggle" class="close-icon">&times;</label>
-        </div>
+        </div> -->
 
         <!-- Menu Items -->
-        <div class="menu-content">
+        <div class="menu-content" id="menu-content">
           <a href="/index/about">About Us</a>
           <a href="/index/join_us">Career</a>
           <a href="/index/teams">Teams</a>
@@ -249,7 +285,7 @@
 
 
 <!-- Side Menu -->
-<div class="side-menu">
+<!-- <div class="side-menu">
   <div class="overlay"></div>
   <div class="menu-content">
     <a href="/index/about">About Us</a>
@@ -257,7 +293,7 @@
     <a href="/index/join_us">Career</a>
     <a href="/index/contact_us">Contact Us</a>
   </div>
-</div>
+</div> -->
 
 <script defer>
   const items = [{
@@ -279,6 +315,16 @@
 
   $(document).ready(() => {
     $('#search-options').hide()
+    $("#side-menu").hide()
+    $("#search_input").hide()
+
+    $("#hamburger-icon").click(() => {
+      $("#side-menu").slideToggle()
+    })
+
+    $("#search_icon_label").click(() => {
+      $("#search_input").fadeToggle()
+    })
 
     $('#nav_search').focusin(() => {
       items.forEach(item => {
@@ -319,4 +365,3 @@
   })
 
 </script>
-
