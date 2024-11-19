@@ -157,6 +157,19 @@ p {
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   /* Subtle shadow for depth */
 }
+.white-box {
+  width: 100%;
+  font-family: 'Arial', sans-serif;
+  background-color: white;
+  color: black;
+  padding: 20px;
+  box-sizing: border-box;
+  height: 600px;
+  margin-top: -4%;
+  border-radius: 34px;
+}
+
+
 
 .visitor-counter h2 {
   font-size: 1.5rem;
@@ -175,6 +188,8 @@ p {
   color: #3498db;
   /* Blue color for the count */
 }
+
+
 
 /* Style the main container */
 
@@ -311,7 +326,7 @@ h2 {
 .black-box {
   background-color: black;
   color: white;
-  margin-top: 20px;
+  margin-top: -1%;
   padding: 30px;
   /* border-radius: 10px; */
   display: flex;
@@ -322,9 +337,9 @@ h2 {
   /* Center vertically */
   text-align: right;
   /* Align text to the right */
-  height: 100%;
+  height: 70%;
   /* Increase height as needed */
-  min-height: 350px;
+  min-height: 300px;
   /* Set a minimum height if desired */
   ;
 }
@@ -849,4 +864,356 @@ ul.box4 .divider-link {
   
   }
 
+ 
+  section {
+    padding: 20px;
+    margin: 0 auto;
+    width: 100%;
+  
+  }
 
+  h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+  }
+
+  /* Brand Section Styles */
+  #brandContainer {
+    display: flex;
+    overflow: hidden; /* Hide scrollbars */
+    gap: 20px;
+    position: relative;
+  }
+
+  .brand-item {
+    flex: 0 0 auto;
+    width: 150px;
+    height: 150px;
+    background-color: #f3f3f3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5%;
+    border-radius: 10px;
+    text-align: center;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+  }
+
+  .brand-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    padding: 10px;
+  }
+
+  .brand-item:hover {
+    transform: scale(1.1);
+  } h1 {
+    margin: 0; /* Remove extra margin */
+    padding-bottom: 20px; /* Add padding for spacing below the heading */
+   margin-top: -6%;
+    font-size: 55px;
+    margin-left: 15%;
+  }
+section {
+    padding: 20px;
+  }
+/* Styling for the h3 Customer Reviews heading */
+h6 {
+  font-size: 16px; /* Larger font size */
+  font-weight: bold; /* Bold the text */
+  color: #333; /* Dark color for the text */
+  text-align: center; /* Center the heading */
+  margin: 0; /* Remove default margin */
+  padding: 20px 0; /* Add space above and below */
+  text-transform: uppercase; /* Uppercase text for emphasis */
+  letter-spacing: 1px; /* Slightly spaced out letters */
+   /* Add a golden bottom border for decoration */
+  width: fit-content; /* Shrinks the width to fit the content * /* Centers the heading */
+  margin-right: auto; /* Centers the heading */
+ /* Light background color for contrast */
+ /* Subtle shadow for depth */
+  border-radius: 10px; /* Rounded corners */
+  margin-left: -7%;
+  margin-top: -3%;
+ 
+}
+
+
+  .container {
+    background-color:white; /* Black container */
+    padding: 20px;
+    border-radius: 10px;
+    width: 100%;
+    height: 250px;
+  }
+
+  .slider-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    margin-left: 30%; /* Add 30% margin from left */
+  }
+
+  /* New Section for the Centered Google Sign, Excellent, and Stars */
+  .promo-section {
+    position: absolute;
+    width: 40%; /* Control the width of the section */
+    color: white;
+    margin-left: 1%;
+  }
+
+  .promo-section img {
+    width: 60px; /* Size of the Google sign */
+    margin-bottom: 10px;
+    margin-top: 4%;
+    margin-right: 50%;
+  }
+
+  .promo-section .rating {
+    font-size: 24px;
+    color: #FFD700;
+    margin-bottom: 10px;
+    margin-right: -6%;
+    margin-top: -4%;
+  }
+
+  .promo-section .excellent {
+    font-size: 15px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    margin-right: 50%;
+    
+    color: black;
+  }
+
+  .reviews-wrapper {
+    display: flex;
+    transition: transform 0.3s ease-in-out;
+    margin-left: 20%;
+  }
+
+  .review-item {
+    flex: 0 0 20%; /* Each review takes up 20% of the container */
+    box-sizing: border-box;
+    padding: 20px;
+    margin: 10px;
+    background-color: white;
+    border-radius: 8px;
+    text-align: center;
+    position: relative;
+  
+  }
+
+  .review-author {
+    font-weight: bold;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .review-author img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+  
+  }
+
+  .review-rating {
+    color: #FFD700;
+    margin-bottom: 10px;
+    
+  }
+
+  .review-text {
+    font-size: 14px;
+  }
+
+  .nav-buttons {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(50%);
+  }
+
+  .nav-buttons span {
+  
+    color: #333;
+    padding: 10px;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+  }
+
+  .nav-buttons span:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+ /* Full Width Gallery */
+
+ h5 {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  font-size: 55px;
+  -webkit-background-clip: text;
+  color: transparent;
+  text-align: center;
+  margin-top: 60px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
+  padding-bottom: 15px;
+  background-color: black;
+}
+
+
+
+h4 {
+  font-style: italic;
+  font-weight: 500;
+  font-size: 30px;
+  color: #555;
+  text-align: center;
+  margin-top: 20px;
+  text-transform: capitalize;
+  letter-spacing: 1px;
+  line-height: 1.5;
+  padding: 5px 0;
+}
+
+.gallery {
+  width: 100%;
+  
+  margin-top: -1%;
+  border-radius: 10px;
+}
+
+.gallery-container {
+  display: flex;
+  height: 400px;
+  margin: 0 auto;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.gallery-item {
+  height: 200px;
+  opacity: 0;
+  position: absolute;
+  transition: all 0.9s ease-in-out;
+  width: 330px;
+  z-index: 0;
+  border-radius: 15px;
+  background-size: cover;
+  background-position: center;
+}
+
+.gallery-item-1 {
+  left: 15%;
+  opacity: 0.4;
+  transform: translateX(-50%);
+  margin-top: 3%;
+}
+
+.gallery-item-2, .gallery-item-4 {
+  height: 250px;
+  opacity: 0.8;
+  width: 380px;
+  z-index: 1;
+  margin-top: 3%;
+}
+
+.gallery-item-2 {
+  left: 30%;
+  transform: translateX(-50%);
+}
+
+.gallery-item-3 {
+  box-shadow: -2px 5px 33px 6px rgba(0, 0, 0, 0.35);
+  height: 300px;
+  opacity: 1;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 430px;
+  z-index: 2;
+}
+
+.gallery-item-4 {
+  left: 70%;
+  transform: translateX(-50%);
+  margin-top: 3%;
+}
+
+.gallery-item-5 {
+  left: 85%;
+  opacity: 0.4;
+  transform: translateX(-50%);
+  margin-top: 3%;
+}
+
+/* Remove the gallery controls section */
+.gallery-controls {
+  display: none;
+}@media (max-width: 768px) {
+  h5 {
+    font-size: 40px;
+    margin-top: 40px;
+  }
+
+  h4 {
+    font-size: 24px;
+    margin-top: 10px;
+  }
+
+  .gallery-container {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .gallery-item {
+    width: 90%;
+    margin: 20px auto;
+    opacity: 1;
+    position: relative;
+    transform: translateX(0);
+    height: 250px; /* Adjust height for mobile */
+  }
+
+  .gallery-item-1, .gallery-item-2, .gallery-item-3, .gallery-item-4, .gallery-item-5 {
+    left: 0;
+    margin-top: 20px;
+    transform: translateX(0);
+  }
+}
+
+/* Extra Small Devices */
+@media (max-width: 480px) {
+  h5 {
+    font-size: 30px;
+    margin-top: 30px;
+  }
+
+  h4 {
+    font-size: 20px;
+    margin-top: 10px;
+  }
+
+  .gallery-container {
+    padding: 0 10px;
+  }
+
+  .gallery-item {
+    width: 100%;
+    margin-top: 15px;
+    height: 220px; /* Adjust height for smaller screens */
+  }
+}

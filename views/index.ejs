@@ -14,6 +14,80 @@
     </a>
   </div>
 </section>
+<div class="gallery">
+  <h5>Innovative Solutions, Inspired by Technology</h5>
+  <h4>Transforming Ideas Into Reality</h4>
+
+  <div class="gallery-container">
+    <a href="https://your-link1.com" target="_blank">
+      <img class="gallery-item gallery-item-1" src="https://img.freepik.com/free-vector/mobile-app-developer-landing-page_52683-2522.jpg?ga=GA1.1.1666531303.1714742568&semt=ais_hybrid" alt="App Development" data-index="2">
+  </a>
+  <a href="https://your-link2.com" target="_blank">
+      <img class="gallery-item gallery-item-2" src="https://img.freepik.com/free-vector/mobile-app-developer-landing-page_52683-2522.jpg?ga=GA1.1.1666531303.1714742568&semt=ais_hybrid" alt="App Development" data-index="2">
+  </a>
+  <a href="https://your-link3.com" target="_blank">
+      <img class="gallery-item gallery-item-3" src="https://img.freepik.com/premium-photo/application-everything_102671-2638.jpg?ga=GA1.1.1666531303.1714742568&semt=ais_hybrid" alt="Digital Marketing" data-index="3">
+  </a>
+  <a href="https://your-link4.com" target="_blank">
+      <img class="gallery-item gallery-item-4" src="https://img.freepik.com/free-photo/hand-holding-smartphone-social-media-concept_23-2150208245.jpg?ga=GA1.1.1666531303.1714742568&semt=ais_hybrid" alt="App Development" data-index="4">
+  </a>
+  <a href="https://your-link5.com" target="_blank">
+      <img class="gallery-item gallery-item-5" src="https://img.freepik.com/free-vector/app-development-banner_33099-1720.jpg?ga=GA1.1.1666531303.1714742568&semt=ais_hybrid" alt="Web Development" data-index="5">
+  </a>
+  <a href="https://your-link6.com" target="_blank">
+    <img class="gallery-item gallery-item-6" src="https://img.freepik.com/free-vector/mobile-app-developer-landing-page_52683-2522.jpg?ga=GA1.1.1666531303.1714742568&semt=ais_hybrid" alt="App Development" data-index="6">
+</a>
+  
+  </div>
+</div>
+
+<script>
+  const galleryContainer = document.querySelector('.gallery-container');
+  const galleryItems = document.querySelectorAll('.gallery-item');
+
+  class Carousel {
+      constructor(container, items) {
+          this.carouselContainer = container;
+          this.carouselItems = [...items];
+          this.initCarousel();
+      }
+
+      initCarousel() {
+          this.updateGallery();
+          this.autoScroll();
+      }
+
+      updateGallery() {
+          this.carouselItems.forEach((item) => {
+              item.classList.remove(
+                  'gallery-item-1',
+                  'gallery-item-2',
+                  'gallery-item-3',
+                  'gallery-item-4',
+                  'gallery-item-5',
+                  'gallery-item-6'
+              );
+          });
+
+          this.carouselItems.slice(0, 6).forEach((item, index) => {
+              item.classList.add(`gallery-item-${index + 1}`);
+          });
+      }
+
+      // Function to make the carousel auto-scroll
+      autoScroll() {
+          setInterval(() => {
+              this.carouselItems.push(this.carouselItems.shift()); // Move the first item to the end
+              this.updateGallery(); // Update the gallery after each shift
+          }, 3000); // Change every 3 seconds
+      }
+  }
+
+  new Carousel(galleryContainer, galleryItems);
+</script>
+</body>
+</html>
+
 
 <!-- Visitor Counter -->
 <section class="visitor-counter">
@@ -22,6 +96,7 @@
 </section>
 
 <script>
+  
   // Check if the visitor count is already stored in localStorage
   // let visitorCount = localStorage.getItem('visitorCount') || 0;
   // visitorCount++;
@@ -29,61 +104,9 @@
   // document.getElementById('visitor-count').innerText = visitorCount;
 </script>
 
+
 <!-- Full Width Image Section -->
-<section class="full-width-image">
-  <div class="full-width-image-container">
-    <img src="<%= index.background_image_url || 'default-image.jpg' %>" alt="Full Width Image"
-      class="w-100 h-100 position-ab" style="object-fit: cover;">
-  </div>
 
-  <!-- Customer Comment Popups -->
-  <div class="customer-comments">
-    <div class="customer-comment active">
-      <p>"<%= index.comment_1 || 'This is a sample comment.' %>"</p>
-    </div>
-    <div class="customer-comment">
-      <p>"<%= index.comment_2 || 'This is another sample comment.' %>"</p>
-    </div>
-    <div class="customer-comment">
-      <p>"<%= index.comment_3 || 'Here is a third sample comment.' %>"</p>
-    </div>
-
-    <!-- Dot Navigation -->
-    <div class="slider-dots">
-      <span class="dot active"></span>
-      <span class="dot"></span>
-      <span class="dot"></span>
-    </div>
-  </div>
-</section>
-
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const comments = document.querySelectorAll('.customer-comment');
-    const dots = document.querySelectorAll('.dot');
-    let currentIndex = 0;
-
-    function changeSlide() {
-      comments.forEach((comment, index) => {
-        comment.classList.remove('active');
-        dots[index].classList.remove('active');
-      });
-
-      comments[currentIndex].classList.add('active');
-      dots[currentIndex].classList.add('active');
-      currentIndex = (currentIndex + 1) % comments.length;
-    }
-
-    setInterval(changeSlide, 5000);
-
-    dots.forEach((dot, index) => {
-      dot.addEventListener('click', () => {
-        currentIndex = index;
-        changeSlide();
-      });
-    });
-  });
-</script>
 
 <!-- Scrolling Text Section -->
 <div class="scrolling-text w-100" style="overflow: hidden;">
@@ -136,6 +159,142 @@
     });
   });
 </script>
+<section>
+  <h1>Our clients</h1>
+  <div id="brandContainer">
+    <div class="brand-item"><img src="https://via.placeholder.com/150?text=Logo+1" alt="Brand 1 Logo"></div>
+    <div class="brand-item"><img src="https://via.placeholder.com/150?text=Logo+2" alt="Brand 2 Logo"></div>
+    <div class="brand-item"><img src="https://via.placeholder.com/150?text=Logo+3" alt="Brand 3 Logo"></div>
+    <div class="brand-item"><img src="https://via.placeholder.com/150?text=Logo+4" alt="Brand 4 Logo"></div>
+    <div class="brand-item"><img src="https://via.placeholder.com/150?text=Logo+5" alt="Brand 5 Logo"></div>
+    <div class="brand-item"><img src="https://via.placeholder.com/150?text=Logo+6" alt="Brand 6 Logo"></div>
+  </div>
+</section>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const brandContainer = document.getElementById("brandContainer");
+    const scrollSpeed = 1; // Adjust scroll speed (pixels per frame)
+
+    // Duplicate items for seamless scrolling
+    const items = [...brandContainer.children];
+    items.forEach(item => {
+      const clone = item.cloneNode(true);
+      brandContainer.appendChild(clone);
+    });
+
+    const startScrolling = () => {
+      brandContainer.scrollLeft += scrollSpeed;
+
+      // Reset to start for infinite scrolling
+      if (brandContainer.scrollLeft >= brandContainer.scrollWidth / 2) {
+        brandContainer.scrollLeft = 0;
+      }
+
+      requestAnimationFrame(startScrolling);
+    };
+
+    startScrolling();
+  });
+</script>
+
+<section>
+    
+  <div class="container">
+    <div class="promo-section">
+      <img src="data:image/png;base64,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" alt="Google Logo">
+      <div class="excellent">Excellent</div>
+      <div class="rating">★★★★★</div>
+      <h6>Customer Reviews</h6>
+    </div>
+    <div class="slider-container">
+      <!-- New Section for Google Sign, Excellent, and Stars -->
+      
+      
+      <div class="reviews-wrapper">
+        <!-- Review Items -->
+        <div class="review-item">
+          <div class="review-author">
+            <img src="https://via.placeholder.com/40" alt="John's Avatar">
+            <span>John Doe</span>
+          </div>
+          <div class="review-rating">★★★★★</div>
+          <div class="review-text">Excellent service! Highly recommend this business.</div>
+        </div>
+        <div class="review-item">
+          <div class="review-author">
+            <img src="https://via.placeholder.com/40" alt="Jane's Avatar">
+            <span>Jane Smith</span>
+          </div>
+          <div class="review-rating">★★★★☆</div>
+          <div class="review-text">Great experience overall, but there’s room for improvement.</div>
+        </div>
+        <div class="review-item">
+          <div class="review-author">
+            <img src="https://via.placeholder.com/40" alt="Emily's Avatar">
+            <span>Emily Johnson</span>
+          </div>
+          <div class="review-rating">★★★★★</div>
+          <div class="review-text">Friendly staff and quick service. Will visit again!</div>
+        </div>
+        <div class="review-item">
+          <div class="review-author">
+            <img src="https://via.placeholder.com/40" alt="Emily's Avatar">
+            <span>Emily Johnson</span>
+          </div>
+          <div class="review-rating">★★★★★</div>
+          <div class="review-text">Friendly staff and quick service. Will visit again!</div>
+        </div>
+        <div class="review-item">
+          <div class="review-author">
+            <img src="https://via.placeholder.com/40" alt="Emily's Avatar">
+            <span>Emily Johnson</span>
+          </div>
+          <div class="review-rating">★★★★★</div>
+          <div class="review-text">Friendly staff and quick service. Will visit again!</div>
+        </div>
+      </div>
+      <!-- Navigation Buttons -->
+      <div class="nav-buttons">
+        <span id="prevBtn">&lt;</span>
+        <span id="nextBtn">&gt;</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  let currentIndex = 0;
+  const reviewsWrapper = document.querySelector('.reviews-wrapper');
+  const totalReviews = document.querySelectorAll('.review-item').length;
+  const reviewWidth = document.querySelector('.review-item').offsetWidth + 20; // Adding margin space
+
+  // Function to scroll the reviews automatically
+  function autoScroll() {
+    currentIndex++;
+    if (currentIndex >= totalReviews) {
+      currentIndex = 0; // Reset to first review
+    }
+    reviewsWrapper.style.transform = `translateX(-${currentIndex * reviewWidth}px)`;
+  }
+
+  // Auto scroll every 3 seconds
+  setInterval(autoScroll, 3000);
+
+  // Optional: Manual navigation buttons
+  document.getElementById('prevBtn').addEventListener('click', () => {
+    currentIndex = (currentIndex === 0) ? totalReviews - 1 : currentIndex - 1;
+    reviewsWrapper.style.transform = `translateX(-${currentIndex * reviewWidth}px)`;
+  });
+
+  document.getElementById('nextBtn').addEventListener('click', () => {
+    currentIndex = (currentIndex === totalReviews - 1) ? 0 : currentIndex + 1;
+    reviewsWrapper.style.transform = `translateX(-${currentIndex * reviewWidth}px)`;
+  });
+</script>
+
+
+
 
 <div class="black-box">
   <p>
@@ -169,6 +328,7 @@
     <a href="/index/contact_us" target="_blank" class="btn btn-primary mt-2">Speak with us</a>
   </div>
 </div>
+
 
 <!-- <div class="grey">
   <ul class="box1">
