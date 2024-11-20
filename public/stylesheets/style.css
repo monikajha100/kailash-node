@@ -326,7 +326,7 @@ h2 {
 .black-box {
   background-color: black;
   color: white;
-  margin-top: -1%;
+margin-top: 2%;
   padding: 30px;
   /* border-radius: 10px; */
   display: flex;
@@ -953,7 +953,7 @@ h6 {
 
   .slider-container {
     position: relative;
-    width: 100%;
+    width: 75%;
     overflow: hidden;
     margin-left: 30%; /* Add 30% margin from left */
   }

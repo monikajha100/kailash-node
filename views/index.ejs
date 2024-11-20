@@ -92,17 +92,34 @@
 <!-- Visitor Counter -->
 <section class="visitor-counter">
   <h2>Total Visitors:</h2>
-  <span class="count" id="visitor-count"><%= count %></span>
+  <span class="count" id="visitor-count">0</span>
 </section>
 
 <script>
-  
-  // Check if the visitor count is already stored in localStorage
-  // let visitorCount = localStorage.getItem('visitorCount') || 0;
-  // visitorCount++;
-  // localStorage.setItem('visitorCount', visitorCount);
-  // document.getElementById('visitor-count').innerText = visitorCount;
+  document.addEventListener('DOMContentLoaded', () => {
+    const visitorCountElement = document.getElementById('visitor-count');
+    const finalCount = <%= count %>; // EJS will inject the count as a number here
+    let currentCount = 0;
+
+    // Ensure finalCount is a valid number
+    if (isNaN(finalCount) || finalCount <= 0) {
+      visitorCountElement.textContent = "Error: Invalid visitor count";
+      return;
+    }
+
+    const interval = setInterval(() => {
+      currentCount++;
+      visitorCountElement.textContent = currentCount;
+
+      if (currentCount >= finalCount) {
+        clearInterval(interval);
+      }
+    }, 50); // Adjust the interval speed (in milliseconds) as needed
+  });
 </script>
+
+  
+  
 
 
 <!-- Full Width Image Section -->
@@ -216,42 +233,66 @@
         <div class="review-item">
           <div class="review-author">
             <img src="https://via.placeholder.com/40" alt="John's Avatar">
-            <span>John Doe</span>
+            <span>Sunil giri</span>
           </div>
           <div class="review-rating">★★★★★</div>
-          <div class="review-text">Excellent service! Highly recommend this business.</div>
+          <div class="review-text">I'm fully satisfied with your services.</div>
         </div>
         <div class="review-item">
           <div class="review-author">
             <img src="https://via.placeholder.com/40" alt="Jane's Avatar">
-            <span>Jane Smith</span>
+            <span>Satish gurjar</span>
           </div>
           <div class="review-rating">★★★★☆</div>
-          <div class="review-text">Great experience overall, but there’s room for improvement.</div>
+          <div class="review-text">Awesome work is given bye this.</div>
         </div>
         <div class="review-item">
           <div class="review-author">
             <img src="https://via.placeholder.com/40" alt="Emily's Avatar">
-            <span>Emily Johnson</span>
+            <span>Ravi shrivastava</span>
           </div>
           <div class="review-rating">★★★★★</div>
-          <div class="review-text">Friendly staff and quick service. Will visit again!</div>
+          <div class="review-text">Greate It service provider</div>
         </div>
         <div class="review-item">
           <div class="review-author">
             <img src="https://via.placeholder.com/40" alt="Emily's Avatar">
-            <span>Emily Johnson</span>
+            <span>Kamlesh kushwah</span>
           </div>
           <div class="review-rating">★★★★★</div>
-          <div class="review-text">Friendly staff and quick service. Will visit again!</div>
+          <div class="review-text">Really good Service</div>
         </div>
         <div class="review-item">
           <div class="review-author">
             <img src="https://via.placeholder.com/40" alt="Emily's Avatar">
-            <span>Emily Johnson</span>
+            <span>Dimple sandilya</span>
           </div>
           <div class="review-rating">★★★★★</div>
-          <div class="review-text">Friendly staff and quick service. Will visit again!</div>
+          <div class="review-text">Nice service thank u</div>
+        </div>
+        <div class="review-item">
+          <div class="review-author">
+            <img src="https://via.placeholder.com/40" alt="Emily's Avatar">
+            <span>Rakhi</span>
+          </div>
+          <div class="review-rating">★★★★★</div>
+          <div class="review-text">Best Cctv service provider company</div>
+        </div>
+        <div class="review-item">
+          <div class="review-author">
+            <img src="https://via.placeholder.com/40" alt="Emily's Avatar">
+            <span>Chetan batham</span>
+          </div>
+          <div class="review-rating">★★★★★</div>
+          <div class="review-text">There are very respectable services</div>
+        </div>
+        <div class="review-item">
+          <div class="review-author">
+            <img src="https://via.placeholder.com/40" alt="Emily's Avatar">
+            <span>Vicky thakur</span>
+          </div>
+          <div class="review-rating">★★★★★</div>
+          <div class="review-text">Best service provide by this company in tec cam thank you  for provide this services</div>
         </div>
       </div>
       <!-- Navigation Buttons -->
