@@ -890,12 +890,12 @@ ul.box4 .divider-link {
     flex: 0 0 auto;
     width: 150px;
     height: 150px;
-    background-color: #f3f3f3;
+    background-color: #4bcffa;
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 5%;
-    border-radius: 10px;
+    border-radius: 30px;
     text-align: center;
     overflow: hidden;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);

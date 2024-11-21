@@ -216,6 +216,71 @@
     color: rgb(99, 99, 99);
     background-color: rgb(223, 230, 236);
   }
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+
+  /* Dropdown Toggle (Services Link) */
+  .dropdown-toggle {
+    text-decoration: none;
+    font-size: 1.2rem;  /* Increase font size for the dropdown link */
+    padding: 20px 30px;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+    color: white; /* Ensure text color is dark for readability */
+  }
+
+  .dropdown-toggle:hover {
+    color: white;
+     /* Highlight with a background color */
+  }
+
+  /* Dropdown Menu */
+  .dropdown-menu {
+    display: none; /* Hidden by default */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #4bcffa;
+    padding: 10px;
+    border-radius: 5px;
+    z-index: 1000;
+    width: 400px;
+    height: auto;;
+    overflow-y: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns for table-like layout */
+    gap: 10px; /* Gap between items */
+  }
+
+  /* Links in the dropdown menu */
+  .dropdown-menu a {
+    display: flex;
+    align-items: center;
+    padding: 12px 20px;  /* Increase padding for better spacing */
+    text-decoration: none;
+    font-size: 1.1rem;  /* Increase font size for items */
+    font-weight: normal;  /* Regular weight for the item text */
+    border-radius: 3px;
+    transition: background-color 0.3s;
+    box-sizing: border-box;
+    justify-content: flex-start;
+    line-height:1.5;  /* Increase line height for readability */
+  }
+
+  /* Hover effect for items in the dropdown */
+  .dropdown-menu a:hover {
+    font-weight: 400; /* Make the text bold when hovered */
+  }
+
+  /* Icon styling */
+  .dropdown-icon {
+    width: 35px; /* Increase icon size for better visibility */
+    height: 54px;
+    margin-right: 15px; /* More space between icon and text */
+    background: skyblue;
+  }
 </style>
 
 <header class="py-4 d-none d-md-block" style="z-index: 99999;">
@@ -227,6 +292,47 @@
       <div class="d-flex gap-5">
         <a href="/index/about">About us</a>
         <a href="/index/teams">Teams</a>
+        <div class="dropdown">
+          <a class="dropdown-toggle" onclick="toggleDropdown()">Services</a>
+          <div class="dropdown-menu">
+            <div class="dropdown-row">
+              <a href="/index/service/web-development">
+                <img src="./images/webdevelopment.png" alt="Web Development" class="dropdown-icon">
+                Web Development
+              </a>
+              <a href="/index/service/mobile-app">
+                <img src="https://img.freepik.com/free-vector/app-development-concept-with-flat-design_23-2147859988.jpg?ga=GA1.1.1666531303.1714742568&semt=ais_hybrid" alt="Mobile App Development" class="dropdown-icon">
+                App Development
+              </a>
+              <a href="/index/service/ui-ux">
+                <img src="path_to_image/digital-marketing-icon.png" alt="Digital Marketing" class="dropdown-icon">
+                Digital Marketing
+              </a>
+            </div>
+            <div class="dropdown-row">
+              <a href="/index/service/cctv-services">
+                <img src="path_to_image/cctv-icon.png" alt="CCTV Services" class="dropdown-icon">
+                CCTV Services
+              </a>
+              <a href="/index/service/graphics-logo-designing">
+                <img src="path_to_image/graphics-logo-icon.png" alt="Graphics & Logo Designing" class="dropdown-icon">
+                Graphics & Logo Designing
+              </a>
+              <a href="/index/service/seo">
+                <img src="path_to_image/seo-icon.png" alt="SEO" class="dropdown-icon">
+                Search Engine Optimization
+              </a>
+            </div>
+          </div>
+        </div>
+        
+        <script>
+          function toggleDropdown() {
+            const dropdownMenu = document.querySelector('.dropdown-menu');
+            dropdownMenu.style.display = (dropdownMenu.style.display === 'block') ? 'none' : 'block';
+          }
+        </script>
+        
         <a href="/index/join_us">Career</a>
         <a href="/index/contact_us">Contact us</a>
       </div>
