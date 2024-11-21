@@ -6,15 +6,13 @@
     }
   </style>
 
-        <div class="d-flex align-items-center container flex-column gap-3" style="padding-top: 100px;max-width: 70%; margin-top: 5%;">
+        <div class="d-flex align-items-center container flex-column gap-3" style="padding-top: 100px;max-width: 80%; margin-top: 5%; margin-left: 10%; margin-bottom: 30%;">
             <h1 class="text-center w-100 text-uppercase fw-bold">
-              <%= title %>
+              <h3><%= data.title %></h3>
             </h1>
     
-            <div class="rounded shadow flex-grow-1" style="max-height: 300px;overflow: hidden;">
-                <img src="<%= data.image_url %>" class="w-100 h-100" style="object-fit:cover;transform: translateY(-10%);">
-              </div>
-              <p class="text-center text-capitalize" style="font-size: 1.5rem; font-weight: 300;">
-                <%= data.description %>
+           
+              <p class="text-center text-capitalize" style="font-size: 1rem; font-weight: 200;">
+                <%= data.full_description %>
               </p>
 </div>

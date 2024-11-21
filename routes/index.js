@@ -218,5 +218,59 @@ router.post('/submit-contact-form', (req, res) => {
     return res.redirect(`/index/contact_us/?message_text=Thank you, ${full_name}, for contacting us! We appreciate your message and will respond to your inquiry shortly.&message_type=success`)
   })
 })
+router.get('/blog', function (req, res) {
+  pool.query('SELECT * FROM blog', (error, results) => {
+    if (error) {
+      console.error('Error fetching Blog Us data:', error);
+      return res.status(500).send(`
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <title>Error</title>
+          <style>
+            body {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              height: 100vh;
+              margin: 0;
+              background-color: #f2f2f2;
+              font-family: Arial, sans-serif;
+            }
+            .error-message {
+              text-align: center;
+              font-size: 24px;
+              color: #333;
+              padding: 20px;
+              border: 1px solid #ccc;
+              background-color: #fff;
+              border-radius: 8px;
+            }
+          </style>
+        </head>
+        <body>
+          <div class="error-message">
+            THIS PAGE IS UNDER DEVELOPMENT
+          </div>
+        </body>
+        </html>
+      `);
+    }
+    
 
+    if (results.length === 0) {
+      return res.status(404).send('blog Us data not found');
+    }
+
+    const aboutData = results[0];
+
+    res.render('layout', {
+      title: "Blog",
+      page: 'blog',
+      blogData
+    })
+  });
+});
 module.exports = router;

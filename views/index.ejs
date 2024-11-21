@@ -7,10 +7,10 @@
   <div class="position-absolute w-100 h-100 bg-dark" style="opacity: 0.3;"></div>
   <div class="d-flex gap-4 px-4" style="margin: 0 auto;position: relative;z-index: 10;transform: translateY(100px); margin-top: 1%;">
     <a href="/index/service" class="btn btn-light btn-lg">
-      <%= index.button_text_1 || 'Explore Our Courses' %>
+      <%= index.button_text_1 || 'Explore Our Services' %>
     </a>
     <a href="/index/training" class="btn btn-light btn-lg">
-      <%= index.button_text_2 || 'Explore Our Services' %>
+      <%= index.button_text_2 || 'Explore Our Courses' %>
     </a>
   </div>
 </section>
@@ -177,13 +177,13 @@
   });
 </script>
 <section>
-  <h1>Our clients</h1>
+  <h1>Our Clients</h1>
   <div id="brandContainer">
     <div class="brand-item"><img src="./images/paramfood.png" alt="Brand 1 Logo"></div>
     <div class="brand-item"><img src="./images/eleven.png" alt="Brand 2 Logo"></div>
     <div class="brand-item"><img src="./images/marvel.png" alt="Brand 3 Logo"></div>
-    <div class="brand-item"><img src="https://via.placeholder.com/150?text=Logo+4" alt="Brand 4 Logo"></div>
-    <div class="brand-item"><img src="https://via.placeholder.com/150?text=Logo+5" alt="Brand 5 Logo"></div>
+    <div class="brand-item"><img src="./images/sc.png"alt="Brand 4 Logo"></div>
+    <div class="brand-item"><img src="./images/browns.png" alt="Brand 5 Logo"></div>
     <div class="brand-item"><img src="https://via.placeholder.com/150?text=Logo+6" alt="Brand 6 Logo"></div>
   </div>
 </section>
@@ -334,7 +334,115 @@
   });
 </script>
 
-
+<section id="faq" class="faq-section">
+  <h2>Frequently Asked Questions..?</h2>
+  <table class="faq-table">
+    <tbody>
+      <!-- Row 1 -->
+      <tr>
+        <td>
+          <div class="faq-item">
+            <h3 class="faq-question">
+              What is Souranjh Technology? 
+              <span class="arrow">▼</span>
+            </h3>
+            <div class="faq-answer">
+              <p>We are a tech company offering innovative solutions for businesses.</p>
+            </div>
+          </div>
+        </td>
+        <td>
+          <div class="faq-item">
+            <h3 class="faq-question">
+              How do I contact support? 
+              <span class="arrow">▼</span>
+            </h3>
+            <div class="faq-answer">
+              <p>Email us at <a href="sales@souranjhtechnology.com">support@souranjh.com</a> or use the <a href="/index/contact_us" target="_blank">contact form</a>.</p>
+            </div>
+          </div>
+        </td>
+        <td>
+          <div class="faq-item">
+            <h3 class="faq-question">
+              What services do you offer? 
+              <span class="arrow">▼</span>
+            </h3>
+            <div class="faq-answer">
+              <p>We specialize in web development, mobile apps, IT consulting, and software solutions.</p>
+            </div>
+          </div>
+        </td>
+        <td>
+          <div class="faq-item">
+            <h3 class="faq-question">
+              Do you handle small projects? 
+              <span class="arrow">▼</span>
+            </h3>
+            <div class="faq-answer">
+              <p>Yes, we cater to both small and large-scale projects, tailoring solutions to fit your needs.</p>
+            </div>
+          </div>
+        </td>
+      </tr>
+      
+      <!-- Row 2 -->
+      <tr>
+        <td>
+          <div class="faq-item">
+            <h3 class="faq-question">
+              What industries do you work with? 
+              <span class="arrow">▼</span>
+            </h3>
+            <div class="faq-answer">
+              <p>We work with various industries, including healthcare, education, e-commerce, and finance.</p>
+            </div>
+          </div>
+        </td>
+        <td>
+          <div class="faq-item">
+            <h3 class="faq-question">
+              How long does it take to complete a project? 
+              <span class="arrow">▼</span>
+            </h3>
+            <div class="faq-answer">
+              <p>Timelines depend on the project's complexity and scope. We work closely with clients to ensure timely delivery.</p>
+            </div>
+          </div>
+        </td>
+        <td>
+          <div class="faq-item">
+            <h3 class="faq-question">
+              Do you provide post-launch support? 
+              <span class="arrow">▼</span>
+            </h3>
+            <div class="faq-answer">
+              <p>Yes, we offer maintenance packages to ensure your project continues to run smoothly after launch.</p>
+            </div>
+          </div>
+        </td>
+        <td>
+          <div class="faq-item">
+            <h3 class="faq-question">
+              What technologies do you use? 
+              <span class="arrow">▼</span>
+            </h3>
+            <div class="faq-answer">
+              <p>We use a range of technologies, including Node.js, React, Python, and cloud platforms like AWS and Azure.</p>
+            </div>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+<script>document.querySelectorAll('.faq-question').forEach((question) => {
+  question.addEventListener('click', () => {
+    const faqItem = question.parentNode;
+    faqItem.classList.toggle('open');
+  });
+});
+</script>
 
 
 <div class="black-box">
