@@ -30,6 +30,24 @@ const loadHeaderAndFooterMiddleware = (req, res, next) => {
       res.send('Reload the page')
     
     res.locals.index = results[0];
+    res.locals.socialMedia = [
+      {
+        name:"facebook",
+        icon : '<i class="bi bi-facebook"></i>'
+      },
+      {
+        name:"instagram",
+        icon : '<i class="bi bi-instagram"></i>'
+      },
+      {
+        name:"linkedin",
+        icon : '<i class="bi bi-linkedin"></i>'
+      },
+      {
+        name:"twitter",
+        icon : '<i class="bi bi-twitter"></i>'
+      },
+    ];
     next()
   })
 }

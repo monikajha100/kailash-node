@@ -170,17 +170,26 @@
   .team-card:hover {
     transform: translateY(-10px);
   }
+  h1 {
+  font-family: 'Roboto', sans-serif;
+  font-weight: bolder;
+  font-size: 55px;
+  -webkit-background-clip: text;
+  color: transparent;
+  text-align: center;
+  margin-top: 60px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
+  padding-bottom: 15px;
+  background-color: black;
+}
 </style>
 <title>Our Teams</title>
 <section class="overview-section mt-5 mt-md-5 mt-md-0">
-  <div class="overview-card">
-    <h2>Our Team</h2>
-    <p>
-      Meet the professionals who drive our success. Our team is skilled, dedicated, and ready to help you achieve your
-      goals.
-    </p>
-    <a href="#" class="explore-button">Explore Team</a>
-  </div>
+  <h1>Our Teams</h1>
+  
+
   <div class="card-area d-flex justify-content-center flex-wrap gap-3 mt-4">
     <% teams.forEach(team=>{ %>
       <a href="/index/team/<%= team.id %>"

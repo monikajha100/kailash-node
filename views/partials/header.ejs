@@ -217,7 +217,7 @@
     background-color: rgb(223, 230, 236);
   }
   /* Dropdown container */
-.dropdown {
+  .dropdown {
   position: relative;
   display: inline-block;
 }
@@ -236,57 +236,75 @@
 
 /* Dropdown Button Hover Effect */
 .dropdown-toggle:hover {
-  transform: translateY(-5px);
+  transform: translateY(-1px);
 
 }
 
+/* Dropdown Menu Styling */
 /* Dropdown Menu Styling */
 .dropdown-menu {
   display: none; /* Hidden by default */
   position: absolute;
   top: 100%;
-  left: 0;
-  background-color:#4BCFFA; 
-  border-radius: 5px;
+  right: 0; /* Aligns the menu to open on the right */
+  background-color: #f9f9f9;
+  border: 1px solid skyblue;
+  border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  padding: 10px;
-  margin-right: 20%;
-  width: auto; /* Set width of the dropdown */
-  height: auto;
-  z-index: 1000;
+  width: 750px; /* Set width of the dropdown */
+  height: auto; /* Adjust height automatically based on content */
+  z-index: 1000; /* Ensure it stays above other elements */
+  padding: 10px; /* Padding inside the dropdown */
 }
 
 /* Dropdown Row Styling */
 .dropdown-row {
   display: grid;
-  grid-template-columns: 1fr 1fr ;
-  gap: 10px;
-  padding: 10px 0;
+  grid-template-columns: repeat(3, 1fr); /* 3 columns per row */
+  gap: 0; /* No gap between cells for clean table effect */
+  border-top: 1px solid skyblue; /* Horizontal line between rows */
+}
+
+.dropdown-row:first-child {
+  border-top: none; /* No border for the first row */
 }
 
 /* Dropdown Item Styling */
 .dropdown-menu a {
   display: flex;
   align-items: center;
+  justify-content: center; /* Center align the text */
   text-decoration: none;
   font-size: 1rem;
-  padding: 10px 20px;
-  border-radius: 5px;
-  color:white;
+  padding: 15px 10px; /* Space inside each box */
+  border-right: 1px solid skyblue;/* Vertical line between columns */
+  color: #333;
   transition: background-color 0.3s;
 }
 
-.dropdown-menu a:hover {
-  background-color:#4BCFFA;;
+.dropdown-row a:last-child {
+  border-right: none; /* Remove border for last item in a row */
 }
 
-/* Icon styling inside dropdown items */
+/* Hover Effect for Items */
+
+/* Optional Icon Styling for Items */
 .dropdown-icon {
-  width: 30px;
-  height: 30px;
+  width: 50px;
+  height: 40px;
   margin-right: 10px;
-  border-radius: 5px;
   object-fit: cover;
+  border-radius: 5px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .dropdown-menu {
+    width: 100%; /* Adjust dropdown width for mobile */
+  }
+  .dropdown-row {
+    grid-template-columns: repeat(2, 1fr); /* 2 items per row on small screens */
+  }
 }
 
 </style>
@@ -298,49 +316,48 @@
     </div>
     <div class="d-flex align-items-center gap-3">
       <div class="d-flex gap-5">
+        <a href="/index">Home</a>
         <a href="/index/about">About us</a>
         <a href="/index/teams">Teams</a>
-       
         <a href="/index/join_us">Career</a>
         <a href="/index/contact_us">Contact us</a>
         <a href="/index/blog">Blog</a>
         <div class="dropdown">
           <!-- Dropdown Button -->
           <a class="dropdown-toggle" onclick="toggleDropdown()">Services</a>
-          
           <!-- Dropdown Menu -->
           <div class="dropdown-menu">
             <div class="dropdown-row">
               <a href="/index/service/web-development">
-                <img src="./images/webdevelopment.png" alt="Web Development" class="dropdown-icon">
+                <img src="./images/app.png" alt="Web Development" class="dropdown-icon">
                 Web Development
               </a>
               <a href="/index/service/mobile-app">
-                <img src="https://img.freepik.com/free-vector/app-development-concept-with-flat-design_23-2147859988.jpg?ga=GA1.1.1666531303.1714742568&semt=ais_hybrid" alt="Mobile App Development" class="dropdown-icon">
+                <img src="./images/web.png" alt="Mobile App Development" class="dropdown-icon">
                 App Development
               </a>
-              <a href="/index/service/ui-ux">
-                <img src="path_to_image/digital-marketing-icon.png" alt="Digital Marketing" class="dropdown-icon">
+              <a href="/index/service/">
+                <img src="./images/digitalmarketing.png" alt="Digital Marketing" class="dropdown-icon">
                 Digital Marketing
               </a>
             </div>
             <div class="dropdown-row">
               <a href="/index/service/cctv-services">
-                <img src="path_to_image/cctv-icon.png" alt="CCTV Services" class="dropdown-icon">
+                <img src="./images/cctv.png" alt="CCTV Services" class="dropdown-icon">
                 CCTV Services
               </a>
               <a href="/index/service/graphics-logo-designing">
-                <img src="path_to_image/graphics-logo-icon.png" alt="Graphics & Logo Designing" class="dropdown-icon">
+                <img src="./images/graphics.png" alt="Graphics & Logo Designing" class="dropdown-icon">
                 Graphics & Logo Designing
               </a>
               <a href="/index/service/seo">
-                <img src="path_to_image/seo-icon.png" alt="SEO" class="dropdown-icon">
+                <img src="./images/seo.png" alt="SEO" class="dropdown-icon">
                 Search Engine Optimization
               </a>
             </div>
           </div>
         </div>
-    ,<script>    // Function to toggle the visibility of the dropdown menu
+    <script>    // Function to toggle the visibility of the dropdown menu
 function toggleDropdown() {
   const dropdownMenu = document.querySelector('.dropdown-menu');
   dropdownMenu.style.display = (dropdownMenu.style.display === 'block') ? 'none' : 'block';
@@ -398,10 +415,14 @@ function toggleDropdown() {
 
         <!-- Menu Items -->
         <div class="menu-content" id="menu-content">
+          <a href="/index">Home</a>
           <a href="/index/about">About Us</a>
           <a href="/index/join_us">Career</a>
           <a href="/index/teams">Teams</a>
           <a href="/index/contact_us">Contact Us</a>
+          <a href="/index/blog">Blog</a>
+        
+          
         </div>
       </div>
     </div>

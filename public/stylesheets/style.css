@@ -473,7 +473,7 @@ ul.box1 {
 
 .scrolling-text p {
   display: inline-block; 
-  animation: scroll 30s linear infinite; 
+  animation: scroll 100s linear infinite; 
   margin: 0; 
   font-weight: bold; 
 }
