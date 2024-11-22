@@ -28,7 +28,7 @@ router.get('/', function (req, res) {
       res.render('layout', {
         title: "Index Page",
         page: 'index',
-        count
+        counts: count 
       })
     })
   })

@@ -9,7 +9,7 @@ html {
 
 /* Header Styles */
 header {
-  background-color: #4bcffa;
+  background-color:  #4bcffa;
   padding: 20px 0;
   position: fixed;
   width: 100%;
@@ -35,7 +35,7 @@ header {
   color: white;
   text-decoration: none;
   padding: 10px 15px;
-  font-size: 1.2rem;
+  font-size: 2.2rem;
   transition: color 0.3s;
 }
 
@@ -51,7 +51,7 @@ header {
 
 .search-input {
   padding: 8px;
-  font-size: 1rem;
+  font-size: 3rem;
   border: 1px solid #ccc;
   border-radius: 4px;
   margin-right: 10px;
@@ -875,7 +875,9 @@ ul.box4 .divider-link {
   h1 {
     text-align: center;
     margin-bottom: 20px;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+    
   }
 
   /* Brand Section Styles */
@@ -888,14 +890,15 @@ ul.box4 .divider-link {
 
   .brand-item {
     flex: 0 0 auto;
-    width: 150px;
-    height: 150px;
-    background-color: #4bcffa;
+    width: 130px;
+    height: 130px;
+    
     display: flex;
+    border: 2px solid #4bcffa;
     justify-content: center;
     align-items: center;
     margin: 5%;
-    border-radius: 30px;
+    border-radius: 70px;
     text-align: center;
     overflow: hidden;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
