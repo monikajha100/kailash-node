@@ -731,7 +731,7 @@ h6 {
   }
 
   .review-item {
-    flex: 0 0 20%; /* Each review takes up 20% of the container */
+    flex: 0 0 20%; 
     box-sizing: border-box;
     padding: 20px;
     margin: 10px;
@@ -791,7 +791,7 @@ h6 {
   .nav-buttons span:hover {
     background-color: rgba(0, 0, 0, 0.7);
   }
- /* Full Width Gallery */
+ 
 
  h5 {
   font-family: 'Roboto', sans-serif;
@@ -870,7 +870,7 @@ h6 {
   margin-top: 3%;
 }
 
-/* Remove the gallery controls section */
+
 .gallery-controls {
   display: none;
 }@media (max-width: 768px) {
@@ -895,7 +895,7 @@ h6 {
     opacity: 1;
     position: relative;
     transform: translateX(0);
-    height: 250px; /* Adjust height for mobile */
+    height: 250px; 
   }
 
   .gallery-item-1, .gallery-item-2, .gallery-item-3, .gallery-item-4, .gallery-item-5 {
@@ -905,7 +905,7 @@ h6 {
   }
 }
 
-/* Extra Small Devices */
+
 @media (max-width: 480px) {
   h5 {
     font-size: 30px;
@@ -924,7 +924,7 @@ h6 {
   .gallery-item {
     width: 100%;
     margin-top: 15px;
-    height: 220px; /* Adjust height for smaller screens */
+    height: 220px; 
   }
 }
 .faq-section {
@@ -937,13 +937,13 @@ h6 {
 
 .faq-section h2 {
   font-size: 3.5em;
-  color: black; /* Deep blue */
+  color: black; 
   margin-bottom: 80px;
   margin-top: 10px;
   font-weight: bolder;
 }
 
-/* Table Styling */
+
 .faq-table {
   width: 100%;
   border-collapse: collapse;

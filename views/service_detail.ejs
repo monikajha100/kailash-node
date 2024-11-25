@@ -1,14 +1,13 @@
-<style>/* General card container styling */
-/* Card Container */
+<style>
 .card-container {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 columns for larger screens */
+  grid-template-columns: repeat(3, 1fr); 
   gap: 20px;
   margin-bottom: 20%;
   margin-top: 20%;
 }
 
-/* Card Styling */
+
 .card {
   background-color: #fff;
   border: 1px solid #ddd;
@@ -17,34 +16,34 @@
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Hover Effects */
+
 .card:hover {
   transform: translateY(-5px);
   box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Responsive Design for Mobile */
+
 @media (max-width: 768px) {
   .card-container {
-    grid-template-columns: repeat(2, 1fr); /* 2 columns for tablets */
+    grid-template-columns: repeat(2, 1fr); 
   }
 }
 
 @media (max-width: 576px) {
   .card-container {
-    grid-template-columns: 1fr; /* 1 column for mobile screens */
+    grid-template-columns: 1fr; 
   }
   
   .card {
-    padding: 15px; /* Reduce padding for smaller screens */
+    padding: 15px; 
   }
 
   .card h3 {
-    font-size: 1.3rem; /* Slightly smaller title */
+    font-size: 1.3rem; 
   }
 
   .card p {
-    font-size: 0.9rem; /* Adjust font size for mobile */
+    font-size: 0.9rem; 
   }
 }
 
@@ -54,7 +53,7 @@
   <h3><%= data.title %></h3>
 </h1>
 
-<!-- Container for cards with grid layout -->
+
 <div class="card-container" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-bottom: 20%; margin-top: 20%;">
 
   <% cards.forEach(card => { %>
