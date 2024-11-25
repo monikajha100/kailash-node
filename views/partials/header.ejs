@@ -1,514 +1,141 @@
 <style>
-  /* General Header Styling */
+  /* Header Styles */
+  header {
+    background-color: #6D214F;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    z-index: 99999;
+    position: relative;
+  }
 
-  /* Navigation Styling */
   nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
-    position: relative;
-    /* z-index: 99999; */
-    height: 30px;
+    z-index: 999999;
   }
 
-  /* Search Container Styling */
-  /* Search Container Styling */
-  .search-container {
-    display: flex;
-    align-items: center;
-    position: relative;
+  nav img {
+    width: 120px;
+    height: 60px;
+    margin-left: 10px;
   }
 
-  .search-icon {
-    /* margin-right: 500px; */
-    font-size: 20px;
-    margin-right: -6px;
-    /* Adds space between the icon and the input field */
-  }
-
-  /* .search-input {
-  width: 0;
-  opacity: 0;
-  visibility: hidden;
-  display: none;
-  height: 30px;
-  padding: 0 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  outline: none;
-  transition: width 0.3s ease, opacity 0.3s ease, visibility 0.3s ease;
-} */
-
-  #search-toggle {
-    margin-right: -100px;
-  }
-
-  /* When checkbox is checked, show the search bar */
-  /* #search-toggle:not(:checked) ~ .search-input {
-  width: 0;
-  opacity: 0;
-  visibility: hidden;
-  margin-right: -50px;
-  height: 30px;
-  padding: 0 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  outline: none;
-  transition: all 0.3s ease;
-}
-#search-toggle:checked ~ .search-input {
-  margin-right: -20px;
-  width: 150px;
-  opacity: 1;
-  visibility: visible;
-  transition: all 0.3s ease;
-} */
-
-
-  .menu-header {
-    display: flex;
-    margin-left: auto;
-    justify-content: flex-end;
-    padding: 0 10px;
-    width: fit-content;
-    cursor: pointer;
-    /* height: 50%; */
-    /* border-radius: 200%; */
-    /* background-color: #84e0fe; */
-    /* border-bottom: 1px solid #ddd; */
-  }
-
-  .close-icon {
-    font-size: 24px;
-
-  }
-
-  .menu-content {
-    position: relative;
-  }
-
-  .menu-content a {
-    display: block;
-    padding: 10px 20px;
-    text-decoration: none;
-    color: #333;
-    border-bottom: 1px solid #ddd;
-    transition: background-color 0.2s ease;
-  }
-
-  .menu-content a:hover {
-    background-color: #f0f0f0;
-  }
-
-  nav a {
-    color: #FFFFFF; 
-    text-decoration: none !important;
-    font-weight: 400;
-    transition: all 0.3s ease-out;
-  }
-
-  nav a:hover {
-    transform: translateY(-5px);
-  }
-
-  .menu-toggle {
-    display: none;
-  }
-
-  /* Side menu styles */
-  .side-menu {
-    background-color: #4bcffa;
-    position: absolute;
-    top: 0;
-    right: 0;
-    top: 100%;
-    /* width: 100px; */
-    width: 100%;
-    transition: left 0.3s;
-    z-index: 99;
-    border-radius: 0 0 0 10px;
-  }
-
-  .side-menu .menu-content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
+  nav .d-flex {
     gap: 1rem;
   }
 
-  .side-menu .menu-content a {
+  nav a {
     color: white;
-    font-size: 1rem;
     text-decoration: none;
-    padding: 10px;
+    font-size: 16px;
+    padding: 5px 10px;
+    transition: color 0.3s ease;
   }
 
-  .side-menu .menu-content a:hover {
-    background-color: #4bcffa;
-    border-radius: 5px;
+  nav a:hover {
+    color: #f5a623;
   }
 
-  .overlay {
-    position: fixed;
-    top: 0;
+  nav .d-md-flex {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .d-md-none {
+    display: none;
+  }
+
+  /* Hamburger Icon Style */
+  .hamburger-icon {
+    display: none;
+    font-size: 30px;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    position: absolute;
+    right: 20px; /* Positioned to the right corner */
+    top: 20px; /* Positioned vertically aligned */
+    z-index: 1000;
+  }
+
+  /* Mobile Menu */
+  .mobile-menu {
+    display: none;
+    position: absolute;
+    top: 80px; /* Adjust below the header */
     left: 0;
     width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    display: none;
-    z-index: 997;
+    background-color: #6D214F;
+    z-index: 9999;
+    padding: 10px 0;
   }
 
-  /* When the checkbox is checked, show the side menu and overlay */
-  #menu-toggle:checked+.side-menu {
-    left: 0;
-  }
-
-  #menu-toggle:checked+.side-menu .overlay {
+  .mobile-menu a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
     display: block;
-  }
-
-  /* Hamburger Icon Styles */
-  .hamburger-icon {
-    font-size: 30px;
-    cursor: pointer;
-    color: #FFFFFF; 
     padding: 10px;
-    background-color: #4bcffa;
+    border-bottom: 1px solid #fff;
   }
 
-  /* Remove default styling for links */
-  .menu-content a {
-    border: none;
-    text-decoration: none;
+  .mobile-menu a:hover {
+    background-color: #f5a623;
   }
 
-  #search-options {
-    position: absolute;
-    background-color: rgb(246, 251, 255);
-    top: 100%;
-    /* width: 100%; */
-    border-radius: 5px;
-    margin-top: 5px;
-    padding: 5px;
+  /* Media Query for Mobile */
+  @media (max-width: 768px) {
+    .hamburger-icon {
+      display: block; /* Show the hamburger icon on mobile screens */
+    }
+
+    .d-md-flex {
+      display: none; /* Hide the desktop menu */
+    }
   }
-
-  #search-options ul,
-  #search-options li,
-  #search-options a {
-    margin: 0;
-    padding: 0;
-    text-decoration: none;
-    list-style: none;
-    color: black;
-    cursor: pointer;
-  }
-
-  #search-options li {
-    padding: 10px 1rem;
-    border-radius: 5px;
-    transition: all 0.3s ease;
-  }
-
-  #search-options li:hover {
-    color: rgb(99, 99, 99);
-    background-color: rgb(223, 230, 236);
-  }
-  /* Dropdown container */
-  .dropdown {
-  position: relative;
-  display: inline-block;
-}
-
-/* Dropdown Button */
-.dropdown-toggle {
-  text-decoration: none;
-  font-size: 1.0rem;
-  padding: 5px 1px;
-  border-radius: 5px;
-  background-color: #4bcffa;
-  color: white;
-  transition: background-color 0.3s;
-  cursor: pointer;
-}
-
-/* Dropdown Button Hover Effect */
-.dropdown-toggle:hover {
-  transform: translateY(-1px);
-
-}
-
-/* Dropdown Menu Styling */
-/* Dropdown Menu Styling */
-.dropdown-menu {
-  display: none; /* Hidden by default */
-  position: absolute;
-  top: 100%;
-  right: 0; /* Aligns the menu to open on the right */
-  background-color: #f9f9f9;
-  border: 1px solid skyblue;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  width: 750px; /* Set width of the dropdown */
-  height: auto; /* Adjust height automatically based on content */
-  z-index: 1000; /* Ensure it stays above other elements */
-  padding: 10px; /* Padding inside the dropdown */
-}
-
-/* Dropdown Row Styling */
-.dropdown-row {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 columns per row */
-  gap: 0; /* No gap between cells for clean table effect */
-  border-top: 1px solid skyblue; /* Horizontal line between rows */
-}
-
-.dropdown-row:first-child {
-  border-top: none; /* No border for the first row */
-}
-
-/* Dropdown Item Styling */
-.dropdown-menu a {
-  display: flex;
-  align-items: center;
-  justify-content: center; /* Center align the text */
-  text-decoration: none;
-  font-size: 1rem;
-  padding: 15px 10px; /* Space inside each box */
-  border-right: 1px solid skyblue;/* Vertical line between columns */
-  color: #333;
-  transition: background-color 0.3s;
-}
-
-.dropdown-row a:last-child {
-  border-right: none; /* Remove border for last item in a row */
-}
-
-/* Hover Effect for Items */
-
-/* Optional Icon Styling for Items */
-.dropdown-icon {
-  width: 50px;
-  height: 40px;
-  margin-right: 10px;
-  object-fit: cover;
-  border-radius: 5px;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-  .dropdown-menu {
-    width: 100%; /* Adjust dropdown width for mobile */
-  }
-  .dropdown-row {
-    grid-template-columns: repeat(2, 1fr); /* 2 items per row on small screens */
-  }
-}
-
 </style>
 
-<header class="py-4 d-none d-md-block" style="z-index: 99999;">
-  <nav class="d-flex justify-content-between" style="z-index: 999999;">
+<header class="py-4">
+  <nav class="d-flex justify-content-between">
+    <!-- Logo -->
     <div>
-      <img src="./images/mvlogo.png" width="150" height="50" alt="Company Logo">
+      <img src="./images/mvlogo.png" alt="Company Logo">
     </div>
-    <div class="d-flex align-items-center gap-3">
-      <div class="d-flex gap-5" style="font-size: medium;">
+    <!-- Desktop Menu -->
+    <div class="d-none d-md-flex align-items-center gap-3">
+      <div class="d-flex gap-3" style="font-size: medium;">
         <a href="/index">Home</a>
         <a href="/index/about">About us</a>
-        <a href="/index/teams">Teams</a>
         <a href="/index/join_us">Career</a>
         <a href="/index/contact_us">Contact us</a>
         <a href="/index/blog">Blog</a>
-        <div class="dropdown">
-          <!-- Dropdown Button -->
-          <a class="dropdown-toggle" onclick="toggleDropdown()">Services</a>
-          <!-- Dropdown Menu -->
-          <div class="dropdown-menu">
-            <div class="dropdown-row">
-              <a href="/index/service/web-development">
-                <img src="./images/app.png" alt="Web Development" class="dropdown-icon">
-                Web Development
-              </a>
-              <a href="/index/service/">
-                <img src="./images/web.png" alt="Mobile App Development" class="dropdown-icon">
-                App Development
-              </a>
-              <a href="/index/service/">
-                <img src="./images/digitalmarketing.png" alt="Digital Marketing" class="dropdown-icon">
-                Digital Marketing
-              </a>
-            </div>
-            <div class="dropdown-row">
-              <a href="/index/service/cctv-services">
-                <img src="./images/cctv.png" alt="CCTV Services" class="dropdown-icon">
-                CCTV Services
-              </a>
-              <a href="/index/service/graphics-logo-designing">
-                <img src="./images/graphics.png" alt="Graphics & Logo Designing" class="dropdown-icon">
-                Graphics & Logo Designing
-              </a>
-              <a href="/index/service/seo">
-                <img src="./images/seo.png" alt="SEO" class="dropdown-icon">
-                Search Engine Optimization
-              </a>
-            </div>
-          </div>
-        </div>
-    <script>    // Function to toggle the visibility of the dropdown menu
-function toggleDropdown() {
-  const dropdownMenu = document.querySelector('.dropdown-menu');
-  dropdownMenu.style.display = (dropdownMenu.style.display === 'block') ? 'none' : 'block';
-}
-</script>
-        
-      </div>
-      <div class="d-flex gap-1 align-items-center position-relative">
-        <input type="text" id="nav_search" placeholder="<%= index.search_placeholder || 'Search here...' %>"
-          class="form-control m-0" aria-label="Search input" style="max-width: 150px;">
-        <button class="btn btn-primary" aria-label="Search">
-          <%= index.search_button_text || 'Search' %>
-        </button>
-        <div id="search-options">
-          <ul id="search-options_ul">
-          </ul>
-        </div>
+        <a href="/index/training">Training</a>
+        <a href="/index/service">Service</a>
       </div>
     </div>
+    <!-- Hamburger Menu for Mobile -->
+    <button class="hamburger-icon d-md-none" onclick="toggleMobileMenu()">☰</button>
   </nav>
-</header>
-
-<!-- small screen nav -->
-<header class="d-block d-md-none" style="z-index: 999999;">
-
-  <nav class="d-flex d-md-none flex-row justify-content-between justify-md-center">
-    <!-- Search Section -->
-    <div>
-      <a href="/index"><img src="./images/mvlogo.png" width="150" height="50" alt="Company Logo"></a>
-    </div>
-    <div class="search-container ms-auto ms-md-0">
-      <!-- Checkbox to toggle search bar -->
-      <input type="text" id="search_input" class="search-input position-relative form-control" placeholder="Search..."
-        style="max-width: 100px;margin-right: -10px;max-height:2rem ;">
-      <!-- <label for="search-toggle" class="search-icon position-relative " id="search_icon_label" style="background-color: transparent;">&#128269;</label> -->
-    </div>
-
-    <!-- Hamburger Menu Section -->
-    <div>
-      <!-- Checkbox to toggle side menu -->
-      <!-- <input type="checkbox" id="menu-toggle" style="display: none;"> -->
-      <label for="menu-toggle" id="hamburger-icon" class="hamburger-icon">
-        <!-- <span style="font-size: 1.5rem;margin:auto 0;width: 10px;">
-          Menu
-        </span> -->
-        #6D214F;
-      </label>
-
-      <!-- Side Menu -->
-      <div class="side-menu mt-3" id="side-menu" style="z-index: 99999;">
-        <!-- Close Button -->
-        <!-- <div class="menu-header" id="menu-header">
-          <label for="menu-toggle" class="close-icon">&times;</label>
-        </div> -->
-
-        <!-- Menu Items -->
-        <div class="menu-content" id="menu-content">
-          <a href="/index">Home</a>
-          <a href="/index/about">About Us</a>
-          <a href="/index/join_us">Career</a>
-          <a href="/index/teams">Teams</a>
-          <a href="/index/contact_us">Contact Us</a>
-          <a href="/index/blog">Blog</a>
-        
-          
-        </div>
-      </div>
-    </div>
-  </nav>
-</header>
-
-
-<!-- Side Menu -->
-<!-- <div class="side-menu">
-  <div class="overlay"></div>
-  <div class="menu-content">
-    <a href="/index/about">About Us</a>
-    <a href="/index/teams">Teams</a>
+  
+  <!-- Mobile Menu -->
+  <div class="mobile-menu d-md-none" id="mobileMenu">
+    <a href="/index">Home</a>
+    <a href="/index/about">About us</a>
     <a href="/index/join_us">Career</a>
-    <a href="/index/contact_us">Contact Us</a>
+    <a href="/index/contact_us">Contact us</a>
+    <a href="/index/blog">Blog</a>
+    <a href="/index/training">Training</a>
+    <a href="/index/service">Service</a>
   </div>
-</div> -->
+</header>
 
-<script defer>
-  const items = [{
-    name: "index",
-    href: "/index",
-  }, {
-    name: "join us",
-    href: "/index/join_us",
-  }, {
-    name: "contact us",
-    href: "/index/contact_us",
-  }, {
-    name: "teams",
-    href: "/index/teams",
-  }, {
-    name: "about us",
-    href: "/index/about_us",
-  }]
-
-  $(document).ready(() => {
-    $('#search-options').hide()
-    $("#side-menu").hide()
-    //$("#search_input").hide()
-
-    $("#hamburger-icon").click(() => {
-      $("#side-menu").slideToggle()
-    })
-
-    $("#search_icon_label").click(() => {
-      $("#search_input").fadeToggle()
-    })
-
-    $('#nav_search').focusin(() => {
-      items.forEach(item => {
-        const li_tag = `
-      <li>
-        <a href='${item.href}'>
-        ${item.name}
-        </a>
-      </li>`
-        $('#search-options_ul').append(li_tag)
-      })
-    })
-
-    $('#nav_search').focusout(() => {
-      setTimeout(() => {
-        $('#search-options_ul > li').remove()
-        $('#search-options').hide()
-      }, 300)
-    })
-
-    $('#nav_search').on('input', (e) => {
-      $('#search-options').show()
-      $('#search-options_ul > li').remove()
-      const text = $('#nav_search').val()
-      const filter_items = items.filter(item => item.name.includes(text))
-
-      filter_items.forEach(item => {
-        const li_tag = `
-      <li>
-        <a href='${item.href}'>
-        ${item.name}
-        </a>
-      </li>`
-        $('#search-options_ul').append(li_tag)
-      })
-
-    })
-  })
-
+<script>
+  // Function to toggle the visibility of the mobile menu
+  function toggleMobileMenu() {
+    const mobileMenu = document.getElementById('mobileMenu');
+    mobileMenu.style.display = (mobileMenu.style.display === 'block') ? 'none' : 'block';
+  }
 </script>

@@ -1,64 +1,68 @@
-<style>
-  body,
-  html {
-    width: 100%;
-    height: 70%;
+<style>/* General card container styling */
+/* Card Container */
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columns for larger screens */
+  gap: 20px;
+  margin-bottom: 20%;
+  margin-top: 20%;
+}
+
+/* Card Styling */
+.card {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover Effects */
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Design for Mobile */
+@media (max-width: 768px) {
+  .card-container {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns for tablets */
   }
+}
+
+@media (max-width: 576px) {
+  .card-container {
+    grid-template-columns: 1fr; /* 1 column for mobile screens */
+  }
+  
+  .card {
+    padding: 15px; /* Reduce padding for smaller screens */
+  }
+
+  .card h3 {
+    font-size: 1.3rem; /* Slightly smaller title */
+  }
+
+  .card p {
+    font-size: 0.9rem; /* Adjust font size for mobile */
+  }
+}
+
 </style>
 
-<div class="d-flex align-items-center container flex-column gap-3"
-  style="padding-top: 100px;max-width: 80%; margin-top: 5%; margin-left: 10%; margin-bottom: 30%;">
-  <h1 class="text-center w-100 text-uppercase fw-bold">
-    <h3>
-      <%= data.title %>
-    </h3>
-  </h1>
-  <!-- Link wrapping the image -->
+<h1 class="text-center w-100 text-uppercase fw-bold">
+  <h3><%= data.title %></h3>
+</h1>
 
+<!-- Container for cards with grid layout -->
+<div class="card-container" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-bottom: 20%; margin-top: 20%;">
 
-  <p class="text-center text-capitalize" style="font-size: 1rem; font-weight: 200;">
-    <%= data.full_description %>
-  </p>
-
-  <div class="row gap-3 w-100">
-    <div class="col-12 col-md">
-      <div class="card card-body" style="height: 300px;">
-        <div class="mx-auto" style="border-radius :100%;width: 100px;height: 100px;overflow:hidden">
-          <img src="https://placehold.co/600x400" class="w-100 h-100" style="object-fit: cover;">
-        </div>
-        <p class="h5 p-0 m-0 mt-3 text-center text-secondary text-uppercase"><b>under develop</b></p>
-        <div class="row col-9 mx-auto mt-3">
-          <p class="h5 p-0 m-0 text-center text-secondary" style="font-size: 0.8rem;">Lorem ipsum dolor sit amet
-            consectetur adipisicing elit.
-        </div>
-        </p>
-      </div>
+  <% cards.forEach(card => { %>
+    <div class="card" style="background-color: #fff; border: 1px solid #ddd; border-radius: 8px; padding: 20px; transition: transform 0.3s ease, box-shadow 0.3s ease;">
+      <h3 style="font-size: 1.5rem; font-weight: 600; color: #333; margin-bottom: 15px;"><%= card.card_title %></h3>
+      <p style="font-size: 1rem; color: #666; line-height: 1.5; margin-bottom: 20px;"><%= card.card_description %></p>
+      <img src="<%= card.card_image_url %>" alt="<%= card.card_title %>" style="width: 100%; height: 40%; border-radius: 8px; transition: transform 0.3s ease;">
     </div>
-    <div class="col-12 col-md">
-      <div class="card card-body" style="height: 300px;">
-        <div class="mx-auto" style="border-radius :100%;width: 100px;height: 100px;overflow:hidden">
-          <img src="https://placehold.co/600x400" class="w-100 h-100" style="object-fit: cover;">
-        </div>
-        <p class="h5 p-0 m-0 mt-3 text-center text-secondary text-uppercase"><b>under develop</b></p>
-        <div class="row col-9 mx-auto mt-3">
-          <p class="h5 p-0 m-0 text-center text-secondary" style="font-size: 0.8rem;">###########
-        </div>
-        </p>
-      </div>
-    </div>
-    <div class="col-12 col-md">
-      <div class="card card-body" style="height: 300px;">
-        <div class="mx-auto" style="border-radius :100%;width: 100px;height: 100px;overflow:hidden">
-          <img src="https://placehold.co/600x400" class="w-100 h-100" style="object-fit: cover;">
-        </div>
-        <p class="h5 p-0 m-0 mt-3 text-center text-secondary text-uppercase"><b>under develop</b></p>
-        <div class="row col-9 mx-auto mt-3">
-          <p class="h5 p-0 m-0 text-center text-secondary" style="font-size: 0.8rem;">############
-        </div>
-        </p>
-      </div>
-    </div>
-
-  </div>
+  <% }) %>
 
 </div>

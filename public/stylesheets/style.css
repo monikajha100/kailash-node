@@ -8,82 +8,19 @@ html {
 }
 
 /* Header Styles */
-header {
-  background-color:  #4bcffa;
-  padding: 20px 0;
-  position: fixed;
-  width: 100%;
-  top: 0;
-  z-index: 10;
-}
+
 
 /* Menu Styles */
-.menu {
-  list-style: none;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  margin: 0;
-  padding: 0;
-}
 
-.menu li {
-  display: inline-block;
-}
-
-.menu a {
-  color: white;
-  text-decoration: none;
-  padding: 10px 15px;
-  font-size: 2.2rem;
-  transition: color 0.3s;
-}
-
-.menu a:hover {
-  color: #95afc0;
-}
 
 /* Search Icon and Input Styles */
-.search-container {
-  display: flex;
-  align-items: center;
-}
-
-.search-input {
-  padding: 8px;
-  font-size: 3rem;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  margin-right: 10px;
-  /* Add space between input and button */
-}
-
-.search-icon {
-  background-color: #95afc0;
-  border: none;
-  color: white;
-  padding: 8px;
-  cursor: pointer;
-  font-size: 1rem;
-  border-radius: 4px;
-}
-
-/* Search Icon Hover Effect */
-.search-icon:hover {
-  background-color: #7f97b0;
-}
 
 
-.hero {
-  position: relative;
-  background: grey;
-  background-size: cover;
-  height: 400px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
+
+
+
+
+
 
 .overlay {
   padding: 50px;
@@ -138,6 +75,18 @@ p {
     padding: 10px 20px;
   }
 }
+.gallery-container {
+  display: block;
+}
+
+/* Hide the gallery on mobile screens */
+@media (max-width: 168px) {
+  .gallery-container {
+    display: none; /* Hide on mobile */
+  }
+}
+/* Mobile-responsive design */
+
 
 .visitor-counter {
   background-color: #f2f2f2;
@@ -156,6 +105,8 @@ p {
   /* Max width for the counter */
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   /* Subtle shadow for depth */
+  margin-top: 20%;
+  margin-bottom: 5%;
 }
 .white-box {
   width: 100%;
@@ -193,135 +144,29 @@ p {
 
 /* Style the main container */
 
-.full-width-image-container {
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  position: absolute;
-  z-index: -1;
-}
-
-.full-width-image {
-  width: 100%;
-  height: 300px;
-  position: relative;
-}
-
-/* Positioning the customer comments in the bottom-right corner */
-.customer-comments {
-  color: #fff;
-  background-color: rgba(0, 0, 0, 0.4);
-  padding: 10px;
-  border-radius: 5px;
-  min-width: 300px;
-  width: 50%;
-  text-align: center;
-  height: fit-content;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-weight: 300;
-}
-
-/* Individual comment styling */
-.customer-comment {
-  display: none;
-  /* Hide by default */
-}
-
-.customer-comment.active {
-  display: block;
-  /* Show the active comment */
-}
-
-/* Dot navigation styling */
-.slider-dots {
-  display: flex;
-  justify-content: center;
-  margin-top: 10px;
-}
-
-.dot {
-  height: 5px;
-  width: 10px;
-  margin: 0 5px;
-  background-color: #bbb;
-  border-radius: 50%;
-  display: inline-block;
-  cursor: pointer;
-}
-
-.dot.active {
-  background-color: #fff;
-}
-
-h2 {
-  margin-top: 0;
-}
-
+ 
+ 
 /* Container styling */
-.box-container {
-  display: grid; /* Enables grid layout */
-  grid-template-columns: repeat(4, 1fr); /* Creates 4 equal columns */
-  gap: 20px; /* Space between the boxes */
-  padding: 20px; /* Adds padding around the container */
-  text-align: center; /* Centers text inside each box */
-  margin-bottom: 8%;
-}
-
-/* Box styling */
-.box {
-  background-color: #f9f9f9; /* Light background color */
-  border: 1px solid skyblue; /* Optional: subtle border */
-  border-radius: 10px; /* Rounded corners */
-  padding: 20px; /* Internal spacing for each box */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: shadow for depth */
-  transition: transform 0.3s ease; /* Smooth hover effect */
-  
-}
-
-.box:hover {
-  transform: scale(1.05); /* Slightly enlarge on hover */
-}
 
 /* Image styling */
-.box img {
-  width: 80px; /* Set a fixed width for images */
-  height: 80px; /* Set a fixed height for images */
-  margin-bottom: 15px; /* Space below the image */
-  border-radius: 50%; /* Optional: make the image circular */
-}
 
 /* h3 styling */
 .box h3 {
-  font-size: 24px; /* Adjust font size */
-  color: #333; /* Dark text color */
+  font-style:oblique;
+  font-size: 74px; /* Adjust font size */
+  color:  #f39c12;/* Dark text color */
   margin: 10px 0; /* Space around the heading */
 }
 
 /* Paragraph styling */
 .box p {
-  font-size: 16px; /* Smaller font size */
-  color: #777; /* Gray text color */
+  font-size: 26px; /* Smaller font size */
+  color: #6D214F; /* Gray text color */
   margin-top: 5px; /* Space above the text */
+  font-weight: bolder;
 }
 
 /* Responsive styling */
-@media (max-width: 768px) {
-  .box-container {
-    grid-template-columns: repeat(1, 1fr); /* Show 2 boxes per row on smaller screens */
-   
-  }
-}
-
-@media (max-width: 480px) {
-  .box-container {
-    grid-template-columns: 1fr; /* Show 1 box per row on very small screens */
-   
-  }
-}
-
 
 .black-box {
   background-color: black;
@@ -337,9 +182,9 @@ margin-top: 2%;
   /* Center vertically */
   text-align: right;
   /* Align text to the right */
-  height: 70%;
+  height: 90%;
   /* Increase height as needed */
-  min-height: 300px;
+  min-height: 400px;
   /* Set a minimum height if desired */
   ;
 }
@@ -388,72 +233,8 @@ margin-top: 2%;
 /* Flexbox container for the sections */
 /* Grey container styling */
 /* Grey container styling */
-.grey {
-  width: 100%;
-  font-family: 'Arial', sans-serif;
-  background-color: grey;
-  color: black;
-  padding: 20px;
-  box-sizing: border-box;
-  height: 300px;
-  margin-top: -4%;
-}
-
-/* Flexbox layout for the two sections */
-ul.box1 {
-  list-style: none;
-  display: flex;
-  padding: 0;
-  margin: 0;
-  justify-content: space-between;
-  
-}
 
 
-.left-section,
-.right-section {
-  width: 45%;
- 
-  padding: 20px;
-  background-color: grey;
-  
-  border-radius: 10px;
-  text-align: center;
-  margin-top: 4%;
-  margin-bottom: 0;
-  
-}
-
-.divider-line {
-  width: 2px;
- background-color: black;
-  margin-top: 2%;
-}
-
-
-.box2,
-.box3 {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 20px;
-}
-
-
-.box3 a {
-  padding: 10px 18px;
-  border: 2px solid black;
-  color: black;
-  background-color: grey;
-   text-decoration: none;
-}
-
-
-.box2 a:hover,
-.box3 a:hover {
-  color: black;
-  cursor: pointer;
-}
 
 
 
@@ -534,108 +315,11 @@ ul.box1 {
 }
 
 
-footer {
-  background-color: #333;
-  color: #fff;
-  padding: 40px 20px;
-  font-family: Arial, sans-serif;
-}
-
-.footer-content {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  flex-wrap: wrap;
-  gap: 20px;
-}
-
-.footer-logo img {
-  max-width: 100%;
-  height: auto;
-}
-
-.footer-links,
-.footer-contact,
-.footer-social {
-  width: 25%;
-}
-
-.footer-links h3,
-.footer-contact h3,
-.footer-social h3 {
-  font-size: 1.2em;
-  margin-bottom: 10px;
-  font-weight: bold;
-}
-
-.footer-links ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-.footer-links ul li {
-  margin: 8px 0;
-}
-
-.footer-links ul li a {
-  color: #fff;
-  text-decoration: none;
-  font-size: 0.9em;
-  transition: color 0.3s ease;
-}
-
-.footer-links ul li a:hover {
-  color: #a1c4fd;
-}
-
-.footer-contact p {
-  font-size: 1em;
-}
-
-.footer-social a {
-  margin-right: 10px;
-}
-
-.footer-social a img {
-  width: 24px;
-  height: 24px;
-  transition: opacity 0.3s ease;
-}
-
-.footer-social a img:hover {
-  opacity: 0.7;
-}
-
-.footer-bottom {
-  text-align: center;
-  margin-top: 20px;
-  font-size: 0.9em;
-}
-
-.footer-bottom p {
-  margin: 0;
-}
 
 
-@media (max-width: 768px) {
-  .footer-content {
-    flex-direction: column;
-    align-items: center;
-  }
 
-  .footer-links,
-  .footer-contact,
-  .footer-social {
-    width: 100%;
-    text-align: center;
-    margin-bottom: 20px;
-  }
 
-  .footer-logo {
-    text-align: center;
-    margin-bottom: 20px;
-  }
-}
+
 
 
 
@@ -712,37 +396,83 @@ ul.box4 .divider-link {
   height: 100%;
   width: 0;
 }
-@media (max-width: 768px) {
-  .black-box {
-    flex-direction: column; 
-    align-items: center; 
-    text-align: center;
-  }
-
-  .black-box p {
-    margin-bottom: 15px; 
-  }
-
-  .black-box .contact-info {
-    margin-bottom: 15px; 
-  }
-
-  .black-box .contact-info h2 {
-    font-size: 1.2rem;
-  }
-  .black-box .contact-info p {
-    font-size: 0.95rem;
-  }
-  .black-box p:last-of-type {
-    margin-top: 10px; /
-  }
+.black-box {
+  background-color: white;
+  color: #000;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  height: 300px;
 }
-  
+
+/* Left Side (Welcome Message) */
+.black-box p {
+  font-size: 2.2rem;
+  font-weight: 500;
+  margin: 0;
+  line-height: 1.6;
+  max-width: 60%;
+}
+
+/* Right Side (Contact Info) */
+.contact-info {
+  background-color: #ffffff; /* White background for contact section */
+  color: #333333; /* Dark text for contrast */
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  width: 40%;
+  text-align: center;
+}
+
+.contact-info h2 {
+  font-size: 1.8rem;
+  color:black; /* Magenta Heading */
+  font-weight: 600;
+}
+
+.contact-info p {
+  font-size: 1.1rem;
+  margin-top: 10px;
+  color: #444;
+  margin-left: 22%;
+}
+
+.contact-info .phone-icon {
+  font-size: 1.7rem;
+  margin-right: 10px;
+  color: #00bcd4; /* Teal icon color */
+}
+
+/* Button Styling */
+.contact-info a {
+  display: inline-block;
+  background-color: #9b1b30; /* Magenta button color */
+  color: white;
+  padding: 12px 25px;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 30px;
+  margin-top: 20px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.contact-info a:hover {
+  background-color: #c2185b; /* Darker Magenta on hover */
+}
+
+
+
 /* Styling for the grey container */
 .grey {
   display: flex; /* Flexbox layout */
   flex-wrap: wrap; /* Wrap content on smaller screens */
-  background-color: grey; /* Light grey background */
+  background-color:#666 ; /* Light grey background */
   padding: 20px; /* Inner spacing */
   border-radius: 10px; /* Rounded corners */
   gap: 20px; /* Space between child elements */
@@ -753,7 +483,7 @@ ul.box4 .divider-link {
 /* Styling for each text-center box */
 .grey .text-center {
   flex: 1 1 calc(50% - 20px); /* Two equal boxes per row, with gap accounted */
-  background-color: grey; /* White background for contrast */
+  background-color:#666  ; /* White background for contrast */
   border-radius: 10px; /* Rounded edges for individual boxes */
   padding: 20px; /* Internal spacing */
   text-align: center; /* Center-align the text */
@@ -765,14 +495,14 @@ ul.box4 .divider-link {
 /* Headings and text styling */
 .grey .text-center h2 {
   font-size: 24px; /* Larger font size for headings */
-  color: #333; /* Dark text color */
+  color: #000; /* Dark text color */
   margin-bottom: 1px; /* Space below the heading */
   align-items: center;
 }
 
 .grey .text-center p {
   font-size: 16px; /* Font size for paragraph text */
-  color: black; /* Gray text color */
+  color: #000; /* Gray text color */
   margin-bottom: 5px; /* Space below the paragraph */
 }
 
@@ -792,9 +522,9 @@ ul.box4 .divider-link {
 
 /* Button hover effect */
 .grey .btn:hover {
-  background-color: #007bff; /* Blue background on hover */
+  background-color: #6D214F; /* Blue background on hover */
   color: #ffffff; /* White text color on hover */
-  border-color: #007bff; /* Border matches the hover background */
+  border-color: #6D214F; /* Border matches the hover background */
 }
 
 /* Responsive styling for mobile view */
@@ -856,9 +586,9 @@ ul.box4 .divider-link {
     
     /* Button hover effect */
     .grey .btn:hover {
-      background-color: #007bff; /* Blue background on hover */
+      background-color: #6D214F; /* Blue background on hover */
       color: #ffffff; /* White text color on hover */
-      border-color: #007bff; /* Border matches the hover background */
+      border-color: #6D214F; /* Border matches the hover background */
     }
     
   
@@ -894,7 +624,7 @@ ul.box4 .divider-link {
     height: 130px;
     
     display: flex;
-    border: 2px solid #4bcffa;
+    border: 2px solid #6D214F;
     justify-content: center;
     align-items: center;
     margin: 5%;
@@ -1080,33 +810,10 @@ h6 {
 
 
 
-h4 {
-  font-weight: lighter;
-  font-size: 30px;
-  color:#333;
-  text-align: center;
-  margin-top: 20px;
-  text-transform: capitalize;
-  letter-spacing: 1px;
-  line-height: 1.5;
-  padding: 5px 0;
-}
 
-.gallery {
-  width: 100%;
-  
-  margin-top: -1%;
-  border-radius: 10px;
-}
 
-.gallery-container {
-  display: flex;
-  height: 400px;
-  margin: 0 auto;
-  width: 100%;
-  position: relative;
-  overflow: hidden;
-}
+
+
 
 .gallery-item {
   height: 200px;
@@ -1221,13 +928,14 @@ h4 {
   }
 }
 .faq-section {
+  padding: 50px 20px;
+
   text-align: center;
   padding: 40px;
- 
+  margin-top: 5%;
 }
 
 .faq-section h2 {
-
   font-size: 3.5em;
   color: black; /* Deep blue */
   margin-bottom: 80px;
@@ -1235,20 +943,17 @@ h4 {
   font-weight: bolder;
 }
 
-/* Table Layout */
+/* Table Styling */
 .faq-table {
   width: 100%;
   border-collapse: collapse;
-  margin: 0 auto;
-  max-width: 1200px;
 }
 
 .faq-table td {
-  padding: 20px;
+  padding: 15px;
   vertical-align: top;
 }
 
-/* FAQ Item Styling */
 .faq-item {
   border: 1px solid white;;
   border-radius: 10px;
@@ -1263,24 +968,29 @@ h4 {
   box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
 }
 
-/* Question Styling */
 .faq-question {
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  position: relative;
+  margin: 0;
+  color: black;
+}
+
+.arrow {
+  position: absolute;
   font-size: 1.0em;
   color: black;
   cursor: pointer;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin: 0;
+  justify-content: center; /* Center the content horizontally */
+  align-items: center; /* Center the content vertically */
+  right: 10px; /* Set the right margin to push the arrow towards the right */
+  top: 50%; /* Vertically center the arrow */
+  transform: translateY(-50%); /* Adjust for exact vertical centering */
 }
 
-.arrow {
-  font-size: 0.8rem;
-  color: black;
-  transition: transform 0.3s;
-}
 
-/* Answer Styling */
 .faq-answer {
   font-size: 0.7em;
   color:#333; /* Gray */
@@ -1297,4 +1007,64 @@ h4 {
 
 .faq-item.open .arrow {
   transform: rotate(180deg);
+}
+
+.faq-answer a {
+  color: black;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.faq-answer a:hover {
+  color: black;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .faq-table {
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .faq-table td {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .faq-item {
+    margin-bottom: 10px;
+    padding: 10px;
+  }
+
+  .faq-question {
+    font-size: 1rem;
+  }
+
+  .faq-answer {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .faq-section {
+    padding: 40px 15px;
+  }
+
+  .faq-section h2 {
+    font-size: 1.6rem;
+  }
+
+  .faq-table td {
+    padding: 10px;
+  }
+
+  .faq-question {
+    font-size: 0.9rem;
+  }
+
+  .faq-answer {
+    font-size: 0.85rem;
+  }
 }

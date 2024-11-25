@@ -1,43 +1,34 @@
 <link rel="stylesheet" href="/stylesheets/style.css" />
-<section class="hero mt-5">
-  <video autoplay muted loop class="border w-100 h-100" style="position: absolute;object-fit: cover;" margin-top="5">
+<section class="hero mt-5" style="height: 450px; position: relative; justify-content: center; align-items: center; text-align: center; display: flex;">
+  <video autoplay muted loop class="border w-100 h-100" style="position: absolute; object-fit: cover; top: -50px;">
     <source src="./videos/mov_bbb.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
-  <div class="position-absolute w-100 h-100 bg-dark" style="opacity: 0.3;"></div>
-  <div class="d-flex gap-4 px-4" style="margin: 0 auto;position: relative;z-index: 10;transform: translateY(100px); margin-top: 1%;">
-    <a href="/index/service" class="btn btn-light btn-lg">
-      <%= index.button_text_1 || 'Explore Our Services' %>
-    </a>
-    <a href="/index/training" class="btn btn-light btn-lg">
-      <%= index.button_text_2 || 'Explore Our Courses' %>
-    </a>
-  </div>
 </section>
-<div class="gallery">
-  <h5>Innovative Solutions, Inspired by Technology</h5>
-  <h4>Transforming Ideas Into Reality</h4>
 
-  <div class="gallery-container">
-    <a href="https://your-link1.com" target="_blank">
-      <img class="gallery-item gallery-item-1" src="https://img.freepik.com/free-vector/mobile-app-developer-landing-page_52683-2522.jpg?ga=GA1.1.1666531303.1714742568&semt=ais_hybrid" alt="App Development" data-index="2">
-  </a>
-  <a href="https://your-link2.com" target="_blank">
-      <img class="gallery-item gallery-item-2" src="https://img.freepik.com/free-vector/mobile-app-developer-landing-page_52683-2522.jpg?ga=GA1.1.1666531303.1714742568&semt=ais_hybrid" alt="App Development" data-index="2">
-  </a>
-  <a href="https://your-link3.com" target="_blank">
-      <img class="gallery-item gallery-item-3" src="https://img.freepik.com/premium-photo/application-everything_102671-2638.jpg?ga=GA1.1.1666531303.1714742568&semt=ais_hybrid" alt="Digital Marketing" data-index="3">
-  </a>
-  <a href="https://your-link4.com" target="_blank">
-      <img class="gallery-item gallery-item-4" src="https://img.freepik.com/free-photo/hand-holding-smartphone-social-media-concept_23-2150208245.jpg?ga=GA1.1.1666531303.1714742568&semt=ais_hybrid" alt="App Development" data-index="4">
-  </a>
-  <a href="https://your-link5.com" target="_blank">
-      <img class="gallery-item gallery-item-5" src="https://img.freepik.com/free-vector/app-development-banner_33099-1720.jpg?ga=GA1.1.1666531303.1714742568&semt=ais_hybrid" alt="Web Development" data-index="5">
-  </a>
-  <a href="https://your-link6.com" target="_blank">
-    <img class="gallery-item gallery-item-6" src="https://img.freepik.com/free-vector/mobile-app-developer-landing-page_52683-2522.jpg?ga=GA1.1.1666531303.1714742568&semt=ais_hybrid" alt="App Development" data-index="6">
-</a>
-  
+
+<div class="d-flex justify-content-between align-items-start flex-wrap p-4 gallery-container" style="gap: 20px; background:white; border-radius: 15px; margin-top: -5%; margin-left: 8%; justify-content: center; align-items: center; height: auto;">
+  <h5 class="text-center font-weight-bold my-4">Innovative Solutions, Inspired by Technology</h5>
+    
+  <div class="d-flex justify-content-between align-items-start flex-wrap gallery-inner" style="margin-top: 2%;width: auto;height: auto;margin-bottom: 6%;margin-left: 4%;">
+    <a href="/index/service/1" target="_blank">
+      <img class="gallery-item" src="https://img.freepik.com/free-photo/medium-shot-people-working-office_23-2149307790.jpg?ga=GA1.2.1666531303.1714742568&semt=ais_hybrid " alt="App Development" data-index="2">
+    </a>
+    <a href="/index/service/2" target="_blank">
+      <img class="gallery-item" src="https://img.freepik.com/free-photo/person-front-computer-working-html_23-2150040428.jpg?ga=GA1.1.1666531303.1714742568&semt=ais_hybrid" alt="App Development" data-index="2">
+    </a>
+    <a href="/index/service/3" target="_blank">
+      <img class="gallery-item" src="https://img.freepik.com/premium-photo/ip-wifi-wireless-security-camera-supports-internet-installation-technology-security-systems-smart-home-applicationsx9_150418-1038.jpg?ga=GA1.1.1666531303.1714742568&semt=ais_hybrid" alt="Digital Marketing" data-index="3">
+    </a>
+    <a href="/index/service/4" target="_blank">
+      <img class="gallery-item" src="https://img.freepik.com/free-photo/corporate-management-strategy-solution-branding-concept_53876-167088.jpg?ga=GA1.1.1666531303.1714742568&semt=ais_hybrid" alt="App Development" data-index="4">
+    </a>
+    <a href="/index/service/5" target="_blank">
+      <img class="gallery-item" src="https://img.freepik.com/free-vector/seo-optimization-banner_33099-1690.jpg?ga=GA1.1.1666531303.1714742568&semt=ais_hybrid" alt="Web Development" data-index="5">
+    </a>
+    <a href="/index/service/6" target="_blank">
+      <img class="gallery-item" src="https://img.freepik.com/free-vector/graphic-design-colorful-geometrical-lettering_52683-34588.jpg?ga=GA1.1.1666531303.1714742568&semt=ais_hybrid" alt="App Development" data-index="6">
+    </a>
   </div>
 </div>
 
@@ -85,8 +76,7 @@
 
   new Carousel(galleryContainer, galleryItems);
 </script>
-</body>
-</html>
+
 
 
 <!-- Visitor Counter -->
@@ -122,28 +112,25 @@
     <%= index.scrolling_text || 'Welcome to Souranjh Technology!' %>
   </p>
 </div>
-<div class="box-container" style="width: 100%; height: 100px;">
-  <div class="box">
-    <img src="https://media.istockphoto.com/id/186862958/photo/print-or-printer-icon.webp?a=1&b=1&s=612x612&w=0&k=20&c=HAULxdn43C9hq1VqfaZGBwpo7SQ3gEC74C7Xw4hH4pA=" alt="Courses Image" class="box-img">
-    <h3 data-target="300">0</h3>
-    <p>Delight clients</p>
+<div class="box-container" style="display: flex; justify-content: space-around; align-items: center; padding: 20px; border-radius: 10px;">
+  <div class="box" style="text-align: center; color: white;">
+    <h3 style="font-size: 2.5rem; font-weight: bold;" data-target="255">0</h3>
+    <p style="margin: 0; font-size: 1.2rem;">Jubilant Clients</p>
   </div>
-  <div class="box">
-    <img src="https://img.freepik.com/premium-photo/3d-flat-icon-as-process-improvement-symbol-with-space-text-blue-background-concept-as-sle_980716-426260.jpg?ga=GA1.1.1666531303.1714742568&semt" alt="Placements Image" class="box-img">
-    <h3 data-target="500">0</h3>
-    <p>Project complete</p>
+  <div class="box" style="text-align: center; color: white;">
+    <h3 style="font-size: 2.5rem; font-weight: bold;" data-target="430">0</h3>
+    <p style="margin: 0; font-size: 1.2rem;">Projects Completed</p>
   </div>
-  <div class="box">
-    <img src="https://img.freepik.com/free-vector/navy-arrows-circle_78370-7812.jpg?ga=GA1.1.1666531303.1714742568&semt=ais_hybrid" alt="Other Image" class="box-img">
-    <h3 data-target="100">0</h3>
-    <p>Ongoing</p>
+  <div class="box" style="text-align: center; color: white;">
+    <h3 style="font-size: 2.5rem; font-weight: bold;" data-target="30">0</h3>
+    <p style="margin: 0; font-size: 1.2rem; color:#000;">Ongoing Projects</p>
   </div>
-  <div class="box">
-    <img src="https://img.freepik.com/free-vector/golden-star-laurel-icon-white-background_24640-133891.jpg?ga=GA1.1.1666531303.1714742568&semt=ais_hybrid" alt="Other Image" class="box-img">
-    <h3 data-target="5">0</h3>
-    <p>Award and Re-organization</p>
+  <div class="box" style="text-align: center; color: white;">
+    <h3 style="font-size: 2.5rem; font-weight: bold;" data-target="5">0</h3>
+    <p style="margin: 0; font-size: 1.2rem;">Awards Won</p>
   </div>
 </div>
+
 
 <script>
   document.addEventListener("DOMContentLoaded", () => {
@@ -152,14 +139,14 @@
     counters.forEach(counter => {
       const updateCounter = () => {
         const target = +counter.getAttribute("data-target"); // Get target value
-        const current = +counter.innerText; // Current displayed number
-        const increment = Math.ceil(target / 200); // Increment value (adjust speed)
+        const current = +counter.innerText.replace("+", ""); // Remove + for calculation
+        const increment = Math.ceil(target / 150); // Adjust speed by changing 150
 
         if (current < target) {
           counter.innerText = current + increment; // Update counter
-          setTimeout(updateCounter, 20); // Repeat every 20ms (adjust speed)
+          setTimeout(updateCounter, 15); // Speed of updates
         } else {
-          counter.innerText = target; // Set the final value
+          counter.innerText = target + "+"; // Add + symbol after animation
         }
       };
 
@@ -167,10 +154,12 @@
     });
   });
 </script>
+
+
 <section style="width: 100%; height: 500px;">
   <!-- Content goes here -->
 
-  <h1 style="font-family: 'Georgia', serif; font-size: 3rem; font-weight: normal; color: #000; letter-spacing: 3px; text-align: center; margin-bottom: 20px; margin-top: 5%;">Our Clients</h1>
+  <h1 style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-size: 5rem; font-weight: bolder; color: #000; letter-spacing: 3px; text-align: center; margin-bottom: 20px; margin-top: -3%;">Our Clients</h1>
 
 
   <div id="brandContainer">
@@ -179,7 +168,7 @@
     <div class="brand-item"><img src="./images/marvel.png" alt="Brand 3 Logo"></div>
     <div class="brand-item"><img src="./images/sc.png" alt="Brand 4 Logo"></div>
     <div class="brand-item"><img src="./images/browns.png" alt="Brand 5 Logo"></div>
-    <div class="brand-item"><img src="https://via.placeholder.com/150?text=Logo+6" alt="Brand 6 Logo"></div>
+    
   </div>
 </section>
 
@@ -265,14 +254,7 @@
           <div class="review-rating">★★★★★</div>
           <div class="review-text">Nice service thank u</div>
         </div>
-        <div class="review-item">
-          <div class="review-author">
-            <img src="https://via.placeholder.com/40" alt="Emily's Avatar">
-            <span>Rakhi</span>
-          </div>
-          <div class="review-rating">★★★★★</div>
-          <div class="review-text">Best Cctv service provider company</div>
-        </div>
+        
         <div class="review-item">
           <div class="review-author">
             <img src="https://via.placeholder.com/40" alt="Emily's Avatar">
@@ -459,17 +441,19 @@
 </p>  -->
 </div>
 
-<div class="grey">
-  <div class="text-center">
-    <h2 class="m-0 p-0">Careers</h2>
-    <p class="m-0 p-0 text-secondary">Gain and Heritage. Leave a Legacy</p>
-    <a href="/index/join_us" class="btn btn-primary mt-2">Join us</a>
+<div class="d-flex justify-content-between align-items-start flex-wrap p-4" style="gap: 20px; background: linear-gradient(to right, #6D214F, #B33771); border-radius: 15px; padding: 40px; align-items: center; justify-content: center; height: auto; margin-bottom: 1%;">
+  <!-- Career Card -->
+  <div class="card text-center" style="width: 420px; padding: 20px; border: none; align-items: center; justify-content: center; border-radius: 15px; box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); background: #fff; transition: transform 0.3s, box-shadow 0.3s; flex-shrink: 0; margin-top: 6%;">
+    <h2 style="font-size: 1.8rem; font-weight: bold; margin-bottom: 15px; color: #6D214F;">Careers</h2>
+    <p style="font-size: 1rem; color: #444; line-height: 1.5;">Gain and Heritage. Leave a Legacy</p>
+    <a href="/index/join_us" class="btn" style="padding: 10px 25px; font-size: 1rem; background-color: #6D214F; color: #fff; border-radius: 25px; text-transform: uppercase; font-weight: bold; transition: background-color 0.3s;">Join us</a>
   </div>
- 
-  <div class="text-center">
-    <h2 class="m-0 p-0">Contact us</h2>
-    <p class="m-0 p-0 text-secondary">What can we help you achieve?</p>
-    <a href="/index/contact_us" target="_blank" class="btn btn-primary mt-2">Speak with us</a>
+
+  <!-- Contact Us Card -->
+  <div class="card text-center" style="width: 420px; padding: 20px; border: none; align-items: center; justify-content: center; border-radius: 15px; box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); background: #fff; transition: transform 0.3s, box-shadow 0.3s; flex-shrink: 0; margin-top: 6%;">
+    <h2 style="font-size: 1.8rem; font-weight: bold; margin-bottom: 15px; color: #B33771;">Contact Us</h2>
+    <p style="font-size: 1rem; color: #444; line-height: 1.5;">What can we help you achieve?</p>
+    <a href="/index/contact_us" target="_blank" class="btn" style="padding: 10px 25px; font-size: 1rem; background-color: #B33771; color: #fff; border-radius: 25px; text-transform: uppercase; font-weight: bold; transition: background-color 0.3s;">Speak with us</a>
   </div>
 </div>
 
