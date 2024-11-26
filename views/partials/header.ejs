@@ -56,8 +56,8 @@
     color: white;
     cursor: pointer;
     position: absolute;
-    right: 20px; /* Positioned to the right corner */
-    top: 20px; /* Positioned vertically aligned */
+    right: 20px;
+    top: 20px;
     z-index: 1000;
   }
 
@@ -65,7 +65,7 @@
   .mobile-menu {
     display: none;
     position: absolute;
-    top: 80px; /* Adjust below the header */
+    top: 80px;
     left: 0;
     width: 100%;
     background-color: #6D214F;
@@ -89,11 +89,11 @@
   /* Media Query for Mobile */
   @media (max-width: 768px) {
     .hamburger-icon {
-      display: block; /* Show the hamburger icon on mobile screens */
+      display: block;
     }
 
     .d-md-flex {
-      display: none; /* Hide the desktop menu */
+      display: none;
     }
   }
 </style>
@@ -102,7 +102,8 @@
   <nav class="d-flex justify-content-between">
     <!-- Logo -->
     <div>
-      <img src="./images/mvlogo.png" alt="Company Logo">
+      <!-- Use absolute path for the logo -->
+      <img src="/images/mvlogo.png"   style="width: 200px; height: 60px; margin-left: 5%;"  alt="Company Logo">
     </div>
     <!-- Desktop Menu -->
     <div class="d-none d-md-flex align-items-center gap-3">
@@ -114,7 +115,6 @@
         <a href="/index/contact_us">Contact us</a>
         <a href="/index/blog">Blog</a>
         <a href="/index/training">Training</a>
-       
       </div>
     </div>
     <!-- Hamburger Menu for Mobile -->
@@ -130,7 +130,6 @@
     <a href="/index/contact_us">Contact us</a>
     <a href="/index/blog">Blog</a>
     <a href="/index/training">Training</a>
-   
   </div>
 </header>
 

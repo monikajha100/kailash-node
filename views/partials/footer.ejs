@@ -1,201 +1,171 @@
 <style>
-  footer {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
+footer {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.footer-logo img {
+  max-width: 100%;
+  height: auto;
+}
+
+.footer-links,
+.footer-contact,
+.footer-social {
+  flex: 1;
+  min-width: 200px;
+}
+
+.footer-links h3,
+.footer-contact h3,
+.footer-social h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: #f39c12;
+  text-transform: uppercase;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links ul li {
+  margin: 8px 0;
+}
+
+.footer-links ul li a {
+  text-decoration: none;
+  color: #fff;
+  transition: color 0.3s ease;
+}
+
+.footer-links ul li a:hover {
+  color: #f39c12;
+}
+
+.footer-contact p {
+  margin: 5px 0;
+  font-size: 0.9rem;
+}
+
+.footer-social a {
+  margin: 0 8px;
+  display: inline-block;
+}
+
+.footer-social img {
+  width: 28px;
+  height: 28px;
+  transition: transform 0.3s ease;
+  color: #000;
+}
+
+.footer-social img:hover {
+  transform: scale(1.2);
+}
+
+/* Footer Bottom Bar */
+footer .p-0.m-0.w-100 {
+  border-top: 1px solid #444;
+  margin-top: 20px;
+  padding-top: 10px;
+  font-size: 0.8rem;
+  color: #aaa;
+}
+
+footer .p-0.m-0.w-100:hover {
+  color: #f39c12;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
   .footer-content {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: 20px;
-  }
-
-  .footer-logo img {
-    max-width: 100%;
-    height: auto;
+    flex-direction: column;
+    text-align: center;
   }
 
   .footer-links,
   .footer-contact,
   .footer-social {
-    flex: 1;
-    min-width: 200px;
+    flex: none;
+    margin-bottom: 20px;
   }
+}
 
-  .footer-links h3,
-  .footer-contact h3,
-  .footer-social h3 {
-    font-size: 1.2rem;
-    margin-bottom: 10px;
-    color: #f39c12;
-    text-transform: uppercase;
-  }
-
-  .footer-links ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-
-  .footer-links ul li {
-    margin: 8px 0;
-  }
-
-  .footer-links ul li a {
-    text-decoration: none;
-    color: #fff;
-    transition: color 0.3s ease;
-  }
-
-  .footer-links ul li a:hover {
-    color: #f39c12;
-  }
-
-  .footer-contact p {
-    margin: 5px 0;
-    font-size: 0.9rem;
-  }
-
-  .footer-social a {
-    margin: 0 8px;
-    display: inline-block;
-  }
-
-  .footer-social img {
-    width: 28px;
-    height: 28px;
-    transition: transform 0.3s ease;color: #000;
-  }
-
-  .footer-social img:hover {
-    transform: scale(1.2);
-
-  }
-
-  /* Footer Bottom Bar */
-  footer .p-0.m-0.w-100 {
-    border-top: 1px solid #444;
-    margin-top: 20px;
-    padding-top: 10px;
-    font-size: 0.8rem;
-    color: #aaa;
-  }
-
-  footer .p-0.m-0.w-100:hover {
-    color: #f39c12;
-  }
-
-  /* Responsive Design */
-  @media (max-width: 768px) {
-    .footer-content {
-      flex-direction: column; /* Stack items vertically */
-      text-align: center;
-    }
-
-    .footer-logo {
-      margin-right: 0;
-      margin-left: 0;
-      margin-top: 20px;
-    }
-
-    .footer-links,
-    .footer-contact,
-    .footer-social {
-      flex: none;
-      margin-bottom: 20px; /* Add spacing between sections */
-    }
-
-    .footer-links h3,
-    .footer-contact h3,
-    .footer-social h3 {
-      font-size: 1rem;
-    }
-
-    .footer-links ul li,
-    .footer-contact p {
-      font-size: 0.85rem;
-      margin-left: 35%;
-    }
-
-    .footer-social a {
-      margin: 5px;
-    }
-
-    .footer-social img {
-      width: 24px;
-      height: 24px;
-    }
-  }
-
-  /* Mobile View Priority */
-  @media (max-width: 576px) {
-    .footer-content {
-      flex-direction: column; /* Stack sections vertically */
-      align-items: center;
-      text-align: center;
-    }
-
-    .footer-links ul {
-      padding: 0;
-      text-align: left;
-    }
-
-    .footer-links ul li a {
-      font-size: 0.85rem;
-    }
-
-    .footer-social img {
-      width: 24px;
-      height: 24px;
-    }
-
-    .footer-contact p {
-      font-size: 0.85rem;
-    }
-  }
 </style>
 
-<footer class="text-black" style="background-color: #57606f; margin-top: -1%; height: auto;">
-  <div class="footer-content">
-    <div class="footer-logo" style="margin-right:150px; margin-top: 150px; margin-left:100px;height: auto; width: auto;">
-      <img src="<%= index.footer_logo_image_url || './images/mvlogo.png' %>" width="200" height="100" alt="Footer Logo">
-    </div>
-    <div class="footer-links" style="margin-top: 8%;align-items: center; justify-content: center;">
-      <h3>Quick Links</h3>
-      <ul>
-        <li><a href="/index">Home</a></li>
-        <li><a href="/index/about">ABOUT US</a></li>
-        <li><a href="/index/teams">TEAMS</a></li>
-        <li><a href="/index/join_us">CAREER</a></li>
-        <li><a href="/index/contact_us">CONTACT US</a></li>
-        <li><a href="/index/blog">Blog</a></li>
-      </ul>
-    </div>
-
-    <div class="footer-contact" style="margin-top: 8%;">
-      <h3>Contact Us</h3>
-      <p>📞 <%= index.contact_phone || 'Not available' %></p>
-      <p>📧 <%= index.contact_email || 'info@default.com' %></p>
-    </div>
-
-    <div class="footer-social" style="margin-top: 8%;">
-      <h3>Follow Us</h3>
-      <% socialMedia.forEach(function(platform) { %>
-        <% if (index[`${platform.name}_link`]) { %>
-          <a href="<%= index[`${platform.name}_link`] %>" class="text-white" style="color: black;">
-            <span class="me-1"><%- platform.icon %></span>
-            <%= platform.name %>
-          </a>
-          <br>
-        <% } %>
-      <% }); %>
-    </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Footer Example</title>
+  <link rel="stylesheet" href="/styles/footer.css">
+</head>
+<body>
+  <!-- Main Content -->
+  <div class="content">
+    <!-- Your Page Content Here -->
   </div>
 
-  <div class="p-0 m-0 w-100">
-    <p class="p-0 m-0 h6 text-center" style="background-color: #57606f;">&copy; 2024 Souranjh Technology. All Rights Reserved.</p>
-  </div>
-</footer>
+  <!-- Footer Section -->
+  <footer class="text-black" style="background-color: #57606f; margin-top: -1%; height: auto;">
+    <div class="footer-content">
+      <!-- Footer Logo -->
+      <div class="footer-logo" style="margin-right:120px; margin-top: 150px; margin-left:80px; height: auto; width: auto;">
+        <img src="<%= index?.footer_logo_image_url || '/images/mvlogo.png' %>" width="200" height="100" alt="Footer Logo">
+      </div>
+
+      <!-- Quick Links -->
+      <div class="footer-links" style="margin-top: 8%; align-items: center; justify-content: center;">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="/index">Home</a></li>
+          <li><a href="/index/about">ABOUT US</a></li>
+          <li><a href="/index/teams">TEAMS</a></li>
+          <li><a href="/index/join_us">CAREER</a></li>
+          <li><a href="/index/contact_us">CONTACT US</a></li>
+          <li><a href="/index/blog">Blog</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact Section -->
+      <div class="footer-contact" style="margin-top: 8%;">
+        <h3>Contact Us</h3>
+        <p>📞 <%= index?.contact_phone || 'Not available' %></p>
+        <p>📧 <%= index?.contact_email || 'info@default.com' %></p>
+      </div>
+
+      <!-- Social Media -->
+      <div class="footer-social" style="margin-top: 8%;">
+        <h3>Follow Us</h3>
+        <% socialMedia.forEach(function(platform) { %>
+          <% if (index?.[`${platform.name}_link`]) { %>
+            <a href="<%= index[`${platform.name}_link`] %>" class="text-white" style="color: white;">
+              <span class="me-1"><%- platform.icon %></span>
+              <%= platform.name %>
+            </a>
+            <br>
+          <% } %>
+        <% }); %>
+      </div>
+    </div>
+
+    <!-- Footer Bottom Bar -->
+    <div class="p-0 m-0 w-100">
+      <p class="p-0 m-0 h6 text-center" style="background-color: #57606f;">&copy; 2024 Souranjh Technology. All Rights Reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>
