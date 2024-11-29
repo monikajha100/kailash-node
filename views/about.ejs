@@ -1,55 +1,702 @@
 <style>
-  /* Header Styles */
+	* {
+	  margin: 0;
+	  padding: 0;
+	  box-sizing: border-box;
+	  font-family: 'Poppins', sans-serif;
+	  line-height: 1.5;
+	}
   
-  /* About Section Styles */
-  #about {
-    padding: 100px 20px;
-    background-color: #f0f4f8;
-    /* Light background color for the section */
+	body {
+	  background-color: #f8f9fa;
+	  color: #343a40;
+	  font-size: 16px;
+	  min-height: 100vh;
+	}
+  
+	.about-us {
+	  width: 100%;
+	  padding: 60px 0;
+	  background-color: #f0f8ff;
+	}
+  
+	.about-us h1 {
+	  text-align: center;
+	  font-size: 60px;
+	  color: #000;
+	  text-transform: uppercase;
+	  letter-spacing: 2px;
+	  margin-bottom: 20px;
+	}
+  
+	.about-us h1::after {
+	  content: "";
+	  height: 3px;
+	  width: 150px;
+	  background-color: #333;
+	  display: block;
+	  margin: 15px auto;
+	}
+  
+	.wrapper {
+	  padding: 0 30px;
+	  display: flex;
+	  flex-wrap: wrap;
+	  justify-content: space-between;
+	}
+  
+	.content {
+	  width: 60%;
+	  padding: 0 30px;
+	}
+  
+	.content h3 {
+	  font-size: 30px;
+	  color: #212529;
+	  margin-bottom: 20px;
+	}
+  
+	.content p {
+	  font-size: 18px;
+	  color: #6c757d;
+	  margin-bottom: 20px;
+	}
+  
+	.content .button {
+	  margin-top: 30px;
+	}
+  
+	.content .button a {
+	  color: #fff;
+	  background-color: #007bff;
+	  border: 1px solid #007bff;
+	  padding: 12px 35px;
+	  text-decoration: none;
+	  font-size: 18px;
+	  border-radius: 30px;
+	  transition: background-color 0.3s ease;
+	}
+  
+	.content .button a:hover {
+	  background-color: #0056b3;
+	}
+  
+	.image-section {
+	  width: 35%;
+	  text-align: center;
+	}
+  
+	.image-section img {
+	  width: 100%;
+	  height: auto;
+	  border-radius: 8px;
+	}
+  
+	.social {
+	  margin-top: 20px;
+	}
+  
+	.social a {
+	  color: #007bff;
+	  margin: 0 12px;
+	  font-size: 28px;
+	  text-decoration: none;
+	  transition: color 0.3s ease;
+	}
+  
+	.social a:hover {
+	  color: #0056b3;
+	}
+  
+	.mission,
+	.team,
+	.values {
+	  width: 100%;
+	  padding: 60px 30px;
+	  text-align: center;
+	  background-color: #fff;
+	  margin: 40px 0;
+	}
+  
+	.mission h2,
+	.team h2,
+	.values h2 {
+	  font-size: 36px;
+	  color: #007bff;
+	  text-transform: uppercase;
+	  margin-bottom: 20px;
+	}
+  
+	.mission p,
+	.team p,
+	.values p {
+	  font-size: 18px;
+	  color: #6c757d;
+	  line-height: 1.8;
+	}
+  
+	.team .team-member {
+	  width: 30%;
+	  display: inline-block;
+	  margin: 10px;
+	  text-align: center;
+	  border-radius: 10px;
+	  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+	  transition: transform 0.3s ease, box-shadow 0.3s ease;
+	}
+  
+	.team .team-member:hover {
+	  transform: scale(1.05);
+	  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+	}
+  
+	.team .team-member img {
+	  width: 160px;
+	  height: 160px;
+	  border-radius: 50%;
+	  margin-bottom: 20px;
+	}
+  
+	.values-heading {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 30px;
+    font-weight: bold;
+  }
+  
+  .values-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    padding: 0 20px;
+  }
+  
+  .value-item {
+    background-color: #f1f1f1;
+    border-radius: 8px;
+    width: 200px;
+    text-align: center;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .value-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  }
+  
+  .value-icon {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 15px;
+    transition: transform 0.3s ease;
+  }
+  
+  .value-item:hover .value-icon {
+    transform: scale(1.1);
+  }
+  
+  .value-item p {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.5;
+  }
+  
+  @media (max-width: 768px) {
+    .values-container {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+    /* Form container */
+    #contact-us {
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      max-width: 800px;
+      margin: 30px auto;
+      padding: 20px;
+      margin-top: 100px;
+    }
+
+    /* Form fields */
+    div.form-group {
+      margin-bottom: 15px;
+    }
+
+    /* Label */
+    label {
+      font-size: 1.1em;
+      font-weight: bold;
+      display: block;
+      margin-bottom: 5px;
+      color: #333;
+    }
+
+    /* Input fields and text areas */
+    /* input[type="text"],
+    input[type="number"],
+    input[type="email"],
+    textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      box-sizing: border-box;
+      font-size: 1em;
+      margin-top: 5px;
+    } */
+
+    textarea {
+      height: 100px;
+      resize: vertical;
+    }
+
+    /* Button */
+    /* button[type="submit"] {
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      font-size: 1.2em;
+      cursor: pointer;
+      border-radius: 5px;
+      width: 100%;
+      margin-top: 15px;
+    }
+
+    button[type="submit"]:hover {
+      background-color: #45a049;
+    } */
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      form {
+        padding: 15px;
+        margin: 20px;
+      }
+
+      h2 {
+        font-size: 1.5em;
+      }
+
+      /* input[type="text"],
+      input[type="number"],
+      input[type="email"],
+      textarea {
+        font-size: 1em;
+      } */
+
+      button[type="submit"] {
+        font-size: 1em;
+      }
+    }
+
+   
+	.services {
+  padding: 60px 30px;
+  background-color: #f8f9fa;
+  text-align: center;
+}
+
+.services h2 {
+  font-size: 36px;
+  color: #007bff;
+  text-transform: uppercase;
+  margin-bottom: 40px;
+}
+
+.services .wrapper {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.service {
+  width: 30%;
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 30px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.service img {
+  width: 100%;
+  max-width: 200px;
+  height: auto;
+  margin-bottom: 20px;
+  border-radius: 8px;
+}
+
+.service h3 {
+  font-size: 24px;
+  color: #343a40;
+  margin-bottom: 15px;
+}
+
+.service p {
+  font-size: 16px;
+  color: #6c757d;
+  line-height: 1.8;
+}
+
+@media (max-width: 768px) {
+  .service {
+    width: 45%;
+  }
+}
+
+@media (max-width: 480px) {
+  .service {
+    width: 100%;
+  }
+}
+/* Call to Action Section */
+
+
+
+/* Style for the CTA section */
+/* CTA Section */
+.cta {
+  background: #40739e;
+  padding: 80px 20px;
+  text-align: center;
+  color: white;
+  position: relative;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+  margin: 40px 0;
+  margin-bottom: 6px;
+}
+
+.cta-content {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.cta h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 30px;
+  color: #fff;
+  letter-spacing: 1px;
+  line-height: 1.4;
+}
+
+.cta-button {
+  padding: 15px 30px;
+  background-color: #ff6f61; /* Bold color for the button */
+  color: white;
+  font-size: 1.1rem;
+  text-decoration: none;
+  border-radius: 30px;
+  font-weight: 600;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  display: inline-block;
+}
+
+.cta-button:hover {
+  background-color: #ff3d32; /* Slightly darker shade on hover */
+  transform: translateY(-5px); /* Button "lifts" on hover */
+}
+
+.cta-button:focus {
+  outline: none;
+  border: 2px solid #fff;
+}
+
+@media (max-width: 768px) {
+  .cta h2 {
+    font-size: 2rem;
+  }
+  .cta-button {
+    font-size: 1rem;
+    padding: 12px 25px;
+  }
+}
+
+/* Our Mission Section Styling */
+/* Our Mission Section */
+.our-mission {
+  background: linear-gradient(135deg, #007bff, #0056b3); /* Gradient background */
+  color: #ffffff; /* White text */
+  padding: 60px 20px;
+  font-family: 'Arial', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mission-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  max-width: 1200px;
+  width: 100%;
+  gap: 40px; /* Space between image and content */
+}
+
+.mission-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px; /* Optional: Add rounded corners */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Optional: Add a shadow effect */
+}
+
+.mission-content {
+  flex: 1;
+}
+
+.mission-content h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.mission-content p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 15px;
+  color: #e0e0e0; /* Light gray text for readability */
+}
+
+.mission-content p:last-child {
+  margin-bottom: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .mission-container {
+    flex-direction: column; /* Stack image and content on smaller screens */
     text-align: center;
   }
 
-
-  .about-content {
-    max-width: 800px;
-    margin: 0 auto;
-    /* Center the content */
-    padding: 20px;
+  .mission-image {
+    margin-bottom: 20px;
   }
 
-  .about-text {
-    background-color: #ffffff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    /* Soft shadow for a subtle 3D effect */
+  .mission-content h2 {
+    font-size: 2rem;
   }
 
-  .about-text p {
-    font-size: 1.1rem;
-    color: #555;
-    /* Medium color for text */
-    line-height: 1.6;
+  .mission-content p {
+    font-size: 1rem;
   }
+}
+/* Sustainability Section */
+.sustainability {
+  background-color:#f5f6fa; /* Light green background */
+  padding: 60px 20px;
+  text-align: center;
+}
 
-  .about-text p strong {
-    font-size: 1.2rem;
-    color: #4bcffa;
-    /* Accent color for the title text */
+.sustainability-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 40px;
+}
+
+.sustainability-content {
+  max-width: 800px;
+  font-family: 'Arial', sans-serif;
+}
+
+.sustainability h2 {
+  font-size: 2.5rem;
+  color: #2a5d4e; /* Deep green */
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.sustainability p {
+  font-size: 1.1rem;
+  color: #333;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.sustainability-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 15px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+}
+
+.sustainability-image img:hover {
+  transform: scale(1.05); /* Zoom-in effect on hover */
+}
+
+@media (max-width: 768px) {
+  .sustainability-container {
+    flex-direction: column;
+    gap: 20px;
   }
-</style>
+  .sustainability h2 {
+    font-size: 2rem;
+  }
+  .sustainability-content p {
+    font-size: 1rem;
+  }
+}
 
-<!-- About Section -->
-<section id="about" style="padding-top: 100px;">
-  <h1 class="display-4 fw-bold">ABOUT US</h1>
-  <div class="about-content">
-    <div class="about-text">
-      <p><strong>
-          <%= aboutData.title %>
-        </strong></p>
-      <p class="text-secondary">
-        <%= aboutData.description %>
-      </p> <!-- This will display the description -->
-    </div>
+  </style>
+  
+  <section class="about-us">
+	<h1>About Us</h1>
+	<div class="wrapper">
+		<div class="content">
+		  <h3>Welcome to Souranjh Technology</h3>
+		  <p>At Souranjh Technology, we are dedicated to providing innovative solutions that help businesses and individuals achieve their goals. With a commitment to excellence, we offer high-quality services designed to meet the unique needs of our clients.</p>
+		  
+		</div>
+		<div class="image-section">
+		  <img src="https://img.freepik.com/free-vector/communication-flat-icon_1262-18771.jpg?ga=GA1.1.1666531303.1714742568&semt=ais_hybrid" alt="Innovative solutions for business and individuals">
+		</div>
+	  </div>
+	  
+	  <div class="wrapper">
+		<div class="content">
+		  <h3 style="margin-top: 10%;">Meet Souranjh Technology</h3>
+		  <p>
+			SOURANJH TECHNOLOGY PRIVATE LIMITED having CIN U62099MP2023PTC067158 is 1 year, 3 months & 13 days old. We were incorporated with MCA on 14th August, 2023.
+		  </p>
+		  <p>
+			Our mission is to bridge the gap between technology and opportunity, delivering tailored solutions that inspire growth and foster success. Join us on this journey to build a smarter, more connected future.
+		  </p>
+		</div>
+		<div class="image-section" style="margin-top: 10%;">
+		  <img src="https://img.freepik.com/free-vector/communication-flat-icon_1262-18771.jpg?ga=GA1.1.1666531303.1714742568&semt=ais_hybrid" alt="Team collaboration and technology solutions">
+		</div>
+	  </div>
+	  <div class="wrapper">
+		<div class="content">
+	  
+			<h3 style="margin-top: 10%;">Our Ambition.</h3>
+		  <p>
+			At Souranjh Technology, our mission is to empower individuals and businesses 
+			with cutting-edge technology solutions and comprehensive training programs. 
+			We aim to foster innovation, create opportunities, and build a sustainable 
+			future through our expertise in web development, app development, digital 
+			marketing, and professional training.
+		  </p>
+		  <p>
+			We are committed to excellence, collaboration, and continuous learning, ensuring 
+			that every client and student achieves their goals and thrives in a digital world.
+		  </p>
+		</div>
+		<div class="image-section" style="margin-top: 10%;">
+		  <img src="https://img.freepik.com/free-vector/communication-flat-icon_1262-18771.jpg?ga=GA1.1.1666531303.1714742568&semt=ais_hybrid" alt="About Us Image">
+		</div>
+	  </div>
+	  <h2 class="values-heading"  style="margin-top: 5%; margin-bottom: 4%;"  >Our Values</h2>
+	  <div class="values-container">
+		<div class="value-item">
+		  <img src="https://img.icons8.com/ios/50/000000/innovation.png" alt="Innovation" class="value-icon">
+		  <p>Innovation: Constantly pushing boundaries to find new solutions.</p>
+		</div>
+		<div class="value-item">
+      <img src="https://cdn-icons-png.flaticon.com/128/9104/9104585.png" style="height: 60px;" alt="Innovation Icon">
+
+		  <p>Integrity: Building trust with clients through honest and transparent practices.</p>
+		</div>
+		<div class="value-item">
+		  <img src="https://cdn-icons-png.flaticon.com/128/5377/5377594.png"   style="height: 60px;" alt="Excellence Icon">
+
+		  <p>Excellence: Striving for the highest standards in everything we do.</p>
+		</div>
+		<div class="value-item">
+		  <img src="https://img.icons8.com/ios/50/000000/customer-insight.png" alt="Customer Focus" class="value-icon">
+		  <p>Customer Focus: Placing the needs and goals of our clients at the center of everything.</p>
+		</div>
+		<div class="value-item">
+		  <img src="https://img.icons8.com/ios/50/000000/teamwork.png" alt="Collaboration" class="value-icon">
+		  <p>Collaboration: Working as a unified team to deliver the best results.</p>
+		</div>
+	  </div>
+ 
+	<h3 style="font-size: 40px; justify-content: center; align-items: center;margin-left: 35%; margin-top: 4%;">Our Achievements</h3>
+  
+  <div class="box-container" style="display: flex; justify-content: space-around;margin-top: 2%;  height: 200px; color: #dff9fb;  align-items: center; padding: 20px; border-radius: 10px;">
+	<div class="box" style="text-align: center; color:#f9ca24;">
+	  <h3 style="font-size: 2.5rem; font-weight: bold;" data-target="255">0</h3>
+	  <p style="margin: 0; font-size: 1.2rem;color:#000;">Jubilant Clients</p>
+	</div>
+	<div class="box" style="text-align: center; color: #f9ca24;">
+	  <h3 style="font-size: 2.5rem; font-weight: bold;" data-target="430">0</h3>
+	  <p style="margin: 0; font-size: 1.2rem;color:#000;">Projects Completed</p>
+	</div>
+	<div class="box" style="text-align: center; color: #f9ca24;">
+	  <h3 style="font-size: 2.5rem; font-weight: bold;" data-target="30">0</h3>
+	  <p style="margin: 0; font-size: 1.2rem; color:#000;">Ongoing Projects</p>
+	</div>
+	<div class="box" style="text-align: center; color: #f9ca24;">
+	  <h3 style="font-size: 2.5rem; font-weight: bold;" data-target="5">0</h3>
+	  <p style="margin: 0; font-size: 1.2rem;color:#000;">Awards Won</p>
+	</div>
   </div>
+ 
+  
+  
+  <script>
+	document.addEventListener("DOMContentLoaded", () => {
+	  const counters = document.querySelectorAll(".box h3"); // Select all h3 elements
+  
+	  counters.forEach(counter => {
+		const updateCounter = () => {
+		  const target = +counter.getAttribute("data-target"); // Get target value
+		  const current = +counter.innerText.replace("+", ""); // Remove + for calculation
+		  const increment = Math.ceil(target / 150); // Adjust speed by changing 150
+  
+		  if (current < target) {
+			counter.innerText = current + increment; // Update counter
+			setTimeout(updateCounter, 15); // Speed of updates
+		  } else {
+			counter.innerText = target + "+"; // Add + symbol after animation
+		  }
+		};
+  
+		updateCounter(); // Start the animation
+	  });
+	});
+  </script>
+  
+
+  <section class="sustainability">
+	<div class="sustainability-container">
+	  <div class="sustainability-content">
+		<h2>Our Commitment to Sustainability</h2>
+		<p>At Souranjh Technology, we believe in creating a better tomorrow by incorporating sustainable practices in everything we do. We are committed to reducing our environmental footprint and contributing to society.</p>
+		<p>Our team works on several initiatives that focus on green technology, supporting communities, and ethical business practices.</p>
+	  </div>
+	  <div class="sustainability-image">
+		<img src="https://img.freepik.com/free-photo/global-environmental-sustainability-background-green-technology_53876-124628.jpg?ga=GA1.1.1666531303.1714742568&semt=ais_hybrid" alt="Sustainability">
+	  </div>
+	</div>
+  </section>
+  
+  
+    
+    
+  <section class="cta" style="color: black; width: auto; height: auto; margin-bottom: -5%; ">
+	<h2>Ready to Start Your Journey with Us?</h2>
+	<a href="/index/contact_us" class="cta-button">Contact Us</a>
+  </section>
 </section>

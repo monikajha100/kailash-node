@@ -283,7 +283,7 @@ router.get('/blog', function (req, res) {
       `);
     }
     
-
+    
     if (results.length === 0) {
       return res.status(404).send('blog Us data not found');
     }

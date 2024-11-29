@@ -1,19 +1,184 @@
-<link rel="stylesheet" href="/stylesheets/service.css" />
+<style>.services {
+    padding: 2rem;
+    background-color: #f4f9ff;
+    
+.services h2 {
+    font-size: 3rem; /* Increase font size */
+    font-weight: bold; /* Make the font bold */
+    text-align: center; /* Center-align the text */
+    color: #0056b3; /* Add a primary color */
+    margin-bottom: 1rem; /* Add some space below */
+    text-transform: uppercase; /* Make text uppercase */
+    letter-spacing: 2px; /* Add spacing between letters */
+    background: linear-gradient(to right, #0056b3, #003f7d); /* Gradient background */
+    -webkit-background-clip: text; /* Clip background to text */
+    color: transparent; /* Make the text color transparent */
+    padding: 20px; /* Add padding around the heading */
+    margin-top: -2%;
+}
+  }
 
+  /* Shadow effect for the heading */
+  .services h2::after {
+    content: ""; 
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: #003f7d; /* Add a bottom shadow line */
+    margin-top: 15px;
+  }
+
+  /* Media Queries for Heading Adjustment */
+  @media (max-width: 768px) {
+    .services h2 {
+      font-size: 2.5rem; /* Adjust font size for tablets */
+    }
+  }
+
+.service-list {
+    margin-top: 2rem;
+}
+
+.service-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    padding: 1.5rem 0;
+    flex-direction: row-reverse; /* Image on the right for desktop */
+    border-bottom: 1px solid #ddd;
+}
+
+.service-icon {
+    flex: 0 0 300px; /* Set fixed width */
+    height: 250px; /* Set fixed height */
+    border-radius: 8px; /* Add rounded corners */
+    overflow: hidden; /* Ensure the image doesn't overflow the container */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a soft shadow */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #ddd; /* Add a border to create the box */
+    background-color: transparent;/* Add a light background color */
+}
+
+.service-icon img {
+    width: 100%; /* Make the image fill the container */
+    height: 100%; /* Maintain the container's height */
+    object-fit: cover; /* Ensure the image scales properly */
+    border-radius: 4px; /* Optional: Add slight rounding to the image */
+}
+
+
+.service-content {
+    flex: 1;
+    text-align: left;
+    padding: 0 1rem;
+    align-items: center;
+}
+
+.service-content h3 {
+    font-size: 1.5rem;
+    color: #333;
+    margin: 0;
+    margin-top: -18%;
+}
+
+.service-content p {
+    font-size: 1rem;
+    color: #666;
+    margin: 0.5rem 0;
+    line-height: 1.6;
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 0.5rem;
+    background-color: #007bff;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: background 0.3s ease, transform 0.2s;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+    transform: translateY(-3px);
+}
+
+hr {
+    border: 0;
+    border-top: 1px solid #ddd;
+    margin: 1rem 0;
+}
+
+/* Media Queries for Responsive Design */
+
+/* For tablets and smaller devices */
+@media (max-width: 768px) {
+    .service-item {
+        flex-direction: column; /* Stack content vertically */
+        text-align: center;
+        gap: 1rem; /* Add spacing between image and text */
+    }
+
+    .service-icon {
+        width: 100%; /* Full-width images */
+        height: auto; /* Maintain aspect ratio */
+        margin-bottom: 1rem;
+    }
+
+    .service-content {
+        text-align: center; /* Center-align content */
+        padding: 0;
+    }
+
+    .btn {
+        font-size: 0.9rem;
+        padding: 0.4rem 0.8rem;
+    }
+}
+
+/* For mobile devices */
+@media (max-width: 480px) {
+    .services {
+        padding: 1rem;
+    }
+
+    .service-content h3 {
+        font-size: 1.2rem; /* Adjust heading size */
+    }
+
+    .service-content p {
+        font-size: 0.9rem; /* Adjust paragraph size */
+    }
+
+    .btn {
+        font-size: 0.8rem;
+        padding: 0.3rem 0.6rem;
+    }
+}
+
+</style>
 <div class="services mt-5 mt-md-5">
-    <h2 class="display-3 fw-bold">Our Services</h2>
+    <div class="services mt-5 mt-md-5">
+        <h2 class="display-3 fw-bold text-center" style="margin: 0 auto; text-align: center;">Our Services</h2>
+    </div>
     <div class="grid">
         <% service.forEach(service => { %>
-            <div class="card">
-                <div class="img-box">
-                    <img src="<%= service.image_url %>" alt="<%= service.title %>" />
-                </div>
-                <div class="card-content">
-                    <h3><%= service.title %></h3>
-                    <p><%= service.description %></p>
+            <div class="service-item">
+                <div class="service-content">
+                    <h3 style="font-size: 30px;"><%= service.title %></h3>
+                    <p style="font-size: 15px;"><%= service.description %></p>
                     <!-- Dynamic link to each service's details page -->
                     <a href="/index/service/<%= service.serviceid %>" class="btn">Learn More</a>
                 </div>
+                <div class="service-icon" style="margin-bottom: 18%;">
+                    <img src="<%= service.image_url %>" alt="<%= service.title %>" />
+                </div>
+                
             </div>
         <% }) %>
     </div>

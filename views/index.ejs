@@ -65,12 +65,12 @@
           });
       }
 
-      // Function to make the carousel auto-scroll
+     
       autoScroll() {
           setInterval(() => {
-              this.carouselItems.push(this.carouselItems.shift()); // Move the first item to the end
-              this.updateGallery(); // Update the gallery after each shift
-          }, 3000); // Change every 3 seconds
+              this.carouselItems.push(this.carouselItems.shift()); 
+              this.updateGallery(); 
+          }, 3000); 
       }
   }
 
@@ -79,7 +79,7 @@
 
 
 
-<!-- Visitor Counter -->
+
 <section class="visitor-counter">
   <h2>Total Visitors:</h2>
   <span class="count" id="visitor-count">0</span>
@@ -88,10 +88,10 @@
 <script>
   document.addEventListener('DOMContentLoaded', () => {
     const visitorCountElement = document.getElementById('visitor-count');
-    const finalCount = <%= count %>; // EJS will inject the count as a number here
+    const finalCount = <%= count %>; 
     let currentCount = 0;
 
-    // Ensure finalCount is a valid number
+    
     if (isNaN(finalCount) || finalCount <= 0) {
       visitorCountElement.textContent = "Error: Invalid visitor count";
       return;
@@ -104,7 +104,7 @@
       if (currentCount >= finalCount) {
         clearInterval(interval);
       }
-    }, 50); // Adjust the interval speed (in milliseconds) as needed
+    }, 50);
   });
 </script>
 <div class="scrolling-text w-100" style="overflow: hidden;">
@@ -134,30 +134,30 @@
 
 <script>
   document.addEventListener("DOMContentLoaded", () => {
-    const counters = document.querySelectorAll(".box h3"); // Select all h3 elements
+    const counters = document.querySelectorAll(".box h3"); 
 
     counters.forEach(counter => {
       const updateCounter = () => {
-        const target = +counter.getAttribute("data-target"); // Get target value
-        const current = +counter.innerText.replace("+", ""); // Remove + for calculation
-        const increment = Math.ceil(target / 150); // Adjust speed by changing 150
+        const target = +counter.getAttribute("data-target"); 
+        const current = +counter.innerText.replace("+", ""); 
+        const increment = Math.ceil(target / 150); 
 
         if (current < target) {
-          counter.innerText = current + increment; // Update counter
-          setTimeout(updateCounter, 15); // Speed of updates
+          counter.innerText = current + increment; 
+          setTimeout(updateCounter, 15); 
         } else {
-          counter.innerText = target + "+"; // Add + symbol after animation
+          counter.innerText = target + "+"; 
         }
       };
 
-      updateCounter(); // Start the animation
+      updateCounter(); 
     });
   });
 </script>
 
 
 <section style="width: 100%; height: 500px;">
-  <!-- Content goes here -->
+  
 
   <h1 style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-size: 5rem; font-weight: bolder; color: #000; letter-spacing: 3px; text-align: center; margin-bottom: 20px; margin-top: -3%;">Our Clients</h1>
 
@@ -175,9 +175,9 @@
 <script>
   document.addEventListener("DOMContentLoaded", () => {
     const brandContainer = document.getElementById("brandContainer");
-    const scrollSpeed = 1; // Adjust scroll speed (pixels per frame)
+    const scrollSpeed = 1; 
 
-    // Duplicate items for seamless scrolling
+   
     const items = [...brandContainer.children];
     items.forEach(item => {
       const clone = item.cloneNode(true);
@@ -187,7 +187,7 @@
     const startScrolling = () => {
       brandContainer.scrollLeft += scrollSpeed;
 
-      // Reset to start for infinite scrolling
+      
       if (brandContainer.scrollLeft >= brandContainer.scrollWidth / 2) {
         brandContainer.scrollLeft = 0;
       }
@@ -209,11 +209,11 @@
       <h6>Customer Reviews</h6>
     </div>
     <div class="slider-container">
-      <!-- New Section for Google Sign, Excellent, and Stars -->
+      
       
       
       <div class="reviews-wrapper">
-        <!-- Review Items -->
+        
         <div class="review-item">
           <div class="review-author">
             <img src="https://via.placeholder.com/40" alt="John's Avatar">
@@ -272,7 +272,7 @@
           <div class="review-text">Best service provide by this company in tec cam thank you  for provide this services</div>
         </div>
       </div>
-      <!-- Navigation Buttons -->
+     
       <div class="nav-buttons">
         <span id="prevBtn">&lt;</span>
         <span id="nextBtn">&gt;</span>
@@ -285,21 +285,21 @@
   let currentIndex = 0;
   const reviewsWrapper = document.querySelector('.reviews-wrapper');
   const totalReviews = document.querySelectorAll('.review-item').length;
-  const reviewWidth = document.querySelector('.review-item').offsetWidth + 20; // Adding margin space
+  const reviewWidth = document.querySelector('.review-item').offsetWidth + 20; 
 
-  // Function to scroll the reviews automatically
+  
   function autoScroll() {
     currentIndex++;
     if (currentIndex >= totalReviews) {
-      currentIndex = 0; // Reset to first review
+      currentIndex = 0; 
     }
     reviewsWrapper.style.transform = `translateX(-${currentIndex * reviewWidth}px)`;
   }
 
-  // Auto scroll every 3 seconds
+  
   setInterval(autoScroll, 3000);
 
-  // Optional: Manual navigation buttons
+  
   document.getElementById('prevBtn').addEventListener('click', () => {
     currentIndex = (currentIndex === 0) ? totalReviews - 1 : currentIndex - 1;
     reviewsWrapper.style.transform = `translateX(-${currentIndex * reviewWidth}px)`;
@@ -315,7 +315,7 @@
   <h2>Frequently Asked Questions..?</h2>
   <table class="faq-table">
     <tbody>
-      <!-- Row 1 -->
+     
       <tr>
         <td>
           <div class="faq-item">
@@ -363,7 +363,7 @@
         </td>
       </tr>
       
-      <!-- Row 2 -->
+      
       <tr>
         <td>
           <div class="faq-item">

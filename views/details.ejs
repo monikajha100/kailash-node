@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= title %></title>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+
+  
+  <section id="intro">
+    <h1><%= intro.title %></h1>
+    <p><%= intro.description %></p>
+  </section>
+
+ 
+  <section id="why-fullstack">
+    <h2><%= whySection.title %></h2>
+    <p><%= whySection.description %></p>
+    <ul>
+      <% whySection.points.forEach(point => { %>
+        <li><strong><%= point.title %>:</strong> <%= point.description %></li>
+      <% }) %>
+    </ul>
+  </section>
+
+ 
+  <section id="technologies">
+    <h2><%= technologies.title %></h2>
+    <p><%= technologies.description %></p>
+    
+    <div class="technologies-content">
+      <div class="technologies-text">
+        <h3>Frontend Technologies</h3>
+        <ul>
+          <% technologies.frontend.forEach(tech => { %>
+            <li><strong><%= tech.title %>:</strong> <%= tech.description %></li>
+          <% }) %>
+        </ul>
+        <h3>Backend Technologies</h3>
+        <ul>
+          <% technologies.backend.forEach(tech => { %>
+            <li><strong><%= tech.title %>:</strong> <%= tech.description %></li>
+          <% }) %>
+        </ul>
+        <h3>API & Integration</h3>
+        <ul>
+          <% technologies.api.forEach(tech => { %>
+            <li><strong><%= tech.title %>:</strong> <%= tech.description %></li>
+          <% }) %>
+        </ul>
+      </div>
+  
+     
+      <div class="technologies-image">
+        <img src="<%= technologies.image %>" alt="Technologies used in Full-Stack Development">
+      </div>
+    </div>
+  </section>
+</body>
+</html>
