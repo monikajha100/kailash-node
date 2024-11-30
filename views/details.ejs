@@ -1,62 +1,228 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title><%= title %></title>
-  <link rel="stylesheet" href="/css/styles.css">
-</head>
-<body>
+<style>
+  #intro h1 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+  }
 
-  <!-- Intro Section -->
-  <section id="intro">
-    <h1><%= intro.title %></h1>
-    <p><%= intro.description %></p>
-  </section>
+  #intro p {
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+    color: #e0e0e0;
+    /* Lighter text color */
+  }
 
- 
-  <section id="why-fullstack">
-    <h2><%= whySection.title %></h2>
-    <p><%= whySection.description %></p>
-    <ul>
-      <% whySection.points.forEach(point => { %>
-        <li><strong><%= point.title %>:</strong> <%= point.description %></li>
-      <% }) %>
-    </ul>
-  </section>
+  /* Why E-commerce Section */
+  #why-ecommerce {
+    padding: 60px 20px;
+    background-color: #ffffff;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    /* Subtle shadow for depth */
+  }
 
- 
-  <section id="technologies">
-    <h2><%= technologies.title %></h2>
-    <p><%= technologies.description %></p>
-    
-    <div class="technologies-content">
-      <div class="technologies-text">
-        <h3>Frontend Technologies</h3>
-        <ul>
-          <% technologies.frontend.forEach(tech => { %>
-            <li><strong><%= tech.title %>:</strong> <%= tech.description %></li>
-          <% }) %>
-        </ul>
-        <h3>Backend Technologies</h3>
-        <ul>
-          <% technologies.backend.forEach(tech => { %>
-            <li><strong><%= tech.title %>:</strong> <%= tech.description %></li>
-          <% }) %>
-        </ul>
-        <h3>API & Integration</h3>
-        <ul>
-          <% technologies.api.forEach(tech => { %>
-            <li><strong><%= tech.title %>:</strong> <%= tech.description %></li>
-          <% }) %>
-        </ul>
-      </div>
-  
-     
-      <div class="technologies-image">
-        <img src="<%= technologies.image %>" alt="Technologies used in Full-Stack Development">
-      </div>
+  #why-ecommerce h2 {
+    font-size: 2.8rem;
+    color: #333;
+    margin-bottom: 20px;
+  }
+
+  #why-ecommerce ul {
+    list-style-type: none;
+    padding-left: 0;
+    font-size: 1.1rem;
+    color: #555;
+  }
+
+  #why-ecommerce ul li {
+    margin-bottom: 12px;
+    text-align: left;
+    padding-left: 20px;
+    position: relative;
+  }
+
+  #why-ecommerce ul li::before {
+    content: '✔';
+    color: #4caf50;
+    position: absolute;
+    left: 0;
+    font-size: 1.2rem;
+  }
+
+  #why-ecommerce ul li strong {
+    color: #333;
+  }
+
+  /* Technologies Section */
+  #technologies {
+    background-color: #f9f9f9;
+    padding: 60px 20px;
+    border-top: 4px solid #e0e0e0;
+    /* Top border for separation */
+  }
+
+  .technologies-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .technologies-text {
+    width: 60%;
+    /* Adjust this value as needed */
+  }
+
+  #technologies h2 {
+    font-size: 2.8rem;
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+  }
+
+  #technologies p {
+    font-size: 1.1rem;
+    text-align: center;
+    color: #555;
+    margin-bottom: 30px;
+  }
+
+  #technologies h3 {
+    font-size: 2rem;
+    color: #333;
+    margin-top: 20px;
+  }
+
+  #technologies ul {
+    list-style-type: none;
+    padding-left: 0;
+    text-align: left;
+    margin-left: 20px;
+  }
+
+  #technologies ul li {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+  }
+
+  #technologies ul li strong {
+    color: #333;
+  }
+
+  /* Image content styling */
+  .technologies-image {
+    width: 35%;
+    /* Adjust this value as needed */
+  }
+
+  .technologies-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    /* Shadow for image */
+    transition: transform 0.3s ease;
+    /* Smooth hover effect */
+  }
+
+  .technologies-image img:hover {
+    transform: scale(1.05);
+    /* Slight zoom on hover */
+  }
+
+  /* Example Section */
+  #example {
+    padding: 60px 20px;
+    background-color: #ffffff;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    /* Subtle shadow for depth */
+  }
+
+  #example h2 {
+    font-size: 2.8rem;
+    color: #333;
+  }
+
+  #example p {
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    color: #555;
+    line-height: 1.6;
+  }
+</style>
+<section id="intro">
+  <h1>
+    <%= card.card_title %>
+  </h1>
+  <p>
+    <%= card.card_description %>
+  </p>
+</section>
+
+<section id="why-ecommerce">
+  <h2>Why <%= card.card_title %>?</h2>
+  <p>Creating a fully-functional online store offers numerous benefits for businesses, including 24/7 availability,
+    global reach, and automated processes that enhance operational efficiency.</p>
+  <ul>
+    <li><strong>Global Reach:</strong> Your store is accessible to anyone with an internet connection, anywhere in the
+      world.</li>
+    <li><strong>Scalability:</strong> Easily scale your product range, integrate payment systems, and support growing
+      traffic.</li>
+    <li><strong>Increased Sales:</strong> An intuitive and secure online store can drive more conversions and customer
+      retention.</li>
+    <li><strong>Analytics:</strong> Track customer behavior, sales trends, and inventory management for improved
+      business decisions.</li>
+  </ul>
+</section>
+
+<section id="technologies">
+  <h2>Technologies Used in <%= card.card_title %>
+  </h2>
+  <p>Our team leverages cutting-edge technologies to build secure and high-performance e-commerce solutions:</p>
+
+  <div class="technologies-content">
+    <div class="technologies-text">
+      <h3>Frontend Technologies</h3>
+      <ul>
+        <li><strong>HTML/CSS/JavaScript:</strong> The foundation of any online store, providing structure, design, and
+          interactivity.</li>
+        <li><strong>React, Angular, Vue:</strong> Modern frameworks to create dynamic and engaging user interfaces for
+          product browsing, filtering, and checkout.</li>
+      </ul>
+      <h3>Backend Technologies</h3>
+      <ul>
+        <li><strong>Node.js:</strong> Building fast and scalable server-side logic for handling user requests, inventory
+          management, and transactions.</li>
+        <li><strong>Express.js:</strong> Simplifying the process of building APIs for handling requests like adding
+          products, processing payments, and managing user accounts.</li>
+        <li><strong>Databases:</strong> MySQL or MongoDB for managing product data, customer information, and order
+          history.</li>
+      </ul>
+      <h3>E-commerce Platforms & Integrations</h3>
+      <ul>
+        <li><strong>Shopify, WooCommerce:</strong> Leading platforms for easily managing product listings, payments, and
+          customer orders.</li>
+        <li><strong>Payment Gateway Integration:</strong> Secure integration with services like PayPal, Stripe, and
+          credit card processors.</li>
+        <li><strong>Shipping API:</strong> Automated shipping options and real-time tracking integration.</li>
+      </ul>
     </div>
-  </section>
-</body>
-</html>
+
+    <!-- Image Section -->
+    <div class="technologies-image">
+      <img
+        src="https://img.freepik.com/free-vector/e-commerce-business-concept-cart-marketing-purchase-vector-illustration-with-icons-flat-design_230076-418.jpg?ga=GA1.1.1666531303.1714742568&semt=ais_hybrid"
+        alt="Technologies used in E-commerce Development">
+    </div>
+  </div>
+</section>
+
+<section id="example">
+  <h2>Example: E-commerce Website for an Online Store</h2>
+  <p>Take a look at our E-commerce projects, where we help businesses set up online stores with customizable product
+    listings, a smooth checkout process, and secure payment gateways.</p>
+</section>
