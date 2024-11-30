@@ -28,7 +28,7 @@ router.get('/', function (req, res) {
       res.render('layout', {
         title: "Index Page",
         page: 'index',
-        counts: count 
+        counts: count
       })
     })
   })
@@ -59,39 +59,44 @@ router.get('/service/:id', function (req, res) {
     LEFT JOIN cards ON service.serviceid = cards.serviceid 
     WHERE service.serviceid = ?`, [id], (error, results) => {
 
-     // console.log("Query Results:", results);
-
-
     if (error) {
-      console.log("Error:", error);  
+      console.log("Error:", error);
       return res.status(500).send('Error fetching service details');
     }
 
     if (results.length === 0) {
-      console.log("No results found for service id:", id);  
+      console.log("No results found for service id:", id);
       return res.status(404).send('Service not found');
     }
 
-    const serviceData = results.find(result => result.card_title === undefined);  
-    const cards = results.filter(result => result.card_title !== undefined); 
-
-   
-    console.log(serviceData) //undefined hai ye 
-    console.log("")
-    console.log(cards)
-    // return res.json(serviceData)
-
+    const serviceData = results.find(result => result.card_title === undefined);
+    const cards = results.filter(result => result.card_title !== undefined);
 
     res.render('layout', {
       title: 'Service Details',
       page: 'service_detail',
-      data: cards, 
-      cards: cards 
+      data: cards,
+      cards: cards
     });
   });
 });
 
-  
+router.get('/details/:id', function (req, res) {
+  const id = req.params.id
+
+  pool.query('select * from cards where card_id = ?', [id], (err, result) => {
+    if (err) return res.json(err)
+
+    const card = result[0];
+
+    res.render('layout', {
+      title: card.card_title,
+      page: 'details',
+      card: card,
+    });
+  })
+})
+
 router.get('/training', function (req, res) {
   pool.query('SELECT * FROM training', (error, results) => {
     if (error)
@@ -113,11 +118,7 @@ router.get('/training/:id', function (req, res) {
     if (error)
       return res.status(500).send('Training/id page error');
 
-   
-
     const data = results[0];
-
-   
 
     res.render('layout', {
       title: 'training details',
@@ -282,8 +283,8 @@ router.get('/blog', function (req, res) {
         </html>
       `);
     }
-    
-    
+
+
     if (results.length === 0) {
       return res.status(404).send('blog Us data not found');
     }
