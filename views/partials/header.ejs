@@ -2,8 +2,7 @@
   /* Header Styles */
   header {
     background-color: #6D214F;
-    padding-top: 20px;
-    padding-bottom: 20px;
+    padding: 20px;
     z-index: 99999;
     position: relative;
   }
@@ -37,14 +36,11 @@
     color: #f5a623;
   }
 
-  nav .d-md-flex {
+  /* Desktop Menu */
+  .d-md-flex {
     display: flex;
     align-items: center;
     gap: 1rem;
-  }
-
-  .d-md-none {
-    display: none;
   }
 
   /* Hamburger Icon Style */
@@ -95,6 +91,27 @@
     .d-md-flex {
       display: none;
     }
+
+    /* Mobile Menu */
+    .mobile-menu {
+      display: block;
+    }
+
+    .mobile-menu a {
+      font-size: 16px;
+    }
+  }
+
+  /* Adjust logo size for mobile */
+  @media (max-width: 480px) {
+    nav img {
+      width: 100px;
+      height: 50px;
+    }
+
+    nav a {
+      font-size: 14px;
+    }
   }
 </style>
 
@@ -102,8 +119,7 @@
   <nav class="d-flex justify-content-between">
     <!-- Logo -->
     <div>
-      <!-- Use absolute path for the logo -->
-      <img src="/images/mvlogo.png"   style="width: 200px; height: 60px; margin-left: 5%;"  alt="Company Logo">
+      <img src="/images/mvlogo.png" style="width: 120px; height: 60px;" alt="Company Logo">
     </div>
     <!-- Desktop Menu -->
     <div class="d-none d-md-flex align-items-center gap-3">
