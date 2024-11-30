@@ -112,14 +112,8 @@ router.get('/training/:id', function (req, res) {
   pool.query(`SELECT * FROM training where trainingid = ?`, [id], (error, results) => {
     if (error)
       return res.status(500).send('Training/id page error');
-
-   
-
-    const data = results[0];
-
-   
-
-    res.render('layout', {
+const data = results[0];
+res.render('layout', {
       title: 'training details',
       page: 'training_detail',
       data

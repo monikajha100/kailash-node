@@ -3,8 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Service Details</title>
-  <!-- Add FontAwesome for icons -->
+  <title>Explore Our Services</title>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
   <style>
     /* Global Styles */
@@ -14,147 +13,168 @@
       padding: 0;
       background-color: #f4f9ff;
       color: #333;
-      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    h1, h2 {
+      text-align: center;
+      margin: 10px 0;
+      color: #0056b3;
     }
 
     h1 {
-      text-align: center;
-      font-size: 3rem;
-      margin: 20px 0;
-      color: #0056b3;
-      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+      font-size: 2.5rem;
     }
 
     h2 {
-      text-align: center;
-      font-size: 2rem;
+      font-size: 1.8rem;
       color: #003f7d;
-      margin-bottom: 40px;
+      margin-bottom: 20px;
     }
 
     /* Card Container */
-    .card-container {
+    .section-container {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-      gap: 70px;
-      padding: 5% 10%;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      padding: 5%;
+      justify-items: center;
+      background-color: #f9f9f9;
     }
 
     /* Each individual card */
-    .card {
+    .section {
       background-color: #ffffff;
       border-radius: 12px;
       overflow: hidden;
       transition: box-shadow 0.3s ease, transform 0.3s ease;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-      border: 2px solid transparent;
-      background-image: linear-gradient(white, white),
-        linear-gradient(to right, #0056b3, #003f7d);
-      background-origin: border-box;
-      background-clip: content-box, border-box;
+      border: 1px solid #ddd;
     }
 
-    /* Hover Effects */
-    .card:hover {
-      transform: scale(1.05);
+    .section:hover {
+      transform: translateY(-10px);
       box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
     }
-    .card:hover .card-title {
-      color: #0056b3;
-      transform: scale(1.1);
-      transition: color 0.3s ease, transform 0.3s ease;
-    }
-    .card:hover .card-description {
-      color: #444444;
-      transition: color 0.3s ease;
-    }
-    .card:hover .card-action a {
-      transform: translateY(-5px);
-      background-color: #004080;
-    }
 
-    /* Card Image */
-    .card img {
+    /* Image Styling */
+    .section img {
       width: 100%;
-      height: 200px;
+      height: 250px;
       object-fit: cover;
-      display: block;
+      border-radius: 12px 12px 0 0;
     }
 
-    /* Card Body */
-    .card-body {
+    /* Section Content */
+    .section-content {
       padding: 20px;
       text-align: center;
     }
 
-    /* Card Title */
-    .card-title {
-      font-size: 1.6rem;
+    .section-title {
+      font-size: 1.8rem;
       font-weight: bold;
-      color: transparent;
-      background: linear-gradient(to right, #0056b3, #003f7d);
-      -webkit-background-clip: text;
-      background-clip: text;
+      color: #0056b3;
       margin-bottom: 10px;
     }
 
-    /* Card Description */
-    .card-description {
+    .section-description {
       font-size: 1rem;
-      color: #777777;
+      color: #555;
       line-height: 1.6;
-      margin-bottom: 15px;
+      margin-bottom: 20px;
     }
 
-    /* Action Button */
-    .card-action a {
+    /* Learn More Button */
+    .section-action a {
       display: inline-block;
       text-decoration: none;
       background-color: #0056b3;
       color: #ffffff;
-      padding: 10px 20px;
+      padding: 12px 24px;
       border-radius: 6px;
       font-size: 1rem;
       font-weight: bold;
       transition: background-color 0.3s ease, transform 0.2s ease;
     }
-    .card-action a:hover {
+
+    .section-action a:hover {
       background-color: #003f7d;
-      box-shadow: 0 4px 20px rgba(0, 85, 179, 0.5);
+      transform: scale(1.1);
     }
 
-    
+    /* Responsiveness */
+    @media screen and (max-width: 768px) {
+      h1 {
+        font-size: 2rem;
+      }
+      h2 {
+        font-size: 1.5rem;
+      }
+      .section-container {
+        padding: 5% 2%;
+        gap: 15px;
+      }
+      .section-title {
+        font-size: 1.4rem;
+      }
+      .section-description {
+        font-size: 0.9rem;
+      }
+      .section-action a {
+        font-size: 0.9rem;
+        padding: 8px 15px;
+      }
+    }
+
+    @media screen and (max-width: 480px) {
+      h1 {
+        font-size: 1.8rem;
+      }
+      h2 {
+        font-size: 1.2rem;
+      }
+      .section-container {
+        grid-template-columns: 1fr;
+        padding: 5%;
+      }
+      .section-content {
+        padding: 15px;
+      }
+      .section-title {
+        font-size: 1.1rem;
+      }
+      .section-description {
+        font-size: 0.85rem;
+      }
+    }
   </style>
 </head>
 <body>
-
-  <!-- Page Heading -->
-  <h1>Welcome to Our Services</h1>
-  <h2>Explore What We Offer</h2>
-
-  <!-- Card Container -->
-  <div class="card-container">
+  <h1>Explore Our Services</h1>
+  <h2>Discover Our Course Offerings</h2>
+  <div class="section-container"  style="margin-bottom: 5%;">
     <% cards.forEach(card => { %>
-      <div class="card">
-        <!-- Card Image -->
-        <img src="<%= card.card_image_url %>" alt="<%= card.card_title %>">
+      <div class="section">
+        <!-- Section Image -->
+        <a href="/details">
+          <img src="<%= card.card_image_url %>" alt="<%= card.card_title %>">
+        </a>
+        
+        <!-- Section Content -->
+        <div class="section-content">
+          <!-- Section Title -->
+          <h2 class="section-title"><%= card.card_title %></h2>
 
-        <!-- Card Body -->
-        <div class="card-body">
-          <h3 class="card-title"><%= card.card_title %></h3>
-          <p class="card-description"><%= card.card_description %></p>
+          <!-- Section Description -->
+          <p class="section-description"><%= card.card_description %></p>
 
-          <!-- Action Button -->
-          <div class="card-action">
+          <!-- Learn More Button -->
+          <div class="section-action">
             <a href="/details">Learn More</a>
           </div>
         </div>
       </div>
     <% }) %>
   </div>
-
-  <!-- Footer -->
- 
-
 </body>
 </html>

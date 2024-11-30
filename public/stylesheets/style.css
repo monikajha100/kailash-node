@@ -168,66 +168,123 @@ p {
 
 /* Responsive styling */
 
+/* Default Styles for Larger Screens */
 .black-box {
   background-color: black;
   color: white;
-margin-top: 2%;
+  margin-top: 2%;
   padding: 30px;
-  /* border-radius: 10px; */
   display: flex;
-  /* Use flexbox for positioning */
   justify-content: space-between;
-  /* Space between left and right content */
   align-items: center;
-  /* Center vertically */
   text-align: right;
-  /* Align text to the right */
   height: 90%;
-  /* Increase height as needed */
   min-height: 400px;
-  /* Set a minimum height if desired */
-  ;
 }
 
 .black-box p {
   font-size: 2rem;
   width: 40%;
-  /* Set to half width of the black box */
   font-style: oblique;
   text-align: right;
-  /* Aligns paragraph text to the right */
 }
 
 .contact-info {
-  width: 50%;
-  /* Keeps the content at half-width */
+  width: auto;
   text-align: right;
-  /* Aligns text to the left */
   margin-left: 0;
-  /* Ensures it starts from the left */
 }
 
 .contact-info h2 {
   font-size: 2rem;
-  /* Customize heading size */
   text-align: right;
-  /* Aligns the heading to the right side */
   font-style: oblique;
 }
 
 .contact-info p {
   margin: 10px 0;
   font-size: 1.2rem;
-  /* Customize contact text size */
   text-align: right;
 }
 
 .contact-info .phone-icon {
   font-size: 1.5rem;
   margin-right: 10px;
-  /* Space between icon and text */
 }
 
+/* Mobile Query (max-width: 768px) */
+@media (max-width: 768px) {
+  .black-box {
+    flex-direction: column;
+    align-items: flex-start; /* Align items to the left for mobile */
+    padding: 20px; /* Reduce padding for mobile */
+    text-align: left; /* Align text to the left */
+    height: auto; /* Allow height to adjust based on content */
+  }
+
+  .black-box p {
+    width: auto; /* Full width for mobile */
+    font-size: 1.5rem; /* Slightly smaller font size for mobile */
+    margin-bottom: 10px; /* Add margin to separate from other elements */
+  }
+
+  .contact-info {
+    width: auto; /* Full width on mobile */
+    margin-left: 0; /* No margin left */
+    text-align: center; /* Align text to the left for mobile */
+    margin-top: -7%;
+  }
+
+  .contact-info h2 {
+    font-size: 1.0rem; /* Smaller heading font for mobile */
+  }
+
+  .contact-info p {
+    font-size: 1rem; /* Slightly smaller text size for mobile */
+  }
+
+  .contact-info .phone-icon {
+    font-size: 1.2rem; /* Smaller phone icon for mobile */
+  }
+}
+
+/* Extra Small Mobile Query (max-width: 480px) */
+@media (max-width: 480px) {
+  .black-box {
+    flex-direction: column;
+    align-items: flex-start; /* Align items to the left for mobile */
+    padding: 20px; /* Reduce padding for mobile */
+    text-align: center; /* Align text to the left */
+    height: 20px; /* Allow height to adjust based on content */
+  }
+
+  .black-box p {
+    width: auto; /* Full width for mobile */
+    font-size: 0.9px; /* Slightly smaller font size for mobile */
+    margin-bottom: 10px; /* Add margin to separate from other elements */
+    align-items: center;
+  }
+   .contact-info {
+    width: auto; /* Full width on mobile */
+    margin-top: -7%;
+   
+    text-align: center; /* Align text to the left for mobile */
+    height: auto;
+  }
+
+  .contact-info h2 {
+    font-size: 0.1rem; /* Further reduce font size for heading */
+    align-items: center;
+  }
+
+  .contact-info p {
+    font-size: 0.1rem; /* Smaller font size for paragraphs */
+  }
+
+  .contact-info .phone-icon {
+    font-size: 0.1rem; /* Smallest phone icon size */
+  }
+}
 
 /* Styles for the list container */
 /* Flexbox container for the sections */
@@ -877,12 +934,15 @@ h6 {
   h5 {
     font-size: 40px;
     margin-top: 40px;
+    align-items: center;
   }
 
   h4 {
     font-size: 24px;
     margin-top: 10px;
+    align-items: center;
   }
+
 
   .gallery-container {
     flex-direction: column;
@@ -1045,6 +1105,19 @@ h6 {
   .faq-answer {
     font-size: 0.9rem;
   }
+  .arrow {
+    position: absolute;
+    font-size: 1.0em;
+    color: black;
+    cursor: pointer;
+    display: flex;
+    justify-content: center; /* Center the content horizontally */
+    align-items: center; /* Center the content vertically */
+    right: 10px; /* Set the right margin to push the arrow towards the right */
+    top: 50%; /* Vertically center the arrow */
+    transform: translateY(-50%); /* Adjust for exact vertical centering */
+  }
+  
 }
 
 @media (max-width: 576px) {
@@ -1066,5 +1139,118 @@ h6 {
 
   .faq-answer {
     font-size: 0.85rem;
+  }
+  .arrow {
+    position: absolute;
+    font-size: 1.0em;
+    color: black;
+    cursor: pointer;
+    display: flex;
+    justify-content: center; /* Center the content horizontally */
+    align-items: center; /* Center the content vertically */
+    right: 10px; /* Set the right margin to push the arrow towards the right */
+    top: 50%; /* Vertically center the arrow */
+    transform: translateY(-50%); /* Adjust for exact vertical centering */
+  }
+  
+}
+.cards-container {
+  display: flex;
+  justify-content: center; /* Centers cards horizontally */
+  align-items: center; /* Aligns cards vertically if needed */
+  flex-wrap: wrap; /* Allows wrapping on smaller screens */
+  gap: 20px; /* Equal spacing between cards */
+  background: linear-gradient(to right, #6D214F, #B33771);
+  border-radius: 15px;
+  padding: 40px;
+  margin-bottom: 1%;
+  text-align: center;
+  min-height: 400px; /* Optional: Ensures enough height for vertical alignment */
+}
+
+.card {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 300px; /* Sets a maximum width for cards */
+  flex: 1 1 calc(100% - 40px); /* Full width on small screens, shrink with space */
+  text-align: center;
+}
+
+.card h2 {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.card p {
+  font-size: 1rem;
+  color: #444;
+  line-height: 1.5;
+  margin-bottom: 15px;
+}
+
+/* Button Styles */
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  color: #fff;
+  background-color: #6D214F;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #B33771;
+}
+
+/* Career Card Specific Styles */
+.career-card h2 {
+  color: #6D214F;
+}
+
+/* Contact Card Specific Styles */
+.contact-card h2 {
+  color: #B33771;
+}
+
+/* Responsive Media Query */
+@media (max-width: 768px) {
+  .cards-container {
+    padding: 20px; /* Reduce padding for smaller screens */
+  }
+
+  .card {
+    flex: 1 1 100%; /* Make cards stack vertically on smaller screens */
+    max-width: 100%; /* Allow cards to occupy full width */
+  }
+
+  .card h2 {
+    font-size: 1.5rem; /* Slightly smaller font size */
+  }
+
+  .card p {
+    font-size: 0.9rem; /* Adjust paragraph font size */
+  }
+
+  .btn {
+    font-size: 0.9rem; /* Adjust button font size */
+  }
+}
+
+@media (max-width: 480px) {
+  .cards-container {
+    gap: 15px; /* Reduce gap between cards */
+  }
+
+  .card {
+    padding: 15px; /* Reduce card padding */
+  }
+
+  .btn {
+    padding: 4px 9px; /* Adjust button padding */
   }
 }
