@@ -231,11 +231,11 @@ router.get('/contact_us', (req, res) => {
 })
 
 router.post('/submit-contact-form', (req, res) => {
-  const { full_name, email_address, message } = req.body;
+  const { full_name, email_address, mobile, message } = req.body;
 
-  const query = 'INSERT INTO contact_form (full_name, email_address, message) VALUES (?, ?, ?)';
+  const query = 'INSERT INTO contact_form (full_name, email_address,mobile, message) VALUES (?, ?, ?, ?)';
 
-  pool.query(query, [full_name, email_address, message], (error, results) => {
+  pool.query(query, [full_name, email_address, mobile, message], (error, results) => {
     if (error)
       return res.send('failed contact us')
 

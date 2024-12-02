@@ -7,27 +7,27 @@
 </section>
 
 
-<div class="d-flex flex-column align-items-center p-4 gallery-container" style="gap: 20px; background: white; border-radius: 15px; margin-top: -5%; margin-left: 8%; justify-content: center; align-items: center; height: auto;">
-  <h5 class="text-center font-weight-bold my-4">Innovative Solutions, Inspired by Technology</h5>
+<div class="d-flex flex-column align-items-center p-4 gallery-container">
+  <h5>Innovative Solutions, Inspired by Technology</h5>
   
-  <div class="d-flex flex-wrap justify-content-center gallery-inner" style="margin-top: 2%; width: 100%; height: auto; margin-bottom: 6%;">
+  <div class="d-flex flex-wrap justify-content-center gallery-inner">
     <a href="/index/service/1" target="_blank">
-      <img class="gallery-item" src="https://img.freepik.com/free-photo/medium-shot-people-working-office_23-2149307790.jpg?ga=GA1.2.1666531303.1714742568&semt=ais_hybrid" alt="App Development" data-index="2">
+      <img class="gallery-item" src="https://img.freepik.com/premium-vector/digital-marketing-social-media-with-man-laptop-logo-icon_112255-1714.jpg" alt="Web Development">
     </a>
     <a href="/index/service/2" target="_blank">
-      <img class="gallery-item" src="https://img.freepik.com/free-photo/person-front-computer-working-html_23-2150040428.jpg?ga=GA1.1.1666531303.1714742568&semt=ais_hybrid" alt="App Development" data-index="2">
+      <img class="gallery-item" src="https://img.freepik.com/free-vector/app-development-banner_33099-1720.jpg" alt="App Development">
     </a>
     <a href="/index/service/3" target="_blank">
-      <img class="gallery-item" src="https://img.freepik.com/premium-photo/ip-wifi-wireless-security-camera-supports-internet-installation-technology-security-systems-smart-home-applicationsx9_150418-1038.jpg?ga=GA1.1.1666531303.1714742568&semt=ais_hybrid" alt="Digital Marketing" data-index="3">
+      <img class="gallery-item" src="https://img.freepik.com/premium-vector/stylish-bright-creative-text-graphic-design-white-background-vector_532963-284.jpg" alt="Graphic Design">
     </a>
     <a href="/index/service/4" target="_blank">
-      <img class="gallery-item" src="https://img.freepik.com/free-photo/corporate-management-strategy-solution-branding-concept_53876-167088.jpg?ga=GA1.1.1666531303.1714742568&semt=ais_hybrid" alt="App Development" data-index="4">
+      <img class="gallery-item" src="https://img.freepik.com/free-vector/website-development-banner_33099-1687.jpg" alt="Digital Marketing">
     </a>
     <a href="/index/service/5" target="_blank">
-      <img class="gallery-item" src="https://img.freepik.com/free-vector/seo-optimization-banner_33099-1690.jpg?ga=GA1.1.1666531303.1714742568&semt=ais_hybrid" alt="Web Development" data-index="5">
+      <img class="gallery-item" src="https://img.freepik.com/free-vector/seo-optimization-banner_33099-1690.jpg" alt="SEO Optimization">
     </a>
     <a href="/index/service/6" target="_blank">
-      <img class="gallery-item" src="https://img.freepik.com/free-vector/graphic-design-colorful-geometrical-lettering_52683-34588.jpg?ga=GA1.1.1666531303.1714742568&semt=ais_hybrid" alt="App Development" data-index="6">
+      <img class="gallery-item" src="https://img.freepik.com/free-photo/cctv-security-technology-with-lock-icon-digital-remix_53876-104935.jpg" alt="CCTV Security">
     </a>
   </div>
 </div>
@@ -89,25 +89,16 @@
 <script>
   document.addEventListener('DOMContentLoaded', () => {
     const visitorCountElement = document.getElementById('visitor-count');
-    const finalCount = <%= count %>; 
-    let currentCount = 0;
+    const finalCount = <%= count %>; // Final visitor count fetched dynamically
 
-    
     if (isNaN(finalCount) || finalCount <= 0) {
       visitorCountElement.textContent = "Error: Invalid visitor count";
-      return;
+    } else {
+      visitorCountElement.textContent = finalCount; // Set final count immediately
     }
-
-    const interval = setInterval(() => {
-      currentCount++;
-      visitorCountElement.textContent = currentCount;
-
-      if (currentCount >= finalCount) {
-        clearInterval(interval);
-      }
-    }, 50);
   });
 </script>
+
 <div class="scrolling-text w-100" style="overflow: hidden;">
   <p>
     <%= index.scrolling_text || 'Welcome to Souranjh Technology!' %>
@@ -128,7 +119,7 @@
   </div>
   <div class="box" style="text-align: center; color: white;">
     <h3 style="font-size: 2.5rem; font-weight: bold;" data-target="5">0</h3>
-    <p style="margin: 0; font-size: 1.2rem;">Awards Won</p>
+    <p style="margin: 0; font-size: 1.2rem;">Awards</p>
   </div>
 </div>
 

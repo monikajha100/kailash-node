@@ -1,7 +1,23 @@
 <style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  /* Intro Section */
+  #intro {
+    padding: 60px 20px;
+    background: linear-gradient(to bottom, #4facfe, #00f2fe);
+    color: white;
+    text-align: center;
+  }
+
   #intro h1 {
-    font-size: 3.5rem;
+    font-size: 2.5rem;
     margin-bottom: 20px;
+    font-weight: bold;
     letter-spacing: 1px;
   }
 
@@ -9,151 +25,129 @@
     font-size: 1.2rem;
     max-width: 800px;
     margin: 0 auto;
-    line-height: 1.6;
-    color: #e0e0e0;
-    /* Lighter text color */
+    line-height: 1.8;
   }
 
   /* Why E-commerce Section */
   #why-ecommerce {
-    padding: 60px 20px;
-    background-color: #ffffff;
+    padding: 40px 20px;
+    background-color: #f9f9f9;
     text-align: center;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    /* Subtle shadow for depth */
   }
 
   #why-ecommerce h2 {
-    font-size: 2.8rem;
-    color: #333;
+    font-size: 2rem;
     margin-bottom: 20px;
+    color: #333;
   }
 
   #why-ecommerce ul {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
     list-style-type: none;
-    padding-left: 0;
-    font-size: 1.1rem;
-    color: #555;
+    padding: 0;
+    margin-top: 30px;
   }
 
   #why-ecommerce ul li {
-    margin-bottom: 12px;
+    background: white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    margin: 10px;
+    max-width: 300px;
+    flex: 1 1 calc(30% - 20px);
     text-align: left;
-    padding-left: 20px;
-    position: relative;
-  }
-
-  #why-ecommerce ul li::before {
-    content: '✔';
-    color: #4caf50;
-    position: absolute;
-    left: 0;
-    font-size: 1.2rem;
   }
 
   #why-ecommerce ul li strong {
-    color: #333;
+    color: #4caf50;
+    display: block;
+    margin-bottom: 10px;
   }
 
   /* Technologies Section */
   #technologies {
-    background-color: #f9f9f9;
-    padding: 60px 20px;
+    padding: 40px 20px;
+    background: linear-gradient(to bottom, #ffffff, #f1f1f1);
     border-top: 4px solid #e0e0e0;
-    /* Top border for separation */
+  }
+
+  #technologies h2 {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 30px;
+    color: #333;
   }
 
   .technologies-content {
     display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
     flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
   }
 
   .technologies-text {
-    width: 60%;
-    /* Adjust this value as needed */
+    flex: 1 1 400px;
+    max-width: 600px;
+    text-align: left;
   }
 
-  #technologies h2 {
-    font-size: 2.8rem;
-    text-align: center;
-    color: #333;
-    margin-bottom: 20px;
-  }
-
-  #technologies p {
-    font-size: 1.1rem;
-    text-align: center;
-    color: #555;
-    margin-bottom: 30px;
-  }
-
-  #technologies h3 {
-    font-size: 2rem;
+  .technologies-text h3 {
+    font-size: 1.5rem;
     color: #333;
     margin-top: 20px;
   }
 
-  #technologies ul {
-    list-style-type: none;
-    padding-left: 0;
-    text-align: left;
-    margin-left: 20px;
+  .technologies-text ul {
+    list-style: none;
+    padding: 0;
   }
 
-  #technologies ul li {
-    font-size: 1.1rem;
+  .technologies-text ul li {
     margin-bottom: 10px;
+    font-size: 1rem;
+    color: #555;
   }
 
-  #technologies ul li strong {
-    color: #333;
-  }
-
-  /* Image content styling */
-  .technologies-image {
-    width: 35%;
-    /* Adjust this value as needed */
+  .technologies-text ul li strong {
+    color: #4caf50;
   }
 
   .technologies-image img {
     width: 100%;
-    height: auto;
-    border-radius: 8px;
+    max-width: 400px;
+    border-radius: 10px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    /* Shadow for image */
-    transition: transform 0.3s ease;
-    /* Smooth hover effect */
   }
 
-  .technologies-image img:hover {
-    transform: scale(1.05);
-    /* Slight zoom on hover */
-  }
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    #intro h1 {
+      font-size: 2rem;
+    }
 
-  /* Example Section */
-  #example {
-    padding: 60px 20px;
-    background-color: #ffffff;
-    text-align: center;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    /* Subtle shadow for depth */
-  }
+    #intro p {
+      font-size: 1rem;
+    }
 
-  #example h2 {
-    font-size: 2.8rem;
-    color: #333;
-  }
+    #why-ecommerce ul li {
+      flex: 1 1 calc(100% - 20px);
+    }
 
-  #example p {
-    font-size: 1.2rem;
-    max-width: 800px;
-    margin: 0 auto;
-    color: #555;
-    line-height: 1.6;
+    .technologies-content {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .technologies-text {
+      text-align: center;
+    }
   }
 </style>
+
 <section id="intro">
   <h1>
     <%= card.card_title %>
@@ -165,25 +159,28 @@
 
 <section id="why-ecommerce">
   <h2>Why <%= card.card_title %>?</h2>
-  <p>Creating a fully-functional online store offers numerous benefits for businesses, including 24/7 availability,
-    global reach, and automated processes that enhance operational efficiency.</p>
   <ul>
-    <li><strong>Global Reach:</strong> Your store is accessible to anyone with an internet connection, anywhere in the
-      world.</li>
-    <li><strong>Scalability:</strong> Easily scale your product range, integrate payment systems, and support growing
-      traffic.</li>
-    <li><strong>Increased Sales:</strong> An intuitive and secure online store can drive more conversions and customer
-      retention.</li>
-    <li><strong>Analytics:</strong> Track customer behavior, sales trends, and inventory management for improved
-      business decisions.</li>
+    <li>
+      <strong>Global Reach:</strong> Your store is accessible to anyone with an internet connection, anywhere in the
+      world.
+    </li>
+    <li>
+      <strong>Scalability:</strong> Easily scale your product range, integrate payment systems, and support growing
+      traffic.
+    </li>
+    <li>
+      <strong>Increased Sales:</strong> An intuitive and secure online store can drive more conversions and customer
+      retention.
+    </li>
+    <li>
+      <strong>Analytics:</strong> Track customer behavior, sales trends, and inventory management for improved business
+      decisions.
+    </li>
   </ul>
 </section>
 
 <section id="technologies">
-  <h2>Technologies Used in <%= card.card_title %>
-  </h2>
-  <p>Our team leverages cutting-edge technologies to build secure and high-performance e-commerce solutions:</p>
-
+  <h2>Technologies Used in <%= card.card_title %></h2>
   <div class="technologies-content">
     <div class="technologies-text">
       <h3>Frontend Technologies</h3>
@@ -202,27 +199,12 @@
         <li><strong>Databases:</strong> MySQL or MongoDB for managing product data, customer information, and order
           history.</li>
       </ul>
-      <h3>E-commerce Platforms & Integrations</h3>
-      <ul>
-        <li><strong>Shopify, WooCommerce:</strong> Leading platforms for easily managing product listings, payments, and
-          customer orders.</li>
-        <li><strong>Payment Gateway Integration:</strong> Secure integration with services like PayPal, Stripe, and
-          credit card processors.</li>
-        <li><strong>Shipping API:</strong> Automated shipping options and real-time tracking integration.</li>
-      </ul>
     </div>
 
-    <!-- Image Section -->
     <div class="technologies-image">
       <img
-        src="https://img.freepik.com/free-vector/e-commerce-business-concept-cart-marketing-purchase-vector-illustration-with-icons-flat-design_230076-418.jpg?ga=GA1.1.1666531303.1714742568&semt=ais_hybrid"
-        alt="Technologies used in E-commerce Development">
+        src="https://img.freepik.com/free-photo/blog-blogging-digital-networking-www-global-concept_53876-21189.jpg?ga=GA1.1.1666531303.1714742568&semt=ais_hybrid"
+        alt="E-commerce Technologies">
     </div>
   </div>
-</section>
-
-<section id="example">
-  <h2>Example: E-commerce Website for an Online Store</h2>
-  <p>Take a look at our E-commerce projects, where we help businesses set up online stores with customizable product
-    listings, a smooth checkout process, and secure payment gateways.</p>
 </section>
