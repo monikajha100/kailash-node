@@ -94,7 +94,7 @@
 
     /* Mobile Menu */
     .mobile-menu {
-      display: block;
+      display: none;
     }
 
     .mobile-menu a {
@@ -143,7 +143,6 @@
     <a href="/index/service">Services</a>
     <a href="/index/join_us">Career</a>
     <a href="/index/contact_us">Contact us</a>
-    <a href="/index/blog">Blog</a>
     <a href="/index/training">Training</a>
   </div>
 </header>
@@ -152,6 +151,11 @@
   // Function to toggle the visibility of the mobile menu
   function toggleMobileMenu() {
     const mobileMenu = document.getElementById('mobileMenu');
-    mobileMenu.style.display = (mobileMenu.style.display === 'block') ? 'none' : 'block';
+    // Toggle the display between 'none' and 'block'
+    if (mobileMenu.style.display === 'block') {
+      mobileMenu.style.display = 'none';
+    } else {
+      mobileMenu.style.display = 'block';
+    }
   }
 </script>

@@ -182,143 +182,142 @@ p {
 .box h3 {
   font-style:oblique;
   font-size: 74px; /* Adjust font size */
-  color:  #f39c12;/* Dark text color */
-  margin: 10px 0; /* Space around the heading */
+  color:  #f39c12;
+  margin: 10px 0; 
 }
 
-/* Paragraph styling */
+
 .box p {
-  font-size: 26px; /* Smaller font size */
-  color: #6D214F; /* Gray text color */
-  margin-top: 5px; /* Space above the text */
+  font-size: 26px; 
+  color: #6D214F; 
+  margin-top: 5px; 
   font-weight: bolder;
 }
 
-/* Responsive styling */
-
-/* Default Styles for Larger Screens */
 .black-box {
-  background-color: black;
-  color: white;
-  margin-top: 2%;
-  padding: 30px;
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
-  align-items: center;
-  text-align: right;
-  height: 90%;
-  min-height: 400px;
+  align-items: stretch; 
+  padding: 20px;
+  background-color: #000;
+  color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  height: auto; 
 }
 
 .black-box p {
-  font-size: 2rem;
-  width: 40%;
-  font-style: oblique;
-  text-align: right;
+  font-size: 1.2rem;
+  line-height: 1.6;
+  text-align: center;
 }
 
+/* Styling for the right side content */
 .contact-info {
-  width: auto;
-  text-align: right;
-  margin-left: 0;
+  text-align: center;
+  margin-top: 20px; /* Default margin for smaller screens */
 }
 
 .contact-info h2 {
-  font-size: 2rem;
-  text-align: right;
-  font-style: oblique;
+  font-size: 1.5rem;
+  margin-bottom: 10px;
 }
 
 .contact-info p {
-  margin: 10px 0;
   font-size: 1.2rem;
-  text-align: right;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
 }
 
-.contact-info .phone-icon {
+.phone-icon {
   font-size: 1.5rem;
-  margin-right: 10px;
 }
 
-/* Mobile Query (max-width: 768px) */
-@media (max-width: 768px) {
+@media (min-width: 768px) {
   .black-box {
-    flex-direction: column;
-    align-items: flex-start; /* Align items to the left for mobile */
-    padding: 20px; /* Reduce padding for mobile */
-    text-align: left; /* Align text to the left */
-    height: auto; /* Allow height to adjust based on content */
-  }
-
-  .black-box p {
-    width: auto; /* Full width for mobile */
-    font-size: 1.5rem; /* Slightly smaller font size for mobile */
-    margin-bottom: 10px; /* Add margin to separate from other elements */
-  }
-
-  .contact-info {
-    width: auto; /* Full width on mobile */
-    margin-left: 0; /* No margin left */
-    text-align: center; /* Align text to the left for mobile */
-    margin-top: -7%;
-  }
-
-  .contact-info h2 {
-    font-size: 1.0rem; /* Smaller heading font for mobile */
-  }
-
-  .contact-info p {
-    font-size: 1rem; /* Slightly smaller text size for mobile */
-  }
-
-  .contact-info .phone-icon {
-    font-size: 1.2rem; /* Smaller phone icon for mobile */
-  }
-}
-
-/* Extra Small Mobile Query (max-width: 480px) */
-@media (max-width: 480px) {
-  .black-box {
-    flex-direction: column;
-    align-items: flex-start; /* Align items to the left for mobile */
-    padding: 20px; /* Reduce padding for mobile */
-    text-align: center; /* Align text to the left */
-    height: 20px; /* Allow height to adjust based on content */
-  }
-
-  .black-box p {
-    width: auto; /* Full width for mobile */
-    font-size: 0.9px; /* Slightly smaller font size for mobile */
-    margin-bottom: 10px; /* Add margin to separate from other elements */
-    align-items: center;
-  }
-   .contact-info {
-    width: auto; /* Full width on mobile */
-    margin-top: -7%;
-   
-    text-align: center; /* Align text to the left for mobile */
+    flex-direction: row; 
+    align-items: flex-start; 
+    text-align: left;
     height: auto;
   }
 
-  .contact-info h2 {
-    font-size: 0.1rem; /* Further reduce font size for heading */
-    align-items: center;
+  .black-box p {
+    flex: 1; /* Ensure both sections take equal space */
+    text-align: left;
+  }
+
+  .contact-info {
+    flex: 1;
+    margin-top: 0; /* Remove extra margin on larger screens */
+    text-align: right;
   }
 
   .contact-info p {
-    font-size: 0.1rem; /* Smaller font size for paragraphs */
-  }
-
-  .contact-info .phone-icon {
-    font-size: 0.1rem; /* Smallest phone icon size */
+    justify-content: flex-end;
   }
 }
 
-/* Styles for the list container */
-/* Flexbox container for the sections */
-/* Grey container styling */
-/* Grey container styling */
+/* Responsive layout for smaller screens */
+@media (max-width: 480px) {
+  .black-box {
+    flex-direction: column; /* Stack items vertically */
+    align-items: stretch; /* Stretch items to fill available space */
+    padding: 15px;
+    height: auto;
+  }
 
+  .black-box p {
+    font-size: 0.9rem; /* Reduced font size for smaller screens */
+    line-height: 1.4; /* Adjust line height accordingly */
+    text-align: center; /* Center align for smaller screens */
+  }
+
+  .contact-info {
+    margin-top: 20px; /* Ensure proper spacing between sections */
+    text-align: center;
+  }
+
+  .contact-info h2 {
+    font-size: 1rem; /* Reduced heading size */
+  }
+
+  .contact-info p {
+    font-size: 0.9rem; /* Reduced paragraph font size */
+  }
+
+  .phone-icon {
+    font-size: 1.2rem; /* Reduced icon size */
+  }
+}
+
+/* Additional layout for ultra-small screens (max-width: 300px) */
+@media (max-width: 300px) {
+  .black-box {
+    padding: 10px; /* Reduced padding for ultra-small screens */
+    height: auto;
+  }
+
+  .black-box p {
+    font-size: 0.8rem; /* Further reduced font size */
+    line-height: 1.3; /* Adjusted line height */
+  }
+
+  .contact-info h2 {
+    font-size: 0.9rem; /* Further reduced heading size */
+  }
+
+  .contact-info p {
+    font-size: 0.8rem; /* Further reduced paragraph size */
+  }
+
+  .phone-icon {
+    font-size: 1rem; /* Reduced icon size for ultra-small screens */
+  }
+}
 
 
 
@@ -1191,9 +1190,10 @@ h6 {
   background: linear-gradient(to right, #6D214F, #B33771);
   border-radius: 15px;
   padding: 40px;
-  margin-bottom: 1%;
+
+
   text-align: center;
-  min-height: 400px; /* Optional: Ensures enough height for vertical alignment */
+height: 400px; /* Optional: Ensures enough height for vertical alignment */
 }
 
 .card {
@@ -1282,3 +1282,63 @@ h6 {
     padding: 4px 9px; /* Adjust button padding */
   }
 }
+  /* Box Container Styles */
+  .box-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px;
+    border-radius: 10px;
+    flex-wrap: wrap; /* Ensures the boxes wrap on smaller screens */
+  }
+
+  /* Box Styles */
+  .box {
+    text-align: center;
+    color: white;
+    margin: 10px;
+    flex: 1; /* This will ensure the boxes take equal space */
+    min-width: 220px; /* Ensures the boxes do not get too small */
+  }
+
+  /* Box Content */
+  .box h3 {
+    font-size: 2.5rem;
+    font-weight: bold;
+  }
+
+  .box p {
+    margin: 0;
+    font-size: 1.2rem;
+  }
+
+  /* Color for ongoing projects */
+  .box p:last-child {
+    color: #000;
+  }
+
+  /* Media Query for Mobile */
+  @media (max-width: 768px) {
+    .box-container {
+      justify-content: center; /* Centers the boxes when stacked */
+    }
+
+    .box h3 {
+      font-size: 2rem; /* Smaller font size on mobile */
+    }
+
+    .box p {
+      font-size: 1rem; /* Smaller font size for descriptions on mobile */
+    }
+  }
+
+  /* Media Query for Extra Small Devices */
+  @media (max-width: 480px) {
+    .box h3 {
+      font-size: 1.8rem; /* Smaller font size on extra small screens */
+    }
+
+    .box p {
+      font-size: 0.9rem; /* Smaller description text on extra small screens */
+    }
+  }
