@@ -481,7 +481,7 @@ ul.box4 .divider-link {
   justify-content: space-between;
   align-items: center;
   gap: 20px;
-  height: 300px;
+  height : fit-content;
 }
 /* Left Side (Welcome Message) */
 .black-box p {
