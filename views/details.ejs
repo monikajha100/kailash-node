@@ -161,43 +161,117 @@
   <h2>Why <%= card.card_title %>?</h2>
   <ul>
     <li>
-      <strong>Global Reach:</strong> Your store is accessible to anyone with an internet connection, anywhere in the
-      world.
+      <strong>
+        <% if(card_details.why_header_1 !=null){ %>
+          <%= card_details.why_header_1 %>
+            <% } %>:
+      </strong>
+
+      <% if(card_details.why_header_1_text !=null){ %>
+        <%= card_details.why_header_1_text %>
+          <% } %>
     </li>
     <li>
-      <strong>Scalability:</strong> Easily scale your product range, integrate payment systems, and support growing
-      traffic.
+      <strong>
+        <% if(card_details.why_header_2 !=null){ %>
+          <%= card_details.why_header_2 %>
+            <% } %>:
+      </strong>
+      <% if(card_details.why_header_2_text !=null){ %>
+        <%= card_details.why_header_2_text %>
+          <% } %>
     </li>
     <li>
-      <strong>Increased Sales:</strong> An intuitive and secure online store can drive more conversions and customer
-      retention.
+      <strong>
+        <% if(card_details.why_header_3 !=null){ %>
+          <%= card_details.why_header_3 %>
+            <% } %>:
+
+      </strong>
+      <% if(card_details.why_header_3_text !=null){ %>
+        <%= card_details.why_header_3_text %>
+          <% } %>
     </li>
     <li>
-      <strong>Analytics:</strong> Track customer behavior, sales trends, and inventory management for improved business
-      decisions.
+      <strong>
+        <% if(card_details.why_header_4 !=null){ %>
+          <%= card_details.why_header_4 %>
+            <% } %>:
+      </strong>
+      <% if(card_details.why_header_4_text !=null){ %>
+        <%= card_details.why_header_4_text %>
+          <% } %>
     </li>
   </ul>
 </section>
 
 <section id="technologies">
-  <h2>Technologies Used in <%= card.card_title %></h2>
+  <h2>Technologies Used in <%= card.card_title %>
+  </h2>
   <div class="technologies-content">
     <div class="technologies-text">
-      <h3>Frontend Technologies</h3>
+      <h3>
+        <% if (card_details.semi_big_header_1 !=null){ %>
+          <%= card_details.semi_big_header_1 %>
+            <% } %>
+      </h3>
       <ul>
-        <li><strong>HTML/CSS/JavaScript:</strong> The foundation of any online store, providing structure, design, and
-          interactivity.</li>
-        <li><strong>React, Angular, Vue:</strong> Modern frameworks to create dynamic and engaging user interfaces for
-          product browsing, filtering, and checkout.</li>
+        <li>
+          <strong>
+            <% if (card_details.semi_big_header_1_text_1 !=null){ %>
+              <%= card_details.semi_big_header_1_text_1 %>
+                <% } %>:
+          </strong>
+          <% if (card_details.semi_big_header_1_text_1_para !=null){ %>
+            <%= card_details.semi_big_header_1_text_1_para %>
+              <% } %>
+        </li>
+        <li><strong>
+            <% if (card_details.semi_big_header_1_text_2 !=null){ %>
+              <%= card_details.semi_big_header_1_text_2 %>
+                <% } %>:
+          </strong>
+          <% if (card_details.semi_big_header_1_text_2_para !=null){ %>
+            <%= card_details.semi_big_header_1_text_2_para %>
+              <% } %>
+        </li>
       </ul>
-      <h3>Backend Technologies</h3>
+      <h3>
+        <% if (card_details.semi_big_header_2 !=null){ %>
+          <%= card_details.semi_big_header_2 %>
+            <% } %>
+      </h3>
       <ul>
-        <li><strong>Node.js:</strong> Building fast and scalable server-side logic for handling user requests, inventory
-          management, and transactions.</li>
-        <li><strong>Express.js:</strong> Simplifying the process of building APIs for handling requests like adding
-          products, processing payments, and managing user accounts.</li>
-        <li><strong>Databases:</strong> MySQL or MongoDB for managing product data, customer information, and order
-          history.</li>
+        <li>
+          <strong>
+            <% if (card_details.semi_big_header_2_text_1 !=null){ %>
+              <%= card_details.semi_big_header_2_text_1 %>
+                <% } %>:
+          </strong>
+          <% if (card_details.semi_big_header_2_text_1_para !=null){ %>
+            <%= card_details.semi_big_header_2_text_1_para %>
+              <% } %>
+        </li>
+        <li>
+          <strong>
+            <% if (card_details.semi_big_header_2_text_2 !=null){ %>
+              <%= card_details.semi_big_header_2_text_2 %>
+                <% } %>:
+          </strong>
+          <% if (card_details.semi_big_header_2_text_2_para !=null){ %>
+            <%= card_details.semi_big_header_2_text_2_para %>
+              <% } %>
+        </li>
+        <li>
+          <strong>
+            <% if (card_details.semi_big_header_2_text_3 !=null){ %>
+              <%= card_details.semi_big_header_2_text_3 %>
+                <% } %>:
+          </strong>
+          <% if (card_details.semi_big_header_2_text_3_para !=null){ %>
+            <%= card_details.semi_big_header_2_text_3_para %>
+              <% } %>
+        </li>
       </ul>
     </div>
 
