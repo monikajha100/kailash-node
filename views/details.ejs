@@ -150,127 +150,86 @@
 
 <section id="intro">
   <h1>
-    <%= card.card_title %>
+    <%= card?.card_title || "Default Title" %> <!-- Default value if card_title is undefined -->
   </h1>
   <p>
-    <%= card.card_description %>
+    <%= card?.card_description || "Default Description" %> <!-- Default value if card_description is undefined -->
   </p>
 </section>
 
 <section id="why-ecommerce">
-  <h2>Why <%= card.card_title %>?</h2>
+  <h2>Why <%= card?.card_title || "This Product" %>?</h2>
   <ul>
     <li>
       <strong>
-        <% if(card_details.why_header_1 !=null){ %>
-          <%= card_details.why_header_1 %>
-            <% } %>:
+        <%= card_details?.why_header_1 || "Default Header 1" %>:
       </strong>
-
-      <% if(card_details.why_header_1_text !=null){ %>
-        <%= card_details.why_header_1_text %>
-          <% } %>
+      <%= card_details?.why_header_1_text || "Default text for header 1" %>
     </li>
     <li>
       <strong>
-        <% if(card_details.why_header_2 !=null){ %>
-          <%= card_details.why_header_2 %>
-            <% } %>:
+        <%= card_details?.why_header_2 || "Default Header 2" %>:
       </strong>
-      <% if(card_details.why_header_2_text !=null){ %>
-        <%= card_details.why_header_2_text %>
-          <% } %>
+      <%= card_details?.why_header_2_text || "Default text for header 2" %>
     </li>
     <li>
       <strong>
-        <% if(card_details.why_header_3 !=null){ %>
-          <%= card_details.why_header_3 %>
-            <% } %>:
-
+        <%= card_details?.why_header_3 || "Default Header 3" %>:
       </strong>
-      <% if(card_details.why_header_3_text !=null){ %>
-        <%= card_details.why_header_3_text %>
-          <% } %>
+      <%= card_details?.why_header_3_text || "Default text for header 3" %>
     </li>
     <li>
       <strong>
-        <% if(card_details.why_header_4 !=null){ %>
-          <%= card_details.why_header_4 %>
-            <% } %>:
+        <%= card_details?.why_header_4 || "Default Header 4" %>:
       </strong>
-      <% if(card_details.why_header_4_text !=null){ %>
-        <%= card_details.why_header_4_text %>
-          <% } %>
+      <%= card_details?.why_header_4_text || "Default text for header 4" %>
     </li>
   </ul>
 </section>
 
 <section id="technologies">
-  <h2>Technologies Used in <%= card.card_title %>
+  <h2>Technologies Used in <%= card?.card_title || "Product" %>
   </h2>
   <div class="technologies-content">
     <div class="technologies-text">
       <h3>
-        <% if (card_details.semi_big_header_1 !=null){ %>
-          <%= card_details.semi_big_header_1 %>
-            <% } %>
+        <%= card_details?.semi_big_header_1 || "Technology Header 1" %> <!-- Default value -->
       </h3>
       <ul>
         <li>
           <strong>
-            <% if (card_details.semi_big_header_1_text_1 !=null){ %>
-              <%= card_details.semi_big_header_1_text_1 %>
-                <% } %>:
+            <%= card_details?.semi_big_header_1_text_1 || "Default Text 1" %>:
           </strong>
-          <% if (card_details.semi_big_header_1_text_1_para !=null){ %>
-            <%= card_details.semi_big_header_1_text_1_para %>
-              <% } %>
+          <%= card_details?.semi_big_header_1_text_1_para || "Default Text 1 Description" %>
         </li>
-        <li><strong>
-            <% if (card_details.semi_big_header_1_text_2 !=null){ %>
-              <%= card_details.semi_big_header_1_text_2 %>
-                <% } %>:
+        <li>
+          <strong>
+            <%= card_details?.semi_big_header_1_text_2 || "Default Text 2" %>:
           </strong>
-          <% if (card_details.semi_big_header_1_text_2_para !=null){ %>
-            <%= card_details.semi_big_header_1_text_2_para %>
-              <% } %>
+          <%= card_details?.semi_big_header_1_text_2_para || "Default Text 2 Description" %>
         </li>
       </ul>
       <h3>
-        <% if (card_details.semi_big_header_2 !=null){ %>
-          <%= card_details.semi_big_header_2 %>
-            <% } %>
+        <%= card_details?.semi_big_header_2 || "Technology Header 2" %> <!-- Default value -->
       </h3>
       <ul>
         <li>
           <strong>
-            <% if (card_details.semi_big_header_2_text_1 !=null){ %>
-              <%= card_details.semi_big_header_2_text_1 %>
-                <% } %>:
+            <%= card_details?.semi_big_header_2_text_1 || "Default Text 1" %>:
           </strong>
-          <% if (card_details.semi_big_header_2_text_1_para !=null){ %>
-            <%= card_details.semi_big_header_2_text_1_para %>
-              <% } %>
+          <%= card_details?.semi_big_header_2_text_1_para || "Default Text 1 Description" %>
         </li>
         <li>
           <strong>
-            <% if (card_details.semi_big_header_2_text_2 !=null){ %>
-              <%= card_details.semi_big_header_2_text_2 %>
-                <% } %>:
+            <%= card_details?.semi_big_header_2_text_2 || "Default Text 2" %>:
           </strong>
-          <% if (card_details.semi_big_header_2_text_2_para !=null){ %>
-            <%= card_details.semi_big_header_2_text_2_para %>
-              <% } %>
+          <%= card_details?.semi_big_header_2_text_2_para || "Default Text 2 Description" %>
         </li>
         <li>
           <strong>
-            <% if (card_details.semi_big_header_2_text_3 !=null){ %>
-              <%= card_details.semi_big_header_2_text_3 %>
-                <% } %>:
+            <%= card_details?.semi_big_header_2_text_3 || "Default Text 3" %>:
           </strong>
-          <% if (card_details.semi_big_header_2_text_3_para !=null){ %>
-            <%= card_details.semi_big_header_2_text_3_para %>
-              <% } %>
+          <%= card_details?.semi_big_header_2_text_3_para || "Default Text 3 Description" %>
         </li>
       </ul>
     </div>
