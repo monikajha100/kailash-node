@@ -89,11 +89,20 @@ router.get('/details/:id', function (req, res) {
 
     const card = result[0];
 
-    res.render('layout', {
-      title: card.card_title,
-      page: 'details',
-      card: card,
-    });
+    pool.query("select * from card_details where card_id =?", [id], (err, result2) => {
+      if (err) return res.send("Reload Page")
+
+      const card_details = result2[0]
+
+      console.log(typeof card_details)
+
+      res.render('layout', {
+        title: card.card_title,
+        page: 'details',
+        card,
+        card_details : card_details || {}
+      });
+    })
   })
 })
 
@@ -118,7 +127,7 @@ router.get('/training/:id', function (req, res) {
     if (error)
       return res.status(500).send('Training/id page error');
     const data = results[0];
-    
+
     res.render('layout', {
       title: 'training details',
       page: 'training_detail',
@@ -231,11 +240,11 @@ router.get('/contact_us', (req, res) => {
 })
 
 router.post('/submit-contact-form', (req, res) => {
-  const { full_name, email_address, mobile, message } = req.body;
+  const { full_name, email_address, message } = req.body;
 
-  const query = 'INSERT INTO contact_form (full_name, email_address,mobile, message) VALUES (?, ?, ?, ?)';
+  const query = 'INSERT INTO contact_form (full_name, email_address, message) VALUES (?, ?, ?)';
 
-  pool.query(query, [full_name, email_address, mobile, message], (error, results) => {
+  pool.query(query, [full_name, email_address, message], (error, results) => {
     if (error)
       return res.send('failed contact us')
 
