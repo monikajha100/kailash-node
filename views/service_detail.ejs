@@ -157,7 +157,7 @@
     <% cards.forEach(card => { %>
       <div class="section">
         <!-- Section Image -->
-        <a href="/details">
+         <a href="/index/details/<%= card.card_id %>">
           <img src="<%= card.card_image_url %>" alt="<%= card.card_title %>">
         </a>
         
