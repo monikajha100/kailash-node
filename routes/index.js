@@ -31,13 +31,12 @@ router.get('/', function (req, res) {
         page: 'index',
         counts: count,
         faqs,
-        reviews
+        reviews,
+        req,
       })
     })
   })
-
 });
-
 
 router.get('/service', function (req, res) {
   pool.query('SELECT * FROM service', (error, results) => {
@@ -247,7 +246,7 @@ router.post('/submit-contact-form', (req, res) => {
 
   pool.query(query, [full_name, email_address, message], (error, results) => {
     if (error)
-      return res.send('failed contact us')
+      return res.send({ error })
 
     return res.redirect(`/index/contact_us/?message_text=Thank you, ${full_name}, for contacting us! We appreciate your message and will respond to your inquiry shortly.&message_type=success`)
   })

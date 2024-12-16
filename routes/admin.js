@@ -6,7 +6,7 @@ localStorage = new LocalStorage('./scratch');
 
 // Admin route
 router.get('', (req, res) => {
-    res.send("this is admin route");
+    res.redirect('/admin/adminlogin');
 });
 
 // Admin login route
@@ -57,7 +57,7 @@ router.post('/check_admin_login', function (req, res) {
                 localStorage.setItem("ADMIN", JSON.stringify(result[0]));
                 res.status(200).redirect('/admin/dashboard');
             } else {
-                res.status(200).render('adminlogin', { status: false, message: 'Invalid emailid or password',req });
+                res.status(200).render('adminlogin', { status: false, message: 'Invalid emailid or password', req });
             }
         }
     });
@@ -197,7 +197,7 @@ router.post('/team/add', (req, res) => {
     const { full_name, position, image_url } = req.body;
     pool.query('insert into team (full_name , position, image_url) values(?,?,?)',
         [full_name, position, image_url], (error, results) => {
-            if (error){
+            if (error) {
                 console.log(error)
                 return res.redirect('/admin/team/?message_text=Cannot inserted team!&message_type=danger')
             }

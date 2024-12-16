@@ -161,7 +161,6 @@
   </div>
 </div> -->
 
-
 <!-- <script>
   const galleryContainer = document.querySelector('.gallery-container');
   const galleryItems = document.querySelectorAll('.gallery-item');
@@ -240,6 +239,7 @@
     const scrollSpeed = 1;
 
     const items = [...brandContainer.children];
+
     items.forEach(item => {
       const clone = item.cloneNode(true);
       brandContainer.appendChild(clone);
@@ -248,13 +248,11 @@
     const startScrolling = () => {
       brandContainer.scrollLeft += scrollSpeed;
 
-      if (brandContainer.scrollLeft >= brandContainer.scrollWidth / 2) {
+      if (brandContainer.scrollLeft >= brandContainer.scrollWidth / 2)
         brandContainer.scrollLeft = 0;
-      }
 
       requestAnimationFrame(startScrolling);
     };
-
     startScrolling();
   });
 </script>
@@ -344,38 +342,67 @@
   })
 </script>
 
+<section class="" style="max-width: 800px;">
+  <h3 class="display-4 fw-bold text-center mb-4">Contact us</h3>
+  <form class="shadow-sm rounded border p-4 flex gap-4 flex-grow-1 w-100 border" action="/index/submit-contact-form"
+    method="POST">
+    <div class="mt-3">
+      <p class="form-label fw-bold text-sm p-0 m-0">Full name:</p>
+      <input type="text" name="full_name" class="form-control">
+    </div>
+    <div class="mt-3">
+      <p class="form-label fw-bold text-sm p-0 m-0">Email address:</p>
+      <input type="text" name="email_address" class="form-control">
+    </div>
+    <div class="mt-3">
+      <p class="form-label fw-bold text-sm p-0 m-0 ">Mobile number:</p>
+      <input type="text" name="mobile" class="form-control">
+    </div>
+    <div class="mt-3">
+      <p class="form-label fw-bold text-sm p-0 m-0">Message:</p>
+      <textarea id="" name="message" class="form-control"></textarea>
+    </div>
+    <div class="mt-3">
+      <button class="btn btn-dark btn-large w-100">Send</button>
+    </div>
+  </form>
 
+</section>
+
+<!-- 
 <div class="black-box">
   <p>
     <%= index.black_box_welcome_message %>
-  </p> <!-- Left side content -->
+  </p> -->
+<!-- Left side content -->
 
-  <div class="contact-info"> <!-- Right side content -->
+<!-- Right side content -->
+<!-- <div class="contact-info"> 
     <h2>
       <%= index.contact_info_heading %>
     </h2>
     <p><span class="phone-icon">📞</span> Contact Us: <%= index.contact_info_phone %>
     </p>
   </div>
-</div>
+</div> -->
 
 <!-- <p>
   <%= index.black_box_extra_content %>
 </p>  -->
-</div>
+<!-- </div> -->
 
-<div class="cards-container">
-  <!-- Career Card -->
+<!-- Career Card -->
+<!-- <div class="cards-container">
   <div class="card">
     <h2>Careers</h2>
     <p>Gain and Heritage. Leave a Legacy</p>
     <a href="/index/join_us" class="btn">Join us</a>
-  </div>
+  </div> -->
 
-  <!-- Contact Us Card -->
-  <div class="card">
+<!-- Contact Us Card -->
+<!-- <div class="card">
     <h2>Contact Us</h2>
     <p>What can we help you achieve?</p>
     <a href="/index/contact_us" target="_blank" class="btn">Speak with us</a>
   </div>
-</div>
+</div> -->

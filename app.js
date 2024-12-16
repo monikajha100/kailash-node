@@ -26,31 +26,36 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 const loadHeaderAndFooterMiddleware = (req, res, next) => {
   pool.query('SELECT * FROM ??', ['index'], (error, results) => {
-    if(error)
+    if (error)
       res.send('Reload the page')
-    
+
     res.locals.index = results[0];
     res.locals.socialMedia = [
       {
-        name:"facebook",
-        icon : '<i class="bi bi-facebook"></i>'
+        name: "facebook",
+        icon: '<i class="bi bi-facebook"></i>'
       },
       {
-        name:"instagram",
-        icon : '<i class="bi bi-instagram"></i>'
+        name: "instagram",
+        icon: '<i class="bi bi-instagram"></i>'
       },
       {
-        name:"linkedin",
-        icon : '<i class="bi bi-linkedin"></i>'
+        name: "linkedin",
+        icon: '<i class="bi bi-linkedin"></i>'
       },
       {
-        name:"twitter",
-        icon : '<i class="bi bi-twitter"></i>'
+        name: "twitter",
+        icon: '<i class="bi bi-twitter"></i>'
       },
     ];
+    res.locals.googleMapApi = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3578.848012292866!2d78.20635777418222!3d26.234127577058068!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3976c1a767cec033%3A0x1aab20fb7ba7ca51!2sSouranjh%20Technology%20Service%20%26%20Training%20Institute!5e0!3m2!1sen!2sin!4v1732956454184!5m2!1sen!2sin"
     next()
   })
 }
+
+app.get("/", (req, res) => {
+  res.redirect('/index')
+})
 
 app.use('/index', loadHeaderAndFooterMiddleware, indexRouter);
 app.use('/users', usersRouter);
