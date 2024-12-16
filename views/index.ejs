@@ -1,87 +1,211 @@
 <link rel="stylesheet" href="/stylesheets/style.css" />
-<section class="hero mt-5" style="height: 450px; position: relative; justify-content: center; align-items: center; text-align: center; display: flex;">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<section class="hero mt-5"
+  style="height: 450px; position: relative; justify-content: center; align-items: center; text-align: center; display: flex;">
   <video autoplay muted loop class="border w-100 h-100" style="position: absolute; object-fit: cover; top: -50px;">
     <source src="./videos/mov_bbb.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
 </section>
 
+<div>
+  <h2 class="display-1 fw-bold text-center">Welcome to<br> Souranjh Technology</h2>
+</div>
 
-<div class="d-flex flex-column align-items-center p-4 gallery-container">
-  <h5>Innovative Solutions, Inspired by Technology</h5>
-  
-  <div class="d-flex flex-wrap justify-content-center gallery-inner">
-    <a href="/index/service/1" target="_blank">
-      <img class="gallery-item" src="https://img.freepik.com/premium-vector/digital-marketing-social-media-with-man-laptop-logo-icon_112255-1714.jpg" alt="Web Development">
-    </a>
-    <a href="/index/service/2" target="_blank">
-      <img class="gallery-item" src="https://img.freepik.com/free-vector/app-development-banner_33099-1720.jpg" alt="App Development">
-    </a>
-    <a href="/index/service/3" target="_blank">
-      <img class="gallery-item" src="https://img.freepik.com/premium-vector/stylish-bright-creative-text-graphic-design-white-background-vector_532963-284.jpg" alt="Graphic Design">
-    </a>
-    <a href="/index/service/4" target="_blank">
-      <img class="gallery-item" src="https://img.freepik.com/free-vector/website-development-banner_33099-1687.jpg" alt="Digital Marketing">
-    </a>
-    <a href="/index/service/5" target="_blank">
-      <img class="gallery-item" src="https://img.freepik.com/free-vector/seo-optimization-banner_33099-1690.jpg" alt="SEO Optimization">
-    </a>
-    <a href="/index/service/6" target="_blank">
-      <img class="gallery-item" src="https://img.freepik.com/free-photo/cctv-security-technology-with-lock-icon-digital-remix_53876-104935.jpg" alt="CCTV Security">
-    </a>
+<div class="d-flex flex-column flex-md-row gap-4 flex-wrap"
+  style="display: flex; justify-content: center; align-items: center;margin: 8rem 0; ">
+  <div class="box" style="text-align: center;">
+    <h3 class="text-warning" style="font-weight: bold;" data-target="255">0</h3>
+    <p class="display-5 ">Jubilant Clients</p>
+  </div>
+  <div class="box" style="text-align: center;">
+    <h3 class="text-warning" style=" font-weight: bold;" data-target="430">0</h3>
+    <p style="margin: 0;">Projects Completed</p>
+  </div>
+  <div class="box" style="text-align: center;">
+    <h3 class="text-warning display-5" style="font-weight: bold;" data-target="30">0</h3>
+    <p style="margin: 0; color:#000;">Ongoing Projects</p>
+  </div>
+  <div class="box" style="text-align: center;">
+    <h3 class="text-warning" style="font-weight: bold;" data-target="5">0</h3>
+    <p style="margin: 0;">Awards</p>
   </div>
 </div>
 
-
 <script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const counters = document.querySelectorAll(".box h3");
+
+    counters.forEach(counter => {
+      const updateCounter = () => {
+        const target = +counter.getAttribute("data-target");
+        const current = +counter.innerText.replace("+", "");
+        const increment = Math.ceil(target / 150);
+
+        if (current < target) {
+          counter.innerText = current + increment;
+          setTimeout(updateCounter, 15);
+        } else {
+          counter.innerText = target + "+";
+        }
+      };
+      updateCounter();
+    });
+  });
+</script>
+
+<h3 class="display-4 fw-bold text-center">Our Services</h3>
+<section class="w-100">
+  <div class="p-0 m-0 mx-auto" style="overflow: hidden;height: 400px;max-width: 1000px;">
+    <div id="carouselExampleAutoplaying" class="carousel slide h-100" data-bs-ride="true">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+          aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+          aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+          aria-label="Slide 3"></button>
+      </div>
+      <div class="carousel-inner h-100">
+        <div class="carousel-item h-100 active" data-bs-interval="2000">
+          <a href="">
+            <img
+              src="https://img.freepik.com/premium-vector/digital-marketing-social-media-with-man-laptop-logo-icon_112255-1714.jpg"
+              class="d-block w-100 h-100 object-fit-cover" alt="...">
+            <div class="carousel-caption text-dark d-none d-md-block">
+              <h5>Digital Marketing</h5>
+            </div>
+          </a>
+        </div>
+        <div class="carousel-item h-100" data-bs-interval="2000">
+          <img src="https://img.freepik.com/free-vector/app-development-banner_33099-1720.jpg"
+            class="d-block w-100 h-100 object-fit-cover" alt="...">
+          <div class="carousel-caption text-dark d-none d-md-block">
+            <h5>App Development</h5>
+          </div>
+        </div>
+        <div class="carousel-item h-100" data-bs-interval="2000">
+          <a href="">
+            <img
+              src="https://img.freepik.com/premium-vector/stylish-bright-creative-text-graphic-design-white-background-vector_532963-284.jpg"
+              class="d-block w-100 h-100 object-fit-cover" alt="...">
+            <div class="carousel-caption text-dark d-none d-md-block">
+              <h5>Graphic Designer</h5>
+            </div>
+          </a>
+        </div>
+        <div class="carousel-item h-100" data-bs-interval="2000">
+          <a href="">
+            <img src="https://img.freepik.com/free-vector/website-development-banner_33099-1687.jpg"
+              class="d-block w-100 h-100 object-fit-cover" alt="...">
+            <div class="carousel-caption text-dark d-none d-md-block">
+              <h5>Website Development</h5>
+            </div>
+          </a>
+        </div>
+        <div class="carousel-item h-100" data-bs-interval="2000">
+          <a href="">
+            <img src="https://img.freepik.com/free-vector/seo-optimization-banner_33099-1690.jpg"
+              class="d-block w-100 h-100 object-fit-cover" alt="">
+            <div class="carousel-caption text-dark d-none d-md-block">
+              <h5>SEO Optimization</h5>
+            </div>
+          </a>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
+        data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying"
+        data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- <div class="d-flex flex-column align-items-center gallery-container"> -->
+<!-- <h5>Innovative Solutions, Inspired by Technology</h5> -->
+
+<!-- <div class="d-flex flex-wrap justify-content-center gallery-inner">
+    <a href="/index/service/1" target="_blank">
+      <img class="gallery-item"
+        src="https://img.freepik.com/premium-vector/digital-marketing-social-media-with-man-laptop-logo-icon_112255-1714.jpg"
+        alt="Web Development">
+    </a>
+    <a href="/index/service/2" target="_blank">
+      <img class="gallery-item" src="https://img.freepik.com/free-vector/app-development-banner_33099-1720.jpg"
+        alt="App Development">
+    </a>
+    <a href="/index/service/3" target="_blank">
+      <img class="gallery-item"
+        src="https://img.freepik.com/premium-vector/stylish-bright-creative-text-graphic-design-white-background-vector_532963-284.jpg"
+        alt="Graphic Design">
+    </a>
+    <a href="/index/service/4" target="_blank">
+      <img class="gallery-item" src="https://img.freepik.com/free-vector/website-development-banner_33099-1687.jpg"
+        alt="Digital Marketing">
+    </a>
+    <a href="/index/service/5" target="_blank">
+      <img class="gallery-item" src="https://img.freepik.com/free-vector/seo-optimization-banner_33099-1690.jpg"
+        alt="SEO Optimization">
+    </a>
+    <a href="/index/service/6" target="_blank">
+      <img class="gallery-item"
+        src="https://img.freepik.com/free-photo/cctv-security-technology-with-lock-icon-digital-remix_53876-104935.jpg"
+        alt="CCTV Security">
+    </a>
+  </div>
+</div> -->
+
+
+<!-- <script>
   const galleryContainer = document.querySelector('.gallery-container');
   const galleryItems = document.querySelectorAll('.gallery-item');
 
   class Carousel {
-      constructor(container, items) {
-          this.carouselContainer = container;
-          this.carouselItems = [...items];
-          this.initCarousel();
-      }
+    constructor(container, items) {
+      this.carouselContainer = container;
+      this.carouselItems = [...items];
+      this.initCarousel();
+    }
 
-      initCarousel() {
-          this.updateGallery();
-          this.autoScroll();
-      }
+    initCarousel() {
+      this.updateGallery();
+      this.autoScroll();
+    }
 
-      updateGallery() {
-          this.carouselItems.forEach((item) => {
-              item.classList.remove(
-                  'gallery-item-1',
-                  'gallery-item-2',
-                  'gallery-item-3',
-                  'gallery-item-4',
-                  'gallery-item-5',
-                  'gallery-item-6'
-              );
-          });
+    updateGallery() {
+      this.carouselItems.forEach((item) => {
+        item.classList.remove(
+          'gallery-item-1',
+          'gallery-item-2',
+          'gallery-item-3',
+          'gallery-item-4',
+          'gallery-item-5',
+          'gallery-item-6'
+        );
+      });
 
-          this.carouselItems.slice(0, 6).forEach((item, index) => {
-              item.classList.add(`gallery-item-${index + 1}`);
-          });
-      }
+      this.carouselItems.slice(0, 6).forEach((item, index) => {
+        item.classList.add(`gallery-item-${index + 1}`);
+      });
+    }
 
-     
-      autoScroll() {
-          setInterval(() => {
-              this.carouselItems.push(this.carouselItems.shift()); 
-              this.updateGallery(); 
-          }, 3000); 
-      }
+    autoScroll() {
+      setInterval(() => {
+        this.carouselItems.push(this.carouselItems.shift());
+        this.updateGallery();
+      }, 3000);
+    }
   }
-
   new Carousel(galleryContainer, galleryItems);
-</script>
+</script> -->
 
-
-
-
-<section class="visitor-counter">
+<!-- <section class="visitor-counter">
   <h2>Total Visitors:</h2>
   <span class="count" id="visitor-count">0</span>
 </section>
@@ -89,87 +213,32 @@
 <script>
   document.addEventListener('DOMContentLoaded', () => {
     const visitorCountElement = document.getElementById('visitor-count');
-    const finalCount = <%= count %>; // Final visitor count fetched dynamically
+    const finalCount = <%= count %>;
 
     if (isNaN(finalCount) || finalCount <= 0) {
       visitorCountElement.textContent = "Error: Invalid visitor count";
     } else {
-      visitorCountElement.textContent = finalCount; // Set final count immediately
+      visitorCountElement.textContent = finalCount;
     }
   });
-</script>
+</script> -->
 
-<div class="scrolling-text w-100" style="overflow: hidden;">
-  <p>
-    <%= index.scrolling_text || 'Welcome to Souranjh Technology!' %>
-  </p>
-</div>
-<div class="box-container" style="display: flex; justify-content: space-around; align-items: center; padding: 20px; border-radius: 10px;">
-  <div class="box" style="text-align: center; color: white;">
-    <h3 style="font-size: 2.5rem; font-weight: bold;" data-target="255">0</h3>
-    <p style="margin: 0; font-size: 1.2rem;">Jubilant Clients</p>
-  </div>
-  <div class="box" style="text-align: center; color: white;">
-    <h3 style="font-size: 2.5rem; font-weight: bold;" data-target="430">0</h3>
-    <p style="margin: 0; font-size: 1.2rem;">Projects Completed</p>
-  </div>
-  <div class="box" style="text-align: center; color: white;">
-    <h3 style="font-size: 2.5rem; font-weight: bold;" data-target="30">0</h3>
-    <p style="margin: 0; font-size: 1.2rem; color:#000;">Ongoing Projects</p>
-  </div>
-  <div class="box" style="text-align: center; color: white;">
-    <h3 style="font-size: 2.5rem; font-weight: bold;" data-target="5">0</h3>
-    <p style="margin: 0; font-size: 1.2rem;">Awards</p>
-  </div>
-</div>
-
-
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const counters = document.querySelectorAll(".box h3"); 
-
-    counters.forEach(counter => {
-      const updateCounter = () => {
-        const target = +counter.getAttribute("data-target"); 
-        const current = +counter.innerText.replace("+", ""); 
-        const increment = Math.ceil(target / 150); 
-
-        if (current < target) {
-          counter.innerText = current + increment; 
-          setTimeout(updateCounter, 15); 
-        } else {
-          counter.innerText = target + "+"; 
-        }
-      };
-
-      updateCounter(); 
-    });
-  });
-</script>
-
-
-<section style="width: 100%; height: 500px;">
-  
-
-  <h1 style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-size: 5rem; font-weight: bolder; color: #000; letter-spacing: 3px; text-align: center; margin-bottom: 20px; margin-top: -3%;">Our Clients</h1>
-
-
+<section class="d-flex flex-column p-0" style="margin: 8rem 0;">
+  <h1 class="text-center p-0 m-0 mb-4 display-4 fw-bold">Our Clients</h1>
   <div id="brandContainer">
     <div class="brand-item"><img src="./images/paramfood.png" alt="Brand 1 Logo"></div>
     <div class="brand-item"><img src="./images/eleven.png" alt="Brand 2 Logo"></div>
     <div class="brand-item"><img src="./images/marvel.png" alt="Brand 3 Logo"></div>
     <div class="brand-item"><img src="./images/sc.png" alt="Brand 4 Logo"></div>
     <div class="brand-item"><img src="./images/browns.png" alt="Brand 5 Logo"></div>
-    
   </div>
 </section>
 
 <script>
   document.addEventListener("DOMContentLoaded", () => {
     const brandContainer = document.getElementById("brandContainer");
-    const scrollSpeed = 1; 
+    const scrollSpeed = 1;
 
-   
     const items = [...brandContainer.children];
     items.forEach(item => {
       const clone = item.cloneNode(true);
@@ -179,7 +248,6 @@
     const startScrolling = () => {
       brandContainer.scrollLeft += scrollSpeed;
 
-      
       if (brandContainer.scrollLeft >= brandContainer.scrollWidth / 2) {
         brandContainer.scrollLeft = 0;
       }
@@ -192,106 +260,49 @@
 </script>
 
 <section>
-    
-  <div class="container">
-    <div class="promo-section">
-      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMwAAADACAMAAAB/Pny7AAABSlBMVEX///8yqFTnQTM+gvH4uwD39/f///0+gfLv9vo6ffJbkOk8g+/8///7ugD///s6fuyjvuyNr+srpk7V4fRQi+357s31wzW/4sroQDfnOik9g+tHg+NIie8hpEdsuoD67u3hdGzmLRvkIwryx8D+//X15bT23Jb34KPvvSPwy16Wtu/c5vRPiODw+vQzplsToT+u17hZsG/34d3rq6LilpPdiYTegHnzwcL31M/li4HgYlfYJwPZLBLeSzzhbGXsnpbeV0vWOyTrs7PsgnrQUQDy2HTocSHyjR/x1oXxnhnmXSn1qQzkUC3paifugB/3ylb503j038a80vr8/+h2n+vduiTm6cu/tSVXqj6Nw6PF1fCptCuLsTrLsyFuq0B4ntWKxZgKbelUnsspoWg4k7BBmZPe7+A4m3w7is81jsdBk6I3nW8pk4SPtdZCmoOBAAAMe0lEQVR4nO2d/VvayBbHA4GJMZOgMS0kvClgr20FEayiFbV2uy939+7ee213W3e3i7tb7u59+f9/vedMggImYZAh6PPk+1hQBJwP58yZM2dmUkmKFStWrFixYsWKFStWrFixYsWKFStWrFixYkUngjdp1OCHByPKvrDVVCLlcrnVqbb3Xuyvo/Zf7LUPOi14NO0+mUjkftNRSgilUrrcqrYPj5IvX1YqGyAbBHeVSuW4e7TfBqQ00BqLbu0EoV3KnYPTky5jSDLlcskhAdXL7vpptVNedGMDRYnbJcqd9uuz4wGGn5AM7GSfgYWQ5z56mwEuJrWAxA4jGbGQffb6vAUvvW/+xnp89cVRzuYj8Xjs3NEew7k/tnGbUl3vTkUy4Onud9wQeH/UOUneAYWFBju331p08z1hKKatE86OEmCe470yRQMv3NsM2jo8ngUFtfGqmoYhatF9h5arZ5UZUcDf7JfrrQUbBv5663AmD7vR8avz8qICAfQVcIr0wdmGEJQk9hwIBAvxNMJG/PLhKzFmQeWS9tFBmi7EOoRKnXVxKC5Nt72YjI1K1SOhLDjq2MnDyGkoJmLtrlgWV3bUUQ1mLTTdvsOIz6NKm0TbbYDltDIPkpxdOU1HO7+mtHxYsZO5yY2bXqdpatCo5gRuheJU2Ogypr0ydkgjMtMYVJqPj4FOy5FZRWKjC5Hac7FLzk7upaOdp8H0uGon59JfNrDvRxrJiNSZaXxh0zHf31Ta6YjzZkJb0437WC/DglmlshE+MAFLdP1+QPPa5nYxu1Kxj/b32lXU+d7+2St4IIhlj0oRj5aS1OY3SXefVZJuWoi1qPWc3/zHrrQphskoRaTq5A6Tw/Q32X3RITi8SoPqjXsLTe68yHnFjxsT2+3I7UJIiyfpt+3uyTkmv/59gErl9lFu6H3g+3aaRj4p4xr57e56FZ9MfFmwfAnmOT+5iWmMJcqqpusjHFHZTp6cpyXKnMr/w4acGyep7TMvutk5jMlR+pg7S3490TD2WbtFBy8IgHFr7KSzjzC5ZNcdXyJ0MywmSwfHk0Z+e73D7/1ld3p3HvVYiW5Oy2cTnMy2X5SBms/9CUyKIDZunKeNiGMy5uUT80vbho4sBQWxMRGsVdHWq3Mp6vEFHZ3WPgv3Mds+8NY2+LwGn0bTi6iTwfTvjf55OEw1+mbdUbSWSqW+CEFJPhwWSfpSB5qv/hrEkju/b0tGgSKktoUwqa8/94/Ox+1FN5FX2Ek3U670L77xwbFP04tuJK8Apvad7tGAq92C2Vi/v4v6Y0LDPNpKXdN8/bcxGrvbWXQbuQXpL30yIEEk/dtRT7PbC1+MnEa171Ij+urVEM3GSevBRDIc1R89HkbR9dTXQx2ne7DoFk4h8KEnqVEYcLZvB9t87EOMZA/GNLT2VE+N4UA68A0aB+YjVUxDH0qvIdKj78ZgvBiNxQv79YMZYlxtbvmwsHQA9JB6DIg88WVh6YB99GDGS1e1v/t5medqezzFCAJj1V0luG5z4dtlPFf7x+TNb8RYmk2GQKDRUWZUjw1j4jSZkBXLWr6rLGt1SSBMQP9nveYN5dkhsqreXYpqrYljkf4SiJLSH3FN+Vcz8kAKfCmypsncUgr/FMdiBAUzzDovON6AkFVVuW6bhiDTsMiZFXEwNZgx+0cAXd/ieYMRGA1aV9CUsOaPStPUFXH5BUbmgHCmP50aRnGsbcvSFG4cgHkmLsm4eBoM82RaGEWzliGyWfI0MKtLwmD8MzMXZnMqGAVUsAoQbS2H39E09e1zoTBBlmEwk5xgFGbbyhes7cI0lhEJ8zg4ADxCFm4YB3q/tpy38suWw20YWYkGJqVf8MKwgGwVMqqMuQCEM0XT3DFHU1QlLBzA0yKD8U4tuUQeVtr7Ce/SuIVkNeMomuNYeRg8VTWfhwY6ssosBRzMYCE06rK4FCAUxjuCxW6Hvr+5B6FloJts5wsF7PrOtqVqFvxsFSxHUxV8MB9im6hgUo/SNxiepLF7BpMBjoKDzQaYvAUA+YKTL+Sh7zjwuLMcEqojg/meNXrIMKNgAyOtAoAma0jigLtty8ACJJrl/gOqkAQnIhgdLCN5MNIQzMj3YBmAcQoKjP0FMIkGwRlh8CHLwW/By2DYCTKNIhYmcNDU9c1Bg0cA0mMw5FmhUJA1B+1haWAlFwbuPBgHDBOYSAuFuRgvNA3BPFm6scZtPxuAGs/AnSBqWfl8vjAOk8cHwUwQDPxZhA6awSUAXX/qAyP5wIBhYBIDAQDuHRgyLRYOZHhAATYIDjIkBf6epslCYb4M6jF6agsXZCe8Ht3Mm5w5Do6SYAMNwoCGxsLR08GHtbwW0G2EWsZ4EpTMwM0Fx0mEm9wM2u9Kdm/RXLJ7rwSlAYosMmvGaXPQoJna5DANS2eu26awWfOIZNn959tpAEbgfAaXAANh3nC8HmFch1FYBL4Bc+2iuXiyv2lg2vxMYFkeBxp/lJT+uMax8wVgVFm5rZHH5IDKgKKoAgsaoQPNu+8nrwCgZTITxXqOL4wmEiYwNuupH95/4IG5XJmsTOBEwLoUCCMF1Jr01I/FxG5dwA4reIelTBALJAAiV382t/xMo7/7yUwkGlm+xk74PblU/VEA5u2SSBjfTqP//DEBMkv1md+fEGr8EgSjqM8Ebn0ixKfTgIu9B5IEp2km/QWylA8yjNCCJlugHYfRt35EEEGmIcRYywRNATLOpcB9j+AEY4saEJHfJ64Fppn1jxHpbeBMU1l+LtTNhjY16G5ELt6wJIozm8Yw1gqBXqauijxWy7ab6AObwDdbP7G+0rimaZIZ9wEYq4EVTkVe4dv1ySn0s61rD0u9+ykxKnM3G7KPmePtpUsrE8SiWGui93F6W7Tw5oePiXEVS/27H3sDw6chEQ1IMhVlWfyGiU1W1NAxijVuwSTMHpXuuj2ZGMZlISBj1lRHfib+Cg61LdZdbrmYB2M277wB3iDP36oBGbOjOoXnhv8RiVnEls9+/mgmTF+aRPb6Sk3TCD/1JZiHBpRnNSWzTeewI/3CG/QDhDQ4+E21yM3w6UrgeImzzJU5nHkg9E3K38WucfrStP2GUIgal1chlVklI3D6PxA08uKjr4Ndq5hoTvuuhNaMy6tAFAwAv8zhpACeQ2juhNkFb5rcBwHcN4VItnKlBHUY1NXzOR15qu+aZqhxTLNXNwhvNgBBylgClrClWnVZmhMMyRbDUJirlbKU88QVxtu1t2r40qa6NrfLBNVLE2nM3Waf782IVG/+qqqhWzXUt8bcYGi2ER4DmKuVmnW3sdLQnfcD61EUTxZJ9Wwp8dvvjhKyWUPJrBl0bgds6r2JMOBqjVLWcM8r0fHPlbBriWBSmu3BB2M2PuXVgAoTrsusLnHUS+8q0p/saGicxC6zjo+LMBJwsFKCxRLT/NcfquxrHE1W88/nuSeXSByOhm0smo1e33vJuIx+r5G4/kzM3/5UfUsZmny1Ms9j6AYkK83w6DzEA+52KxjUs80S/GbkiY1/5339THCF6bYgBJX4YBjPTjHRKH1oZlHND71SY2dn59bLTfPTtjIWB7CKnr+c9xFhQ+rvctMwFYs7TEWQ/ytN8z9/jkUBRVWcuToZE+HtNtMBN37fHu04CjjZ/A8YAA1vt3E/dr5nmZ/+UK5XbsDJRC4wh/M0bzv+rEJXUxW2+oQ0igYdJpqzEqQnniZR/O1Xx509KzglEz9VDhCtfwibDdyVBtMBTcGFZxxhorraATXqHzgygamF6QDMbZyrVci8I7xuS703B9tAOoB59NUvkWF4ok3OQDUdTeJTPnoWjGnixxvMGv77P67TBWJZYPScMhfgU6/Ge60HkTSS1C9NM3zyyBzMHSIXkfo9gUENPhhzN7uwK7ZiSr8rDAcmQb3+Yi9z3OeZSXOp2GimB2WCRanebMyc3ODrd1jlYOEC48zma+bALIuWgTW//m7AvIuPxcRSKC42LhrGu8xSf/fOCYFpNkpZ6V79tyG1bKkBPFMPPKZXx2FmuT889WxvWvNghe1Ddn51vruKVff6zVKjWOQtRgFJjxWjJh9bjVhEwnkuwcLYrjmRB2tnSFJ3r5l6z1iYp7ABj9T72V4psRNYWCoWd7A+mO0vKAubVnUAavbAQm657FpYA2yUwCL9+uLDMK8Im1ojEjD1Sky9Xq+ZBXOAHoA5RuRNsAieSacoMvyfSzwoGjLS9MGDw7+P/tKssWLFihUrVqxYsWLFihUrVqxYsWLFihUr1mT9H6Rlb7QP4K1cAAAAAElFTkSuQmCC" alt="Google Logo">
-      <div class="excellent">Excellent</div>
-      <div class="rating">★★★★★</div>
-      <h6>Customer Reviews</h6>
-    </div>
-    <div class="slider-container">
-      
-      
-      
-      <div class="reviews-wrapper">
-        
-        <div class="review-item">
-          <div class="review-author">
-            <img src="https://via.placeholder.com/40" alt="John's Avatar">
-            <span>Sunil giri</span>
+  <div class="d-flex flex-column w-100">
+    <h2 class="display-4 fw-bold text-center mb-3">Our Customers</h2>
+    <div class="mx-auto">
+      <div class="h-100 d-flex flex-wrap gap-3 ">
+        <% reviews.map(review=>{ %>
+          <div class="shadow-sm p-3 d-flex flex-column flex-grow-1 border border-warning testinomials"
+            style="width: 300px;min-height: 200px;border-radius: none !important;">
+            <div class="text-warning fw-bold h4">
+              <%= review.rating %>
+            </div>
+            <small>
+              <%= review.text %>
+            </small>
+            <div class="d-flex gap-2 mt-auto align-items-center">
+              <div style="border-radius: 100%;overflow: hidden;width: 30px;height: 30px;">
+                <img src="<%= review.avatar %>" alt="" style="width: 100%;height: 100%;object-fit: cover;">
+              </div>
+              <p class="p-0 m-0" style="height: fit-content;">
+                <%= review.author %>
+              </p>
+            </div>
           </div>
-          <div class="review-rating">★★★★★</div>
-          <div class="review-text">I'm fully satisfied with your services.</div>
-        </div>
-        <div class="review-item">
-          <div class="review-author">
-            <img src="https://via.placeholder.com/40" alt="Jane's Avatar">
-            <span>Satish gurjar</span>
-          </div>
-          <div class="review-rating">★★★★☆</div>
-          <div class="review-text">Awesome work is given bye this.</div>
-        </div>
-        <div class="review-item">
-          <div class="review-author">
-            <img src="https://via.placeholder.com/40" alt="Emily's Avatar">
-            <span>Ravi shrivastava</span>
-          </div>
-          <div class="review-rating">★★★★★</div>
-          <div class="review-text">Greate It service provider</div>
-        </div>
-        <div class="review-item">
-          <div class="review-author">
-            <img src="https://via.placeholder.com/40" alt="Emily's Avatar">
-            <span>Kamlesh kushwah</span>
-          </div>
-          <div class="review-rating">★★★★★</div>
-          <div class="review-text">Really good Service</div>
-        </div>
-        <div class="review-item">
-          <div class="review-author">
-            <img src="https://via.placeholder.com/40" alt="Emily's Avatar">
-            <span>Dimple sandilya</span>
-          </div>
-          <div class="review-rating">★★★★★</div>
-          <div class="review-text">Nice service thank u</div>
-        </div>
-        
-        <div class="review-item">
-          <div class="review-author">
-            <img src="https://via.placeholder.com/40" alt="Emily's Avatar">
-            <span>Chetan batham</span>
-          </div>
-          <div class="review-rating">★★★★★</div>
-          <div class="review-text">There are very respectable services</div>
-        </div>
-        <div class="review-item">
-          <div class="review-author">
-            <img src="https://via.placeholder.com/40" alt="Emily's Avatar">
-            <span>Vicky thakur</span>
-          </div>
-          <div class="review-rating">★★★★★</div>
-          <div class="review-text">Best service provide by this company in tec cam thank you  for provide this services</div>
-        </div>
-      </div>
-     
-      <div class="nav-buttons">
-        <span id="prevBtn">&lt;</span>
-        <span id="nextBtn">&gt;</span>
+          <% }) %>
       </div>
     </div>
-  </div>
 </section>
 
 <script>
   let currentIndex = 0;
   const reviewsWrapper = document.querySelector('.reviews-wrapper');
   const totalReviews = document.querySelectorAll('.review-item').length;
-  const reviewWidth = document.querySelector('.review-item').offsetWidth + 20; 
+  const reviewWidth = document.querySelector('.review-item').offsetWidth + 20;
 
-  
   function autoScroll() {
     currentIndex++;
     if (currentIndex >= totalReviews) {
-      currentIndex = 0; 
+      currentIndex = 0;
     }
     reviewsWrapper.style.transform = `translateX(-${currentIndex * reviewWidth}px)`;
   }
 
-  
   setInterval(autoScroll, 3000);
 
-  
   document.getElementById('prevBtn').addEventListener('click', () => {
     currentIndex = (currentIndex === 0) ? totalReviews - 1 : currentIndex - 1;
     reviewsWrapper.style.transform = `translateX(-${currentIndex * reviewWidth}px)`;
@@ -304,113 +315,33 @@
 </script>
 
 <section id="faq" class="faq-section">
-  <h2>Frequently Asked Questions..?</h2>
-  <table class="faq-table">
-    <tbody>
-     
-      <tr>
-        <td>
-          <div class="faq-item">
-            <h3 class="faq-question">
-              What is Souranjh Technology? 
-              <span class="arrow">▼</span>
-            </h3>
-            <div class="faq-answer">
-              <p>We are a tech company offering innovative solutions for businesses.</p>
-            </div>
-          </div>
-        </td>
-        <td>
-          <div class="faq-item">
-            <h3 class="faq-question">
-              How do I contact support? 
-              <span class="arrow">▼</span>
-            </h3>
-            <div class="faq-answer">
-              <p>Email us at <a href="sales@souranjhtechnology.com">support@souranjh.com</a> or use the <a href="/index/contact_us" target="_blank">contact form</a>.</p>
-            </div>
-          </div>
-        </td>
-        <td>
-          <div class="faq-item">
-            <h3 class="faq-question">
-              What services do you offer? 
-              <span class="arrow">▼</span>
-            </h3>
-            <div class="faq-answer">
-              <p>We specialize in web development, mobile apps, IT consulting, and software solutions.</p>
-            </div>
-          </div>
-        </td>
-        <td>
-          <div class="faq-item">
-            <h3 class="faq-question">
-              Do you handle small projects? 
-              <span class="arrow">▼</span>
-            </h3>
-            <div class="faq-answer">
-              <p>Yes, we cater to both small and large-scale projects, tailoring solutions to fit your needs.</p>
-            </div>
-          </div>
-        </td>
-      </tr>
-      
-      
-      <tr>
-        <td>
-          <div class="faq-item">
-            <h3 class="faq-question">
-              What industries do you work with? 
-              <span class="arrow">▼</span>
-            </h3>
-            <div class="faq-answer">
-              <p>We work with various industries, including healthcare, education, e-commerce, and finance.</p>
-            </div>
-          </div>
-        </td>
-        <td>
-          <div class="faq-item">
-            <h3 class="faq-question">
-              How long does it take to complete a project? 
-              <span class="arrow">▼</span>
-            </h3>
-            <div class="faq-answer">
-              <p>Timelines depend on the project's complexity and scope. We work closely with clients to ensure timely delivery.</p>
-            </div>
-          </div>
-        </td>
-        <td>
-          <div class="faq-item">
-            <h3 class="faq-question">
-              Do you provide post-launch support? 
-              <span class="arrow">▼</span>
-            </h3>
-            <div class="faq-answer">
-              <p>Yes, we offer maintenance packages to ensure your project continues to run smoothly after launch.</p>
-            </div>
-          </div>
-        </td>
-        <td>
-          <div class="faq-item">
-            <h3 class="faq-question">
-              What technologies do you use? 
-              <span class="arrow">▼</span>
-            </h3>
-            <div class="faq-answer">
-              <p>We use a range of technologies, including Node.js, React, Python, and cloud platforms like AWS and Azure.</p>
-            </div>
-          </div>
-        </td>
-      </tr>
-    </tbody>
-  </table>
+  <h2>Frequently Asked Questions</h2>
+  <section class="freq-asks d-flex gap-2 flex-column" style="max-width: 800px;">
+    <% faqs.map((faq,index)=>{ %>
+      <div class="d-flex flex-column gap-1">
+        <div class="shadow-sm p-3 d-flex align-items-center w-full">
+          <h3 class="fw-bold text-start h5">
+            <%= faq.question %>
+          </h3>
+          <span class="ms-auto fw-bold p-2 show-faq" data-target-id="faq-ans-<%= index %>"
+            style="cursor: pointer;">+</span>
+        </div>
+        <div class="shadow-sm p-3 d-none" id="faq-ans-<%= index %>">
+          <small>
+            <%= faq.answer %>
+          </small>
+        </div>
+      </div>
+      <% }) %>
+  </section>
 </section>
-<script>document.querySelectorAll('.faq-question').forEach((question) => {
-  question.addEventListener('click', () => {
-    const faqItem = question.parentNode;
-    faqItem.classList.toggle('open');
-  });
-});
+<script>
+  $(document).ready(() => {
+    $('.show-faq').click(function () {
+      const targetId = $(this).data("target-id");
+      $(`#${targetId}`).toggleClass('d-none')
+    })
+  })
 </script>
 
 
@@ -448,28 +379,3 @@
     <a href="/index/contact_us" target="_blank" class="btn">Speak with us</a>
   </div>
 </div>
-
-
-
-<!-- <div class="grey">
-  <ul class="box1">
-    <li class="left-section">
-      <h2>Careers</h2>
-      <p>Gain and Heritage. Leave a Legacy</p>
-      <div class="box2">
-        <a href="/index/join_us">Join Us</a>
-      </div>
-    </li> -->
-
-<!-- Vertical Divider -->
-<!-- <div class="divider-line"></div>
-
-    <li class="right-section">
-      <h2>Contact Us</h2>
-      <p>What can we help you achieve?</p>
-      <div class="box3">
-        <a href="index/contact_us" target="_blank">Speak with us</a>
-      </div>
-    </li>
-  </ul>
-</div> -->

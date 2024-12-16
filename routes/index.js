@@ -6,6 +6,8 @@ const { v4: uuidv4 } = require('uuid');
 
 
 const multer = require("multer");
+const faqs = require('../utils/freqQuestions.js');
+const reviews = require('../utils/reviews.js');
 
 // Configure multer to store uploaded files in the "uploads" directory
 const storage = multer.diskStorage({
@@ -23,12 +25,13 @@ router.get('/', function (req, res) {
   pool.query('select * from visitors', (error, result) => {
     count = result[0].count;
 
-
     pool.query('update visitors set count = ? where id = ?', [++count, 1], (error1, result1) => {
       res.render('layout', {
         title: "Index Page",
         page: 'index',
-        counts: count
+        counts: count,
+        faqs,
+        reviews
       })
     })
   })
@@ -94,13 +97,11 @@ router.get('/details/:id', function (req, res) {
 
       const card_details = result2[0]
 
-      console.log(typeof card_details)
-
       res.render('layout', {
         title: card.card_title,
         page: 'details',
         card,
-        card_details : card_details || {}
+        card_details: card_details || {}
       });
     })
   })
